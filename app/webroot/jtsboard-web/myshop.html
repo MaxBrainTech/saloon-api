@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JTS Dashboard</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<!-- <link href="css/datatables/dataTables.bootstrap.min.css" rel="stylesheet"> -->
+
+	<!-- DataTables CSS -->
+    <link href="css/datatables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="css/datatables/dataTables.responsive.css" rel="stylesheet">
+
+
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/custom-font.css">
+	<link rel="stylesheet" type="text/css" href="css/custom-style.css">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="#"><img src="images/jts-board-logo.png"></a>
+				<ul class="nav navbar-top-links navbar-right">
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="icon-user"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div><em class="fa fa-user"></em> User Profile</div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div><em class="fa fa-gear"></em> Settings</div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div><em class="fa fa-sign-out"></em> Logout</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+			</div>
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<div class="profile-sidebar">
+			<div class="profile-userpic">
+				<img src="images/profile-image.png" class="img-responsive" alt="">
+			</div>
+			<div class="profile-usertitle">
+				<div class="profile-usertitle-name">Username</div>
+				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="divider"></div>
+		<form role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form>
+		<ul class="nav menu">
+            <li><a href="index.html"> <span class="icon-dashboard">&nbsp;</span> Dashboard</a></li>
+			<li class="active"><a href="myshop.html"> <span class="icon-dashboard">&nbsp;</span> My Shop</a></li>
+			<li><a href="#"><span class="icon-customer-list">&nbsp;</span> Customer List</a></li>
+			<li><a href="#"><span class="icon-staff">&nbsp;</span> Jts Staff</a></li>
+			<li><a href="#"><span class="icon-sales">&nbsp;</span> Sales</a></li>
+			<li><a href="#"><span class="icon-attendance">&nbsp;</span> Attendance</a></li>
+			<li><a href="#"><span class="icon-expenses">&nbsp;</span> Expenses </a></li>
+			<li><a href="#"><span class="icon-logout">&nbsp;</span> Logout</a></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">My Shop</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">My Shop</h1>
+			</div>
+		</div><!--/.row-->
+		
+			
+		
+		  <div class="panel panel-default">
+                    <div class="panel-heading">Customer Detail</div>
+                    <div class="panel-body">                        
+                            <form role="form">
+
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Name</label>
+	                                    <input class="form-control" placeholder="Name">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Email</label>
+	                                    <input class="form-control" placeholder="Email">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Company Name</label>
+	                                    <input class="form-control" placeholder="Name">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Salon Name</label>
+	                                    <input class="form-control" placeholder="Salon Name">
+	                                </div>
+	                            </div>	                            
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Website URL</label>
+	                                    <input class="form-control" placeholder="Website URL">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Phone No</label>
+	                                    <input class="form-control" placeholder="Phone No">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Zip Code</label>
+	                                    <input class="form-control" placeholder="Zip Code">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>City</label>
+	                                    <input class="form-control" placeholder="City">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Street Name</label>
+	                                    <input class="form-control" placeholder="Street Name">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Apartment Name</label>
+	                                    <input class="form-control" placeholder="Apartment Name">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Employee No</label>
+	                                    <input class="form-control" placeholder="Employee Number">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Advertisement</label>
+	                                    <input class="form-control" placeholder="Advertisement">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Average Customer</label>
+	                                    <input class="form-control" placeholder="Avr Customer">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Employee Pin Number</label>
+	                                    <input class="form-control" placeholder="Employee Pin Number">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Customer Pin Number</label>
+	                                    <input class="form-control" placeholder="Customer Pin Number">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Cash Box</label>
+	                                    <input class="form-control" placeholder="Cash Box">
+	                                </div>
+	                            </div>
+                            	<div class="col-sm-6">
+	                                <div class="form-group">
+	                                    <label>Date</label>
+	                                    <input class="form-control" placeholder="Date">
+	                                </div>
+	                            </div>
+	                            <div class="col-sm-6">
+	                            	<div class="form-group">
+	                                    <label>Weekend</label>
+	                                    <select class="form-control">
+	                                    	<option disabled="disabled" selected="selected">Weekend</option>
+	                                        <option>Monday</option>
+	                                        <option>Tuesday</option>
+	                                        <option>Wednesday 3</option>
+	                                        <option>Thursday</option>
+	                                        <option>Friday</option>
+	                                        <option>Saturday</option>
+	                                        <option>Sunday</option>
+	                                    </select>
+	                                </div>
+	                            </div>
+
+								<div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary">Submit Button</button>
+                                    <button type="reset" class="btn btn-default">Reset Button</button>
+                                </div>
+                               
+                                
+                                
+                                <!-- <div class="form-group">
+                                    <label>Text area</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                 -->
+                               
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- /.panel-->
+		
+		
+		<div class="">
+			<p class="back-link">Copyright © <a href="#">Zein El Dine International</a> 2018</p>
+		</div>
+		
+	</div>	<!--/.main-->
+	
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/custom.js"></script>
+	
+	<script>
+		window.onload = function () {
+	var chart1 = document.getElementById("line-chart").getContext("2d");
+	window.myLine = new Chart(chart1).Line(lineChartData, {
+	responsive: true,
+	scaleLineColor: "rgba(0,0,0,.2)",
+	scaleGridLineColor: "rgba(0,0,0,.05)",
+	scaleFontColor: "#c5c7cc"
+		});
+	};
+	</script>
+
+
+    <!-- DataTables JavaScript -->
+    <script src="js/datatables/jquery.dataTables.min.js"></script>
+    <script src="js/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="js/datatables/dataTables.responsive.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+		
+</body>
+</html>

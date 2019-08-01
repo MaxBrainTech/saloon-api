@@ -1,0 +1,30 @@
+version: "2"
+services:
+  proxy:
+    image: jwilder/nginx-proxy
+    container_name: proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs:ro
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - ./max_post_size.conf:/etc/nginx/conf.d/max_post_size.conf
+    restart: always
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    volumes:
+      - ./certs:/etc/nginx/certs
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    volumes_from:
+      - proxy
+    restart: always
+
+networks:
+  default:
+    external:
+      name: shared

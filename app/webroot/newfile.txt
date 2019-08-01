@@ -1,0 +1,4 @@
+Array
+(
+    [msg] => test push notification.
+)

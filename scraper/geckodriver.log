@@ -1,0 +1,2495 @@
+1553007226500	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.S2GpVwbeNsYe"
+*** You are running in headless mode.
+1553007226973	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1553007226974	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+1553007229406	Marionette	INFO	Listening on port 39953
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+1553007229475	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+1553007240504	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+1553007240769	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+1553007240806	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+1553007250077	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+openRemotePrompt@jar:file:///opt/firefox/firefox/omni.ja!/components/nsPrompter.js:507:5
+openPrompt@jar:file:///opt/firefox/firefox/omni.ja!/components/nsPrompter.js:541:17
+confirm@jar:file:///opt/firefox/firefox/omni.ja!/components/nsPrompter.js:646:9
+@https://imgbp.salonboard.com/KLP/js/KPCL020V01.js?switch=20190221:37:13
+dispatch@https://imgbp.salonboard.com/KLP/js/common/jquery-1.10.2.min.js:4:14077
+add/v.handle@https://imgbp.salonboard.com/KLP/js/common/jquery-1.10.2.min.js:4:10849
+event.synthesizeMouseAtPoint@chrome://marionette/content/event.js:202:5
+webdriverClickElement@chrome://marionette/content/interaction.js:183:5
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+1553007254647	Marionette	INFO	Stopped listening on port 39953
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:12199): dconf-CRITICAL **: unable to create directory '/run/user/1002/dconf': Permission denied.  dconf will not work properly.
+[Parent 12199, Gecko_IOThread] WARNING: pipe error (124): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 349
+1553016482015	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.0jnLh0IGS6Jw"
+*** You are running in headless mode.
+1553016482470	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1553016482470	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+1553016484454	Marionette	INFO	Listening on port 41517
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+1553016484531	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+1553016499604	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+1553016499882	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+1553016499911	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+1553016509184	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+bail@chrome://marionette/content/sync.js:196:64
+openRemotePrompt@jar:file:///opt/firefox/firefox/omni.ja!/components/nsPrompter.js:507:5
+openPrompt@jar:file:///opt/firefox/firefox/omni.ja!/components/nsPrompter.js:541:17
+confirm@jar:file:///opt/firefox/firefox/omni.ja!/components/nsPrompter.js:646:9
+@https://imgbp.salonboard.com/KLP/js/KPCL020V01.js?switch=20190221:37:13
+dispatch@https://imgbp.salonboard.com/KLP/js/common/jquery-1.10.2.min.js:4:14077
+add/v.handle@https://imgbp.salonboard.com/KLP/js/common/jquery-1.10.2.min.js:4:10849
+event.synthesizeMouseAtPoint@chrome://marionette/content/event.js:202:5
+webdriverClickElement@chrome://marionette/content/interaction.js:183:5
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+
+(firefox:14831): dconf-CRITICAL **: unable to create directory '/run/user/1003/dconf': Permission denied.  dconf will not work properly.
+1553016513751	Marionette	INFO	Stopped listening on port 41517

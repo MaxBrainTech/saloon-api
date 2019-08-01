@@ -1,0 +1,14 @@
+{
+    "require": {
+        "google/apiclient": "^2.0"
+    }
+}
+
+{
+	"require": {
+		"chronon/stripe": "~2.0"
+	},
+	"config": {
+        "vendor-dir": "Vendor"
+    }
+}

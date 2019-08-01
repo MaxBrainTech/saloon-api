@@ -1,0 +1,927 @@
+@charset "utf-8";
+/* CSS Document */
+@media all and (min-width:950px) and (max-width:1149px) {
+.Container {
+ margin: auto;
+ width:940px;
+}
+.Navi li {
+ padding: 0 15px;
+}
+h1 {
+ font-size: 55px;
+}
+.BanMidBox p {
+font-size:28px;
+}
+.MidTopLimg {
+width:395px;
+}
+.MidTopLimg img {
+width:100%;
+}
+.MidTopLTxt {
+ float: left;
+ width:520px;
+}
+.MidTopLTxt img {
+width:200px;
+}
+.MidTopLTxt h1 {
+font-size:45px;
+}
+.FeaListRow {
+ float: left;
+ margin: 0 5px;
+}
+.FeaListMidImg {
+width:400px;
+}
+.FeaListMidImg img {
+width:100%;
+}
+.FeaListMidTxt {
+ float: left;
+ width: 515px;
+}
+.LeftMobile {
+left: 50px !important;
+}
+.RightMobile {
+ left: 516px !important;
+}
+.MidTopList {
+ width: 940px;
+}
+/*----------------03-09-2014----------------------*/
+.AccMidRight {
+width: 640px;
+}
+.PlanTypeTop li {
+padding: 0 1%;
+font-size: 14px;
+}
+.UpgradeTitle h4 {
+font-size:25px;
+}
+.UpgradeMidli p span {
+ font-size:25px;
+}
+.UpgradeMidli p {
+font-size:13px;
+}
+.UpgradeBotmli p span {
+ font-size:25px;
+}
+.UpgradeBotmli p {
+font-size:13px;
+}
+.UpgradeLiBotm {
+font-size: 14px;
+}
+.SignupMidLeft {
+width: 500px;
+}
+.SignupMidRight {
+ float: right;
+ padding: 100px 25px 0 0;
+ width: 382px;
+}
+}
+@media all and (min-width:768px) and (max-width:949px) {
+.Container {
+ margin: auto;
+ width:750px;
+}
+.Navi li {
+padding: 0 10px;
+}
+.Navi li a {
+font-size: 14px;
+}
+.LogSignBtn li a.LoginBtn {
+font-size: 14px;
+}
+.LogSignBtn li a.SignupBtn {
+font-size: 14px;
+}
+.Logo {
+width:200px;
+}
+.Logo img {
+width:100%;
+}
+h1 {
+ font-size: 45px;
+}
+.BanMidBox p {
+font-size:25px;
+}
+.LeftMobile {
+left:0 !important;
+}
+.RightMobile {
+left:386px !important;
+}
+.MidTopLimg {
+ float: left;
+ margin: 0;
+ text-align: center;
+}
+.MidTopLimg img {
+width:90%;
+max-width:661px;
+}
+.MidTopLTxt {
+width:100%;
+text-align:center;
+}
+.FeaListRow {
+ float: left;
+ margin: 0 5px;
+ width: 232px;
+}
+.FeaListIcon {
+margin: 0 12px;
+}
+.FeaListTxt {
+ float: left;
+ padding: 15px 0;
+ text-align: center;
+ width: 205px;
+}
+h3 {
+ font-size: 25px;
+}
+.FeaListTxt p {
+font-size: 15px;
+}
+.FeaListMidTxt {
+width:100%;
+margin:0 0 20px 0;
+text-align:center;
+}
+.FeaListMidImg {
+width:100%;
+text-align:center;
+}
+.FeaListMidImg img {
+width:90%;
+max-width:490px;
+}
+/*----------------03-09-2014----------------------*/
+.AccMidRight {
+width: 460px;
+}
+.PlanTypeTop li {
+font-size: 14px;
+ padding: 0 7%;
+ width: 50%;
+}
+.UpgradeLiRow {
+ float: left;
+ padding: 0 2% 20px 0;
+ width: 50%;
+}
+.UpgradeTitle h4 {
+font-size:25px;
+}
+.UpgradeMidli p span {
+ font-size:25px;
+}
+.UpgradeMidli p {
+font-size:13px;
+}
+.UpgradeBotmli p span {
+ font-size:25px;
+}
+.UpgradeBotmli p {
+font-size:13px;
+}
+.UpgradeLiBotm {
+font-size: 14px;
+}
+.SignupMidLeft {
+width:400px;
+padding:15px 0 15px 34px;
+}
+.SignupMidRight {
+ float: right;
+ padding: 100px 12px 0 0;
+ width: 303px;
+}
+}
+@media all and (min-width:600px) and (max-width:767px) {
+.Container {
+ margin: auto;
+ width:580px;
+}
+.Navi li {
+padding: 0 10px;
+}
+.Navi li a {
+font-size: 14px;
+}
+.LogSignBtn li a.LoginBtn {
+font-size: 14px;
+}
+.LogSignBtn li a.SignupBtn {
+font-size: 14px;
+}
+.Logo {
+width:200px;
+}
+.Logo img {
+width:100%;
+}
+h1 {
+ font-size: 40px;
+}
+.BanMidBox p {
+font-size:23px;
+width:90%;
+}
+.LeftMobile {
+left:0 !important;
+width: 266px;
+height:auto;
+background:none;
+}
+.RightMobile {
+left:312px !important;
+width: 266px;
+}
+.iphoneMobile {
+width:300px;
+}
+.MidTopLimg {
+ float: left;
+ margin: 0;
+ text-align: center;
+ width: 100%;
+}
+.MidTopLimg img {
+width:90%;
+max-width:661px;
+}
+.MidTopLTxt {
+width:100%;
+text-align:center;
+}
+.FeaListRow {
+ float: left;
+ margin: 0 5px;
+ width:175px;
+}
+.FeaListIcon {
+ margin: 0;
+ width: 100%;
+}
+.FeaListRow .FeaListIcon a {
+width:175px;
+height:175px;
+}
+.FeaListTxt {
+ float: left;
+ padding: 15px 0;
+ text-align: center;
+ width:175px;
+}
+h3 {
+ font-size: 25px;
+}
+.FeaListTxt p {
+font-size: 15px;
+}
+.FeaListMidTxt {
+width:100%;
+margin:0 0 20px 0;
+text-align:center;
+}
+.FeaListMidImg {
+width:100%;
+text-align:center;
+}
+.FeaListMidImg img {
+width:90%;
+max-width:490px;
+}
+.AppBtnMid a img {
+width:200px;
+}
+.Navi {
+display:none;
+}
+.NaviMobile {
+float:left;
+display:block;
+position:relative;
+}
+.NaviMobileIcon {
+float:left;
+}
+.NaviMobileIcon a {
+padding:6px 12px 1px;
+background:#e91300;
+color:#fff;
+font-size:26px;
+float:left;
+}
+.Navi.NaviMobile {
+position:absolute;
+background:#fff;
+left:0;
+top:42px;
+width:180px;
+z-index:30;
+}
+.Navi.NaviMobile li {
+width:100%;
+}
+.Navi.NaviMobile li:hover a, .Navi.NaviMobile li.active a, .Navi.NaviMobile li:hover, .Navi.NaviMobile li.active {
+color:#fff;
+background:#e91300;
+}
+.Navi.NaviMobile li:hover a, .Navi.NaviMobile li.active a {
+width:100%;
+height:44px;
+float:left;
+}
+.MidBannerImg {
+ float: left;
+ height: 400px;
+}
+/*.FeaListWrp.fixed .FeaListRow {
+display:block;
+}*/
+
+/*----------------03-09-2014----------------------*/
+.AccMidRight {
+width: 98%;
+}
+.AccMidLeft {
+width: 100%;
+}
+.AccMidLeft .ChainBgLeft {
+display:none;
+}
+.AccMidLeftTop li label {
+width:auto;
+float:none;
+}
+.PlanTypeTop li {
+font-size: 14px;
+ padding: 0 7%;
+ width: 50%;
+}
+.UpgradeLiRow {
+ float: left;
+ padding: 0 2% 20px 0;
+ width: 50%;
+}
+.UpgradeTitle h4 {
+font-size:25px;
+}
+.UpgradeMidli p span {
+ font-size:25px;
+}
+.UpgradeMidli p {
+font-size:13px;
+}
+.UpgradeBotmli p span {
+ font-size:25px;
+}
+.UpgradeBotmli p {
+font-size:13px;
+}
+.UpgradeLiBotm {
+font-size: 14px;
+}
+.SignupMidLeft {
+ padding: 15px 25px 0 0;
+ width:95%;
+ float:right;
+}
+.SignupFrmLeft {
+width:100%;
+}
+.SignupMidLeft .ChainBgLeft {
+display:none;
+}
+.SignupMidRight {
+ float: right;
+ padding: 100px 25px 0 0;
+ width: 95%;
+}
+.SignupFrmLeft li .BlueBtnFrm {
+padding:0;
+width:100%;
+}
+}
+@media all and (min-width:480px) and (max-width:599px) {
+.Container {
+ margin: auto;
+ width:450px;
+}
+.Navi li {
+padding: 0 10px;
+}
+.Navi li a {
+font-size: 14px;
+}
+.LogSignBtn li a.LoginBtn {
+font-size: 14px;
+}
+.LogSignBtn li a.SignupBtn {
+font-size: 14px;
+}
+.Logo {
+width:170px;
+}
+.Logo img {
+width:100%;
+}
+h1 {
+ font-size:30px;
+}
+.BanMidBox p {
+font-size:18px;
+width:90%;
+}
+.LeftMobile {
+left:0 !important;
+width: 266px;
+height:auto;
+background:none;
+}
+.RightMobile {
+left:175px !important;
+width: 266px;
+}
+.iphoneMobile {
+width:300px;
+}
+.PageTopRow {
+width:95%;
+}
+.MidTopLimg {
+ float: left;
+ margin: 0;
+ text-align: center;
+ width: 100%;
+}
+.MidTopLimg img {
+width:90%;
+max-width:661px;
+}
+.MidTopLTxt {
+width:100%;
+text-align:center;
+}
+.MidTopLTxt p img {
+margin:0 0 15px 0;
+}
+.MidTopLTxt p {
+padding:12px;
+}
+.FeaListRow {
+ float: left;
+ margin: 0 3%;
+ width: 26%;
+}
+.FeaListIcon {
+ margin: 0;
+ width: 100%;
+}
+.FeaListRow .FeaListIcon a {
+height: 118px;
+ width: 100%;
+ background-size:70%;
+}
+.FeaListRow:hover .FeaListIcon a, .FeaListRow.active .FeaListIcon a {
+background-size:70%;
+}
+.FeaListTxt {
+ float: left;
+ padding: 15px 0;
+ text-align: center;
+ width:100%;
+}
+h3 {
+ font-size: 20px;
+}
+.FeaListTxt p {
+font-size: 15px;
+display:none;
+}
+.FeaListMidTxt {
+width:100%;
+margin:0 0 20px 0;
+text-align:center;
+}
+.FeaListMidImg {
+width:100%;
+text-align:center;
+}
+.FeaListMidImg img {
+width:90%;
+max-width:490px;
+}
+.AppBtnMid a img {
+width:200px;
+margin: 0 0 10px;
+}
+.Navi {
+display:none;
+}
+.NaviMobile {
+float:left;
+display:block;
+position:relative;
+}
+.NaviMobileIcon {
+float:left;
+}
+.NaviMobileIcon a {
+padding:6px 12px 9px;
+background:#e91300;
+color:#fff;
+font-size:26px;
+float:left;
+}
+.Navi.NaviMobile {
+position:absolute;
+background:#fff;
+left:0;
+top:42px;
+width:180px;
+z-index:30;
+}
+.Navi.NaviMobile li {
+width:100%;
+}
+.Navi.NaviMobile li:hover a, .Navi.NaviMobile li.active a, .Navi.NaviMobile li:hover, .Navi.NaviMobile li.active {
+color:#fff;
+background:#e91300;
+}
+.Navi.NaviMobile li:hover a, .Navi.NaviMobile li.active a {
+width:100%;
+height:44px;
+float:left;
+}
+.MidBannerImg {
+ float: left;
+ height: 400px;
+}
+.FtrBotm p {
+font-size: 14px;
+}
+/*.FeaListWrp.fixed .FeaListRow {
+display:block;
+}*/
+
+/*----------------03-09-2014----------------------*/
+.AccMidRight {
+width: 98%;
+}
+.AccMidLeft {
+width: 100%;
+}
+.AccMidLeft .ChainBgLeft {
+display:none;
+}
+/*.AccMidLeftTop li label {
+width:auto;
+float:none;
+}*/
+.MyAccTpRight {
+width: 100%;
+}
+.AccEmailCon p {
+text-align:left;
+}
+.PlanTypeTop li {
+font-size: 14px;
+ padding: 0 7%;
+ width: 50%;
+}
+.UpgradeLiRow {
+ float: left;
+ padding: 0 2% 20px 0;
+ width: 50%;
+}
+.UpgradeTitle h4 {
+font-size:25px;
+}
+.UpgradeMidli p span {
+ font-size:25px;
+}
+.UpgradeMidli p {
+font-size:13px;
+}
+.UpgradeBotmli p span {
+ font-size:25px;
+}
+.UpgradeBotmli p {
+font-size:13px;
+}
+.UpgradeLiBotm {
+font-size: 14px;
+}
+.SignupMidLeft {
+ padding: 15px 25px 0 0;
+ width:95%;
+ float:right;
+}
+.SignupFrmLeft {
+width:100%;
+}
+.SignupMidLeft .ChainBgLeft {
+display:none;
+}
+.SignupMidRight {
+ float: right;
+ padding: 100px 25px 0 0;
+ width: 95%;
+}
+.SignupFrmLeft li .BlueBtnFrm {
+padding:0;
+width:100%;
+}
+}
+@media all and (max-width:479px) {
+.Container {
+ margin: auto;
+ width:300px;
+}
+.Navi li {
+padding: 0 10px;
+}
+.Navi li a {
+font-size: 14px;
+}
+.LogSignBtn li a.LoginBtn {
+font-size: 14px;
+}
+.LogSignBtn li a.SignupBtn {
+font-size: 14px;
+}
+.Logo {
+width:100%;
+text-align:center;
+}
+/*.Logo img {
+width:100%;
+}*/
+.Navigation {
+ float: right;
+ font-family: 'Museo500';
+ margin: 0;
+ width: 100%;
+}
+h1 {
+ font-size:25px;
+}
+.MidTopLTxt p {
+font-size:16px;
+}
+.BanMidBox p {
+font-size:18px;
+width:90%;
+line-height:30px;
+}
+.LeftMobile {
+left:0 !important;
+width:150px;
+height:auto;
+background:none;
+}
+.RightMobile {
+left:158px !important;
+width:150px;
+}
+.iphoneMobile {
+width:175px;
+}
+.PageTopRow {
+width:95%;
+}
+.MidTopLimg {
+ float: left;
+ height: 215px;
+ margin: 0;
+ padding: 11px 28px 0 0;
+ text-align: center;
+ width: 316px;
+}
+.MidTopLimg img {
+width:90%;
+max-width:661px;
+}
+.MidTopLTxt {
+width:100%;
+text-align:center;
+}
+.MidTopLTxt p img {
+margin:0 0 15px 0;
+}
+.MidTopLTxt p {
+padding:12px;
+}
+.FeaListRow {
+ float: left;
+ margin: 0 3%;
+ width: 26%;
+}
+.FeaListIcon {
+ margin: 0;
+ width: 100%;
+}
+.FeaListRow .FeaListIcon a {
+height: 76px;
+ width: 100%;
+ background-size:70%;
+}
+.FeaListRow:hover .FeaListIcon a, .FeaListRow.active .FeaListIcon a {
+background-size:70%;
+}
+.FeaListTxt {
+ float: left;
+ padding: 15px 0;
+ text-align: center;
+ width:100%;
+}
+.FeaListTxt h3 {
+font-size:15px;
+}
+h3 {
+ font-size: 20px;
+}
+.FeaListTxt p {
+font-size: 15px;
+display:none;
+}
+.FeaListMidTxt {
+width:100%;
+margin:0 0 20px 0;
+text-align:center;
+}
+.FeaListMidImg {
+width:100%;
+text-align:center;
+}
+.FeaListMidImg img {
+width:90%;
+max-width:490px;
+}
+.AppBtnMid a img {
+width:200px;
+margin: 0 0 10px;
+}
+.Navi {
+display:none;
+}
+.NaviMobile {
+float:left;
+display:block;
+position:relative;
+}
+.NaviMobileIcon {
+float:left;
+}
+.NaviMobileIcon a {
+padding:6px 12px 9px;
+background:#e91300;
+color:#fff;
+font-size:26px;
+float:left;
+}
+.Navi.NaviMobile {
+position:absolute;
+background:#fff;
+left:0;
+top:42px;
+width:180px;
+z-index:30;
+}
+.Navi.NaviMobile li {
+width:100%;
+}
+.Navi.NaviMobile li:hover a, .Navi.NaviMobile li.active a, .Navi.NaviMobile li:hover, .Navi.NaviMobile li.active {
+color:#fff;
+background:#e91300;
+}
+.Navi.NaviMobile li:hover a, .Navi.NaviMobile li.active a {
+width:100%;
+height:44px;
+float:left;
+}
+.MidBannerImg {
+ float: left;
+ height: 220px;
+}
+.FtrBotm p {
+font-size: 14px;
+}
+/*.FeaListWrp.fixed .FeaListRow {
+display:block;
+}*/
+/*----------------03-09-2014----------------------*/
+.AccMidRight {
+width: 98%;
+}
+.AccMidLeft {
+width: 100%;
+}
+.AccMidLeft .ChainBgLeft {
+display:none;
+}
+/*.AccMidLeftTop li label {
+width:auto;
+float:none;
+}*/
+.MyAccTpRight {
+width: 100%;
+}
+.AccEmailCon p {
+text-align:left;
+}
+.PlanTypeTop li {
+font-size: 14px;
+ padding: 0 7%;
+ width:100%;
+}
+.UpgradeLiRow {
+ float: left;
+ padding: 0 2% 20px 0;
+ width:100%;
+}
+.UpgradeTitle h4 {
+font-size:25px;
+}
+.UpgradeMidli p span {
+ font-size:25px;
+}
+.UpgradeMidli p {
+font-size:13px;
+}
+.UpgradeBotmli p span {
+ font-size:25px;
+}
+.UpgradeBotmli p {
+font-size:13px;
+}
+.UpgradeLiBotm {
+font-size: 14px;
+}
+.AccTpRiBtn {
+width:100%;
+padding:10px 0 0 0;
+}
+.AccTpRiBtn .BlueBtnRi {
+padding:0;
+width:100%;
+text-align:center;
+}
+.EditProfFrm li label {
+line-height:28px;
+}
+.EditProfFild {
+width:98%;
+}
+.BlueBtnFrm {
+padding:0;
+width:98%;
+}
+.EditProfFrm li.FrmBtnLabel label {
+display:none;
+}
+.EditProfFrm li span.EditProfTxtRi {
+width:100%;
+float:left;
+line-height:25px;
+}
+ .SignupMidLeft {
+ padding: 15px 25px 0 0;
+ width:95%;
+ float:right;
+}
+.SignupFrmLeft {
+width:100%;
+}
+.SignupMidLeft .ChainBgLeft {
+display:none;
+}
+.SignupMidRight {
+ float: right;
+ padding: 100px 25px 0 0;
+ width: 95%;
+}
+.SignupFrmLeft li .BlueBtnFrm {
+padding:0;
+width:100%;
+}
+.SignupMidRight p img.bdr-log-ti {
+width:100%;
+}
+}

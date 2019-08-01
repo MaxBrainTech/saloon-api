@@ -1,0 +1,38 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    container_name: "nginx"
+    volumes:
+      - .:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      
+    environment:
+      VIRTUAL_HOST: api.jtsboard.com
+      LETSENCRYPT_HOST: api.jtsboard.com
+      LETSENCRYPT_EMAIL: mahen.zed123@gmail.com
+    restart: always
+  php:
+    build: ./php
+    container_name: "php"
+    volumes:
+      - .:/var/www/html
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+    restart: always
+    
+  hub:
+    image: selenium/hub
+    ports:
+      - '4444:4444'
+  firefox:
+    image: selenium/node-firefox:3.14.0-gallium
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=hub
+      - HUB_PORT_4444_TCP_PORT=4444
+    depends_on:
+      - hub
+
+networks:
+  default:
+    external:
+      name: shared

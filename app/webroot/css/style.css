@@ -1,0 +1,1188 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	/*background: url(../images/body_bg.jpg) repeat-x;*/
+}
+/*ClearFix*/
+.Clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.Clear {
+	clear:both;
+}
+.Clearfix {
+	display: inline-block;
+}
+h1 {
+	font-size:60px;
+	color:#0aa2b1;
+	font-family: 'Museo700';
+	font-weight:normal;
+}
+h2 {
+	font-size:40px;
+	color:#fff8c9;
+	font-family: 'Museo500';
+	font-weight:normal;
+}
+h3 {
+	font-size:35px;
+	color:#ece7c8;
+	font-family: 'Museo500';
+	font-weight:normal;
+}
+p, a, ul, li, h1, h2, h3, h4, h5, from {
+	padding:0px;
+	margin:0px;
+}
+img {
+	padding:0px;
+	margin:0px;
+	border:0px;
+}
+a:link {
+	text-decoration: none;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+a:visited {
+	text-decoration: none;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+a:hover {
+	text-decoration: none;
+}
+/*Text Link css*/
+.linkVU a {
+	Font-Family:Verdana, Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+}
+.linkVU a:hover {
+	Font-Family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration:none;
+}
+/*Bgcolour css*/
+.BgWhite {
+	background-color:#ffffff;
+}
+.BgBlack {
+	background-color:#000000;
+}
+/*colour css*/
+.RedColor {
+	color:#e91300;
+}
+.BlueColor {
+	color:#0aa2b1;
+}
+.DarkGrayColor {
+	color:#3f3f3f;
+}
+/*Layout css*/
+.FullWraper {
+	width:100%;
+}
+.Container {
+	width:1150px;
+	margin:auto;
+}
+/*Layout bg*/
+.TopBgBan {
+	background:url(../images/top-bg-ban.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.LightYellowBg {
+	background:url(../images/light-yellow-bg.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.MidBlkBg {
+	background:url(../images/blk-bg-mid.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.MidBlueBg {
+	background:url(../images/blue-bg-mid.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.MidBlue2Bg {
+	background:url(../images/blue-bg-mid-set.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.FeaMidBlkBG {
+	background:#242620;
+}
+.YellowBg {
+	background:#F3ECE5;
+}
+.FtrBg {
+	background:url(../images/ftr-bg.jpg) repeat-x #242620;
+}
+.ChainTopBg {
+	background:url(../images/chen-bg-top.png) repeat-x;
+	height:43px;
+	position:absolute;
+	left:0;
+	width:100%;
+	bottom:-21px;
+	z-index:200;
+}
+.ChainMidpBg {
+	background:url(../images/chen-bg-mid.png) repeat-x;
+	height:34px;
+	bottom: -17px;
+	float: left;
+	height: 34px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index:300;
+}
+/*---------Header Css-------------*/
+ 
+ .HeadBotmBdr {
+	background:url(../images/head-botm-bdr-bg.png) no-repeat center bottom;
+}
+.Logo {
+	float:left;
+}
+.Navigation {
+	float:right;
+	margin:30px 0 0 0;
+	font-family: 'Museo500';
+}
+.default_header_logo {
+    height: 40px;
+}
+.Navi {
+	float:left;
+	list-style-type:none;
+	display:block;
+}
+.Navi li {
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:0 25px;
+}
+.Navi li a {
+	font-size:18px;
+	color:#3f3f3f;
+	line-height:44px;
+}
+.Navi li a:hover, .Navi li.active a {
+	color:#e91300;
+}
+.LogSignBtn {
+	float:right;
+	list-style-type:none;
+	display:block;
+}
+.LogSignBtn li {
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:0 0 0 8px;
+}
+.LogSignBtn li a.LoginBtn {
+	background:#e91300;
+	height:44px;
+	padding:0 15px;
+	float:left;
+	font-size:18px;
+	color:#fff;
+	text-decoration:none;
+	line-height:44px;
+	font-weight:normal;
+	-moz-border-radius: 5px;
+	-webkit-border-radius:5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+}
+.LogSignBtn li a.LoginBtn span {
+	background:url(../images/log-icon.png) no-repeat left;
+	padding:0 0 0 25px;
+}
+/*.LogSignBtn li a.LoginBtn:hover {
+	background:#b60f01;
+}*/
+.LogSignBtn li a.SignupBtn {
+	background:none;
+	border:1px solid #c6c4a9;
+	height:44px;
+	padding:0 14px;
+	float:left;
+	font-size:18px;
+	color:#3f3f3f;
+	text-decoration:none;
+	line-height:44px;
+	font-weight:normal;
+	-moz-border-radius: 5px;
+	-webkit-border-radius:5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+}
+
+.LogSignBtn li a.SignupBtn span {
+	margin:0 6px 0 0;
+	font-size:14px;
+	cursor:pointer;
+}
+.LogSignBtn li a.SignupBtn label {
+	cursor:pointer;
+	font-weight:normal;
+}
+.LogSignBtn li a.SignupBtn:hover span {
+	color:#fff;
+}
+.LogSignBtn li a.SignupBtn:hover label {
+	color:#fff;
+}
+.LogSignBtn li a.SignupBtn:hover {
+	background:#e91300;
+}
+.LogSignBtn li a.SignupBtn.Active span {
+	color:#fff;
+}
+.LogSignBtn li a.SignupBtn.Active label {
+	color:#fff;
+}
+.LogSignBtn li a.SignupBtn.Active {
+	background:#e91300;
+}
+
+
+/*------------------Banner------------------*/
+.BanMidBox {
+	width:100%;
+	float:left;
+}
+.BanMidBox p {
+	width:733px;
+	margin:25px auto;
+	font-size:32px;
+	color:#3f3f3f;
+	font-family: 'Museo300';
+	line-height:40px;
+	text-align:center;
+}
+.MidBannerImg {
+	width:100%;
+	float:left;
+	position:relative;
+	height:606px;
+}
+.iphoneMobile {
+	position:absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	top:-300px;
+	z-index:500;
+}
+.LeftMobile {
+	left:-200px;
+	position:absolute;
+	top:35px;
+	z-index:400;
+	width:398px;
+}
+.RightMobile {
+	right:-200px;
+	position:absolute;
+	top:35px;
+	z-index:400;
+}
+.PaggingTop {
+	width:100%;
+	float:left;
+	padding:140px 0 0;
+}
+.PageTopRow {
+	width:580px;
+	margin:auto;
+	border-bottom:4px solid #9d9280;
+}
+.PageTopBox {
+	float:left;
+	list-style-type:none;
+	display:block;
+	margin:0 0 -12px 0;
+}
+.PageTopBox li {
+	padding:0 8px;
+	float:left;
+	list-style-type:none;
+	display:block;
+	background:#f3ece4;
+}
+.PageTopBox li a {
+	background:url(../images/pagging-bg.png) no-repeat;
+	width:22px;
+	height:22px;
+	float:left;
+}
+.MidTopList {
+	width:100%;
+	float:left;
+	padding:100px 0;
+}
+.MidTopLimg {
+	background: url("../images/video-pic.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	background-size:100%;
+	float: left;
+	height: 420px;
+	margin: 0 15px 0 0;
+	padding: 23px 85px 23px 17px;
+	width: 661px;
+}
+.MidTopLimg img {
+	width:100%;
+}
+.MidTopLTxt {
+	width:728px;
+	float:left;
+}
+.MidTopLTxt p {
+	padding:12px 0;
+	font-size:20px;
+	color:#3f3f3f;
+	font-family: 'Museo100';
+	line-height:30px;
+}
+.FeaWrp {
+	margin-top:2px;
+}
+.FeaWrp .PaggingTop {
+	float: left;
+	padding:25px 0 0;
+}
+.FeaWrp .PageTopRow {
+	border-bottom: 4px solid #ece7ca;
+}
+.FeaWrp .PageTopBox li {
+	background: none repeat scroll 0 0 #242620;
+}
+.FeaWrp .PageTopBox li a {
+	background:url(../images/pagging-bg-1.png) no-repeat;
+}
+.FeaListWrp {
+	width:100%;
+	float:left;
+	padding:55px 0;
+}
+.FeaListRow {
+	float: left;
+	margin: 0 40px;
+	width: 300px;
+}
+.FeaListIcon {
+	width:205px;
+	float:left;
+	margin:0 47px;
+}
+.FeaListRow .FeaListIcon a {
+	width:205px;
+	height:205px;
+	float:left;
+	background-color:#fff8c9;
+	background-repeat:no-repeat;
+	background-position:center center;
+	-moz-border-radius: 100%;
+	-webkit-border-radius:100%;
+	-khtml-border-radius:100%;
+	border-radius:100%;
+}
+.FeaListRow:hover .FeaListIcon a, .FeaListRow.active .FeaListIcon a {
+	background:#e91300;
+}
+.FeaListRow .FeaListIcon a.Voicemail {
+	background-image:url(../images/fea-icon1.png);
+}
+.FeaListRow:hover .FeaListIcon a.Voicemail, .FeaListRow.active .FeaListIcon a.Voicemail {
+	background-image:url(../images/fea-icon1-h.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.FeaListRow .FeaListIcon a.Greetings {
+	background-image:url(../images/fea-icon2.png);
+}
+.FeaListRow:hover .FeaListIcon a.Greetings, .FeaListRow.active .FeaListIcon a.Greetings {
+	background-image:url(../images/fea-icon2-h.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.FeaListRow .FeaListIcon a.Settings {
+	background-image:url(../images/fea-icon3.png);
+}
+.FeaListRow:hover .FeaListIcon a.Settings, .FeaListRow.active .FeaListIcon a.Settings {
+	background-image:url(../images/fea-icon3-h.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.FeaListTxt {
+	width:300px;
+	float:left;
+	padding:15px 0;
+	text-align:center;
+}
+.FeaListTxt h3 a {
+	color:#ece7c8;
+}
+.FeaListTxt p {
+	padding:8px 0;
+	font-size:20px;
+	color:#f9f8ee;
+	font-family: 'Museo100';
+}
+.FeaListMid {
+	width:100%;
+	float:left;
+	padding:70px 0;
+}
+.FeaListMidTxt {
+	width:585px;
+	float:left;
+}
+.FeaListMidTxt a {
+	color:#fff8c9;
+	text-decoration:none;
+}
+.FeaListMidTxt a:hover {
+	color:#e91300;
+}
+.FeaListMidTxt p {
+	padding:8px 0;
+	font-size:20px;
+	color:#fff;
+	font-family: 'Museo100';
+	line-height:26px;
+}
+.FeaListMidTxt p span {
+	font-size:25px;
+}
+.FeaListMidImg {
+	float:right;
+}
+.AppBtnMid {
+	width:100%;
+	float:left;
+	padding:60px 0 40px;
+	text-align:center;
+}
+.AppBtnMid a {
+	padding:0 15px;
+}
+.FtrTop {
+	width:100%;
+	float:left;
+	padding:20px 0 14px;
+}
+.FtrTop p {
+	color:#fff;
+	font-size:24px;
+	padding:0 0 7px 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight:300;
+	text-align:center;
+}
+.SicialFtr {
+	width:100%;
+}
+.SicialFtrIcon {
+	list-style-type:none;
+	display:block;
+}
+.SicialFtrIcon li {
+	float:left;
+	padding:0 3px;
+}
+.SicialFtrIcon li a {
+	width:45px;
+	height:44px;
+	float:left;
+	background-repeat:no-repeat;
+	background-position:left top
+}
+.SicialFtrIcon li a:hover {
+	background-position:left bottom;
+}
+.SicialFtrIcon li.Facebook a {
+	background-image:url(../images/facebook-icon.png);
+}
+.SicialFtrIcon li.Twitter a {
+	background-image:url(../images/twitter-icon.png);
+}
+.SicialFtrIcon li.Gplah a {
+	background-image:url(../images/g-plash-icon.png);
+}
+.SicialFtrIcon li.YouTube a {
+	background-image:url(../images/you-tube.png);
+}
+.FtrBotm {
+	width:100%;
+	float:left;
+	padding:0px 0 20px;
+}
+.FtrBotm p {
+	font-size:16px;
+	color:#0aa2b1;
+	font-family: 'Roboto', sans-serif;
+	font-weight:300;
+	text-align:center;
+	padding:4px 0;
+}
+.FtrBotm p a {
+	color:#0aa2b1;
+	text-decoration:none;
+	padding:0 6px;
+}
+.FtrBotm p a:hover {
+	color:#fff;
+}
+.FtrBotm p.Copyright {
+	font-size:12px;
+	color:#50514d;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	text-align:center;
+	padding:4px 0;
+}
+.FtrBotm p.FtrNavi {
+	text-transform:uppercase;
+}
+.NaviMobile {
+	display:none;
+}
+.FeaBgHeadFixed {
+	position:fixed;
+	left:0;
+	top:0;
+	background:#242620;
+	padding:15px 0;
+	width:100%;
+	border-bottom:2px solid #ccc;
+	z-index:999;
+	display:none;
+}
+.FeaListWrp.fixed .FeaBgHeadFixed {
+	display:block;
+}
+.FeaListWrp.fixed .FeaListRow {
+	display:none;
+}
+.FeaHeadListRow {
+	width:32%;
+	float:left;
+}
+.FeaHeadLiRow {
+	width:75px;
+	margin:auto;
+}
+.FeaHeadListIcon {
+	width:75px;
+}
+.FeaHeadLiRow .FeaHeadListIcon a {
+	width:75px;
+	height:75px;
+	float:left;
+	background-color:#fff8c9;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:60%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius:100%;
+	-khtml-border-radius:100%;
+	border-radius:100%;
+}
+.FeaHeadLiRow:hover .FeaHeadListIcon a, .FeaListRow.active .FeaHeadListIcon a {
+	background:#e91300;
+}
+.FeaHeadLiRow .FeaHeadListIcon a.Voicemail {
+	background-image:url(../images/fea-icon1.png);
+}
+.FeaHeadLiRow:hover .FeaHeadListIcon a.Voicemail, .FeaListRow.active .FeaHeadListIcon a.Voicemail {
+	background-image:url(../images/fea-icon1-h.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:60%;
+}
+.FeaHeadLiRow .FeaHeadListIcon a.Greetings {
+	background-image:url(../images/fea-icon2.png);
+}
+.FeaHeadLiRow:hover .FeaHeadListIcon a.Greetings, .FeaListRow.active .FeaHeadListIcon a.Greetings {
+	background-image:url(../images/fea-icon2-h.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:60%;
+}
+.FeaHeadLiRow .FeaHeadListIcon a.Settings {
+	background-image:url(../images/fea-icon3.png);
+}
+.FeaHeadLiRow:hover .FeaHeadListIcon a.Settings, .FeaListRow.active .FeaHeadListIcon a.Settings {
+	background-image:url(../images/fea-icon3-h.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:60%;
+}
+.FeaHeadListTxt {
+	width:100%;
+	float:left;
+	padding:5px 0;
+	text-align:center;
+}
+.FeaHeadListTxt a {
+	color:#ece7c8;
+	font-size:15px;
+}
+/*-------------------03-09-2014---------------*/
+.InnerMidBg {
+	background:url(../images/mid-top-in-bg.png) repeat-x top #f3ece4;
+}
+.InnerMidUserBg {
+	background:url(../images/mid-user-bg.png) no-repeat right;
+}
+.MyAccMid {
+	width:100%;
+	float:left;
+	padding:45px 0;
+}
+.MyAccMidTp {
+	width:100%;
+	float:left;
+	padding:12px 0 5px;
+}
+.MyAccMidTp h2 {
+	float:left;
+	font-size:30px;
+	color:#e91300;
+	font-family: 'Museo700';
+	font-weight:normal;
+	padding:2px 0 4px 0;
+}
+.MyAccTpRight {
+	float:right;
+	padding:0 0 0 0;
+}
+.AccEmailCon {
+	float:left;
+	padding:0 10px 0 0;
+}
+.AccEmailCon p {
+	text-align:right;
+	color:#3f3f3f;
+	font-size:16px;
+	font-family: 'Museo500';
+}
+.AccTpRiBtn {
+	float:right;
+}
+a.BlueBtnRi {
+	height:44px;
+	background:#0aa2b1;
+	text-decoration:none;
+	float:right;
+	color:#fff;
+	font-size:18px;
+	font-family: 'Museo500';
+	line-height:44px;
+	padding:0 18px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	border-radius:3px;
+}
+a.BlueBtnRi:hover {
+	background:#057e8a;
+}
+.AccMidBox {
+	width:100%;
+	float:left;
+	background:#fff;
+	border:4px solid #ede1d4;
+}
+.AccMidLeft {
+	background:#252620;
+	width:246px;
+	float:left;
+	border-right:1px solid #ede1d4;
+	position:relative;
+}
+.AccMidLeftTop {
+	width:100%;
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:18px 0 8px;
+}
+.AccMidLeftTop li {
+	width:100%;
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:10px 0;
+}
+.AccMidLeftTop li span.AccLeTpIcon {
+	margin:0 11px 0 25px;
+	float:left;
+	color:#fff8c9;
+	font-size:18px;
+}
+.AccMidLeftTop li label {
+	float: left;
+	width: 175px;
+	color:#f8faef;
+	font-size:14px;
+	font-family: 'Museo300';
+	font-weight:normal;
+}
+.AccMidLeftTop li label a.UserNameAccLe {
+	width:100%;
+	float:left;
+	font-size:20px;
+	color:#0aa2b1;
+	font-family: 'Museo500';
+	font-weight:normal;
+}
+.AccMidLeftTop li label a.UserNameAccLe:hover {
+	color:#e91300;
+}
+.AccMidLeftTop li label span.RedTxtAcc {
+	color:#e91300;
+}
+.AccNavLeft {
+	width:100%;
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:15px 0 25px;
+}
+.AccNavLeft li {
+	width:100%;
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:3px 0;
+}
+.AccNavLeft li a {
+	padding:7px 0 7px 15px;
+	float:left;
+	border-left:7px solid #252620;
+	font-size:18px;
+	color:#77786e;
+	font-family: 'Museo300';
+}
+.AccNavLeft li a:hover, .AccNavLeft li.active a {
+	color:#fdc844;
+	border-left:7px solid #fdc844;
+}
+.AccNavLeft li ul.AccSubNavLe {
+	width:90%;
+	float:right;
+	list-style-type:none;
+	display:block;
+	padding:0 0 8px 0;
+}
+.AccNavLeft li ul.AccSubNavLe li {
+	width:100%;
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:4px 0;
+}
+.AccNavLeft li ul.AccSubNavLe li a {
+	padding:0 0 0 14px;
+	background:url(../images/arrow.png) no-repeat left;
+	border-left:0px;
+	font-size:16px;
+	color:#0aa2b1;
+	font-family: 'Museo300';
+}
+.AccNavLeft li ul.AccSubNavLe li a:hover, .AccNavLeft li ul.AccSubNavLe li.active a {
+	color:#fff;
+}
+.ChainBgLeft {
+	background:url(../images/chain-bg.png) repeat-y;
+	width:35px;
+	float:right;
+	position:absolute;
+	right: -19px;
+	top: 10px;
+	z-index:80;
+	height:100%;
+}
+.AccMidRight {
+	width:845px;
+	float:right;
+	padding:15px 0;
+}
+.PlanTypeTop {
+	width:98%;
+	float:left;
+	list-style-type:none;
+	display:block;
+	background:#ffe7ab;
+	margin:15px 0;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	-khtml-border-radius:15px;
+	border-radius:15px;
+}
+.PlanTypeTop li {
+	width:25%;
+	height:40px;
+	float:left;
+	list-style-type:none;
+	display:block;
+	margin:0 0;
+	padding:0 2%;
+	color:#3f3f3f;
+	font-size:14px;
+	font-family: 'Museo300';
+	line-height:40px;
+}
+.AccMidRiCon {
+	width:100%;
+	float:left;
+	padding:14px 0;
+}
+.AccMidRiCon h3 {
+	font-size:24px;
+	color:#0aa2b1;
+	padding: 8px;
+}
+.AccRiConIn {
+	width:100%;
+	float:left;
+	padding:17px 0 0 0;
+}
+.UpgradeList {
+	width:100%;
+	float:left;
+}
+.UpgradeLiRow {
+	width:25%;
+	float:left;
+	padding:0 2% 0 0;
+}
+.UpgradeLiTop {
+	width:100%;
+	border:1px solid #f3f3f3;
+	float:left;
+}
+.UpgradeTitle {
+	width:100%;
+	float:left;
+	height:92px;
+	border-bottom:1px solid #d4d4d4;
+}
+.UpgradeTitle h4 {
+	color:#252620;
+	font-size:30px;
+	font-family: 'Museo500';
+	text-align:center;
+	padding:27px 0 0 0;
+}
+.UpgradeMidli {
+	width:100%;
+	float:left;
+	border-bottom:1px solid #d4d4d4;
+	height:70px;
+}
+.UpgradeMidli p {
+	font-size:16px;
+	color:#6a6b63;
+	font-family: 'Museo500';
+	text-align:center;
+	line-height:70px;
+}
+.UpgradeMidli p span {
+	font-size:30px;
+}
+.UpgradeBotmli {
+	width:100%;
+	float:left;
+	height:145px;
+	padding:15px 0;
+}
+.UpgradeBotmli p {
+	font-size:16px;
+	color:#6a6b63;
+	font-family: 'Museo500';
+	text-align:center;
+}
+.UpgradeBotmli p span {
+	font-size:30px;
+}
+.SelectBtn {
+	margin:14px 0 0 0;
+	color:#0aa2b1;
+	font-size:18px;
+	font-family: 'Museo500';
+	background:#fff;
+	padding:0 15px;
+	height:32px;
+	border:1px solid #0aa2b1;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	border-radius:3px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.SelectBtn:hover {
+	background:#0aa2b1;
+	color:#fff;
+}
+.UpgradeLiBotm {
+	width:100%;
+	float:left;
+	padding:8px 0 0 0;
+	font-size:16px;
+	color:#3f3f3f;
+	font-family: 'Museo300';
+}
+.UpgradeTitle.GrayBdr {
+	border-top:7px solid #6a6a69;
+}
+.UpgradeTitle.OrangeBdr {
+	border-top:7px solid #fdc844;
+}
+.UpgradeTitle.BlueBdr {
+	border-top:7px solid #0aa2b1;
+}
+.UpgradeTitle.RedBdr {
+	border-top:7px solid #e91300;
+}
+.EditProfFrm {
+	width:100%;
+	float:left;
+	list-style-type:none;
+	display:block;
+}
+.EditProfFrm li {
+	width:100%;
+	padding:5px 0;
+	float:left;
+	list-style-type:none;
+	display:block;
+}
+.EditProfFrm li label {
+	width:150px;
+	float:left;
+	color:#3f3f3f;
+	font-size:18px;
+	font-family: 'Museo300';
+	line-height:56px;
+	font-weight:normal;
+	padding:0 0 0 8px;
+}
+.EditProfFrm li span.EditProfTxtRi {
+	width:auto;
+	color:#0aa2b1;
+	font-size:18px;
+	font-family: 'Museo300';
+	line-height:56px;
+	font-weight:normal;
+	padding:0 0 0 8px;
+}
+.EditProfFrm li span.EditProfTxtRi a {
+	color:#e91300;
+	text-decoration:none;
+}
+.EditProfFrm li span.EditProfTxtRi a:hover {
+	color:#0aa2b1;
+}
+.EditProfFild {
+	width:60%;
+	float:left;
+	height:54px;
+	border:1px solid #e0e0d7;
+	padding:0 15px;
+	color:#3f3f3f;
+	font-size:18px;
+	font-family: 'Museo300';
+}
+.BlueBtnFrm {
+	height:44px;
+	background:#0aa2b1;
+	text-decoration:none;
+	color:#fff;
+	font-size:18px;
+	font-family: 'Museo500';
+	line-height:44px;
+	padding:0 18px;
+	border:0px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	border-radius:3px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.BlueBtnFrm:hover {
+	background:#057e8a;
+}
+.EditProfFrm.EditProfTxtRow li {
+	border-bottom:1px solid #e0e0d7;
+}
+.EditProfFrm.EditProfTxtRow {
+	width:97%;
+}
+.InnerMid2Bg {
+	background:url(../images/mid-top-in-bg.png) repeat-x top;
+}
+.SignupMidBox {
+	width:100%;
+	float:left;
+	padding:35px 0;
+}
+.SignupMidTp {
+	padding:10px 0;
+	width:100%;
+	float:left;
+}
+.SignupMidTp h2 {
+	font-size:30px;
+	color:#e91300;
+	font-family: 'Museo700';
+	font-weight:normal;
+	padding:0 0 4px 0;
+}
+.SignupMidTp p {
+	font-size:22px;
+	color:#3f3f3f;
+	font-family: 'Museo300';
+	font-weight:normal;
+	padding:5px 0;
+}
+.SignupMidBotm {
+	width:100%;
+	float:left;
+	border:4px solid #ede1d4;
+	background:#fff;
+	-moz-box-shadow:0 1px 4px #999999;
+	-webkit-box-shadow:0 1px 4px #999999;
+	box-shadow:0 1px 4px #999999;
+}
+.SignupMidLeft {
+	width:620px;
+	float:left;
+	padding:15px 0 15px 58px;
+	position:relative;
+	border-right:1px solid #ede1d4;
+}
+.SignupFrmLeft {
+	width:80%;
+	float:left;
+	list-style-type:none;
+	display:block;
+	padding:15px 0;
+}
+.SignupFrmLeft li {
+	width:100%;
+	padding:8px 0;
+	float:left;
+	list-style-type:none;
+	display:block;
+	color:#3f3f3f;
+	font-size:18px;
+	font-family: 'Museo300';
+	font-weight:normal;
+}
+.SignupFrmLeft li label {
+	width:100%;
+	float:left;
+	padding:0 2% 3px;
+	color:#3f3f3f;
+	font-size:18px;
+	font-family: 'Museo300';
+	font-weight:normal;
+}
+.SignupFrmLeft li label span.Req {
+	color:#FF0000;
+}
+.RegFild {
+	width:100%;
+	float:left;
+	height:54px;
+	border:1px solid #e0e0d7;
+	padding:0 15px;
+	color:#3f3f3f;
+	font-size:18px;
+	font-family: 'Museo300';
+}
+.SignupMidRight {
+	width:425px;
+	float:right;
+	padding:130px 75px 0 0;
+}
+.SignupMidRight h3 {
+	color:#0aa2b1;
+	font-size:24px;
+	font-family: 'Museo500';
+	font-weight:normal;
+	padding:22px 0;
+	text-align:center;
+}
+.SignupMidRight p {
+	text-align:center;
+}
+.SignupMidRight .SignupFrmLeft {
+	width:100%;
+}
+.BlueBtnFrm.LogBtnBg {
+	background:#9d9280;
+}
+.BlueBtnFrm.LogBtnBg:hover {
+	background:#857a68;
+}
+.SignupFrmLeft li a.Forgot {
+	color:#e91300;
+	text-decoration:none;
+}
+.SignupFrmLeft li a.Forgot:hover {
+	color:#0aa2b1;
+}
+.MenuShow{
+display:block;
+}
+.Navi .NaviMobile{
+diplay:none;
+}
+.input-notification.error{color: #ff0000;}

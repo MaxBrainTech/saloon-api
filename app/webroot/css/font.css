@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Museo100';
+    src: url('museo100-regular.eot');
+    src: url('museo100-regular.eot') format('embedded-opentype'),
+         url('museo100-regular.woff') format('woff'),
+         url('museo100-regular.ttf') format('truetype'),
+         url('museo100-regular.svg#Museo100') format('svg');
+}
+@font-face {
+    font-family: 'Museo300';
+    src: url('museo300-regular.eot');
+    src: url('museo300-regular.eot') format('embedded-opentype'),
+         url('museo300-regular.woff') format('woff'),
+         url('museo300-regular.ttf') format('truetype'),
+         url('museo300-regular.svg#Museo300') format('svg');
+}
+@font-face {
+    font-family: 'Museo500';
+    src: url('museo500-regular.eot');
+    src: url('museo500-regular.eot') format('embedded-opentype'),
+         url('museo500-regular.woff') format('woff'),
+         url('museo500-regular.ttf') format('truetype'),
+         url('museo500-regular.svg#Museo500') format('svg');
+}
+
+@font-face {
+    font-family: 'Museo700';
+    src: url('museo700-regular.eot');
+    src: url('museo700-regular.eot') format('embedded-opentype'),
+         url('museo700-regular.woff') format('woff'),
+         url('museo700-regular.ttf') format('truetype'),
+         url('museo700-regular.svg#Museo700') format('svg');
+}
+
+
+
+.RobotoFont {
+font-family: 'Roboto', sans-serif;
+}
