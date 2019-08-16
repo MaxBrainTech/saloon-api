@@ -16,8 +16,9 @@ class CronSchedulersController extends AppController {
         $this->layout=null;
 
         $this->RequestHandler->addInputType('json', array('json_decode', true));
-        $this->Auth->allow('employee_birthday', 'customer_birthday',  'salon_board_scraper',  'hotpaper_customer_list', 'get_string_between', 'delete_reservation', 'test');
+        $this->Auth->allow('employee_birthday', 'customer_birthday',  'salon_board_scraper',  'hotpaper_customer_list', 'get_string_between', 'delete_reservation', 'test','salon_board_scraper_new','salon_board_reservation_api','IOSCustomerPushNotification');
         date_default_timezone_set("Asia/Tokyo");
+        App::import('Vendor', 'SalonBoard', array('file' => 'SalonBoard'.DS.'SalonBoard.php'));
     }
 
     
@@ -68,6 +69,8 @@ class CronSchedulersController extends AppController {
 
             /* reservation date section*/
             $visit_date = isset($value['visit_date']) ? $value['visit_date'] : '';
+            $dy = date('w', strtotime($visit_date));
+            $dys = array("日","月","火","水","木","金","土");
             if(!empty($visit_date)){
                 $reservation_datetime = 'start'.$visit_date.'end';
                 $y = $this->get_string_between($reservation_datetime, 'start', '年');
@@ -293,7 +296,8 @@ class CronSchedulersController extends AppController {
                         
                         /* User Notification send*/
                         // $reservationNotificationMessage =  '予約が追加されました';
-                        $reservationNotificationMessage =  $last_name.' '.$first_name.' 様が '.$visit_date.' に予約しました';
+                        // $reservationNotificationMessage =  $last_name.' '.$first_name.' 様が '.$visit_date.' に予約しました';
+                        $reservationNotificationMessage = 'スタッフが'. $last_name.' '.$first_name.' 様 '.$visit_date.' ('.$dys[$dy].') '.$reservation_start_time.' ～ '.$reservation_end_time. ' に追加しました';
                         $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id)));
                         $deviceTokenArr = array();
                         foreach ($employeeData as $empKey => $empValue) {
@@ -310,6 +314,1226 @@ class CronSchedulersController extends AppController {
                
             }   
         }
+        echo 'Sccuessfully.';exit();
+       
+       
+        
+    }
+
+
+
+    // date = 20190712 yyyymmdd
+    function formatDateInJapanese($dtStr){  
+         $yy = substr($dtStr, 0, 4);
+         $mm = substr($dtStr, -4, -2);
+         $dd = substr($dtStr, 6, 8);  
+         $dateString = $yy.'-'.$mm.'-'.$dd;
+         $timestamp = strtotime($dateString);
+         $day = date('D', $timestamp);
+         $cnday = '';
+         if ($day == "Mon")
+            $cnday = "月"; 
+        elseif ($day == "Tue")
+            $cnday = "水" ;
+        elseif ($day == "Wed")
+            $cnday = "水" ;
+        elseif ($day == "Thu")
+            $cnday = "木" ;
+        elseif ($day == "Fri")
+            $cnday = "金" ;
+        elseif ($day == "Sat")
+            $cnday = "土" ;
+        elseif ($day == "Sun")
+            $cnday = "日" ;
+        return ($yy.'年'.$mm.'月'.$dd.'日 ('.$cnday).') ';
+    }
+
+    function formatDateInJapaneseText($dtStr){  
+         $yy = substr($dtStr, 0, 4);
+         $mm = substr($dtStr, -4, -2);
+         $dd = substr($dtStr, 6, 8);  
+         $dateString = $yy.'-'.$mm.'-'.$dd;
+         $timestamp = strtotime($dateString);
+         $day = date('D', $timestamp);
+         $cnday = '';
+         if ($day == "Mon")
+            $cnday = "月"; 
+        elseif ($day == "Tue")
+            $cnday = "水" ;
+        elseif ($day == "Wed")
+            $cnday = "水" ;
+        elseif ($day == "Thu")
+            $cnday = "木" ;
+        elseif ($day == "Fri")
+            $cnday = "金" ;
+        elseif ($day == "Sat")
+            $cnday = "土" ;
+        elseif ($day == "Sun")
+            $cnday = "日" ;
+        return ($yy.'年'.$mm.'月'.$dd.'日'.'（'.$cnday.'）');
+        // return ($yy.'年6月26日（水）);
+    }
+    public function salon_board_scraper_new($test_data = null){
+       
+        $data = file_get_contents('php://input');
+    
+        if(empty($data)){
+            $data = json_encode($_REQUEST);
+        } 
+        $this->loadModel('Service');
+        $this->loadModel('Employee');
+        $this->loadModel('Customer');
+        $this->loadModel('Reservation');
+        $this->loadModel('ReservationRead');
+        $this->loadModel('ReservationStatusRead');
+        $decoded = json_decode($data, true);
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $servicelist = $this->Service->find('all', array('conditions' => array('Service.user_id' => $user_id), 'fields' => array('Service.id', 'Service.name')));
+        $employeelist = $this->Employee->find('all', array('conditions' => array('Employee.user_id' => $user_id), 'fields' => array('Employee.id', 'Employee.name', 'Employee.service_id')));
+         // pr($decoded);
+        
+        $i =0;
+        foreach ($decoded as $key => $value) {
+            $coupon_name = isset($value['coupon_name']) ? $value['coupon_name'] : '';
+            $customer_phone_number = isset($value['customer_phone_number']) ? $value['customer_phone_number'] : '';
+            $facility_start_time = isset($value['facility_start_time']) ? $value['facility_start_time'] : '';
+            $facility_end_time = isset($value['facility_end_time']) ? $value['facility_end_time'] : '';
+            $kana_name = isset($value['kana_name']) ? $value['kana_name'] : '';
+            $kanji_name = isset($value['kanji_name']) ? $value['kanji_name'] : '';
+            $note = isset($value['menu']) ? $value['menu'] : '';
+            $reservation_amount = isset($value['reservation_amount']) ? $value['reservation_amount'].' 円' : '0 円';
+            $reservation_number = isset($value['reservation_number']) ? $value['reservation_number'] : '';
+            $reservation_route = isset($value['reservation_route']) ? $value['reservation_route'] : '';
+            
+            $service_name = isset($value['service_name']) ? $value['service_name'] : '';
+            $reservation_duration = isset($value['service_duration']) ? $value['service_duration'] : '';
+            $staff = isset($value['staff']) ? $value['staff'] : '';
+
+            $staff_start_time = isset($value['staff_start_time']) ? $value['staff_start_time'] : '';
+            $staff_end_time = isset($value['staff_end_time']) ? $value['staff_end_time'] : '';
+            $status = isset($value['status']) ? $value['status'] : '';
+            $visit_date = isset($value['visit_date']) ? $value['visit_date'] : '';
+            $used_points = isset($value['used_points']) ? $value['used_points'].' 円'  : '0';
+            $status = isset($value['status']) ? $value['status'] : '';
+            // $note = isset($value['note']) ? $value['note'] : '';
+            $reservation_date =date("Y-m-d", strtotime($visit_date));
+            // echo "staff_start_time : ".$staff_start_time;
+            $staff_start_timeiIni = (string)$staff_start_time;
+            $staff_start_timei = array();
+            $staff_start_timei[0] = isset($staff_start_timeiIni[0])?$staff_start_timeiIni[0]:0;
+            $staff_start_timei[1] = isset($staff_start_timeiIni[1])?$staff_start_timeiIni[1]:0;
+            $staff_start_timei[2] = isset($staff_start_timeiIni[2])?$staff_start_timeiIni[2]:0;
+            $staff_start_timei[3] = isset($staff_start_timeiIni[3])?$staff_start_timeiIni[3]:0;
+
+            $reservation_start_time = $staff_start_timei[0].$staff_start_timei[1].":".$staff_start_timei[2].$staff_start_timei[3];
+
+            // echo "staff_end_time : ".$staff_end_time;
+            $staff_end_timeiIni = (string)$staff_end_time;
+            $staff_end_timei = array();
+            $staff_end_timei[0] = isset($staff_end_timeiIni[0])?$staff_end_timeiIni[0]:0;
+            $staff_end_timei[1] = isset($staff_end_timeiIni[1])?$staff_end_timeiIni[1]:0;
+            $staff_end_timei[2] = isset($staff_end_timeiIni[2])?$staff_end_timeiIni[2]:0;
+            $staff_end_timei[3] = isset($staff_end_timeiIni[3])?$staff_end_timeiIni[3]:0;
+
+            $reservation_end_time = $staff_end_timei[0].$staff_end_timei[1].":".$staff_end_timei[2].$staff_end_timei[3];
+
+           
+            // $presentation_conditions = isset($value['presentation_conditions']) ? $value['presentation_conditions'] : '';
+            // $customer_phone_number = isset($value['customer_phone_number']) ? $value['customer_phone_number'] : '';
+            // $coupon_name = isset($value['coupon_name']) ? $value['coupon_name'] : '';
+            // $coupon_description = isset($value['coupon_description']) ? $value['coupon_description'] : '';
+            
+            
+            // $reservation_start_time = (string)$reservation_start_time;
+            // $staff_end_timei = (string)$staff_end_time;
+            
+            // $reservation_end_time = (string)$reservation_end_time;
+             $reservation_datetime = $reservation_date.' '.$reservation_start_time;
+             $reservation_datetime_notification = date('h:i', strtotime($reservation_date)).' ～ '.date('h:i', strtotime($reservation_start_time));
+            
+
+            
+
+            /* reservation date section*/
+            // $visit_date = isset($value['visit_date']) ? $value['visit_date'] : '';
+            /*if(!empty($visit_date)){
+                $reservation_datetime = 'start'.$visit_date.'end';
+                $y = $this->get_string_between($reservation_datetime, 'start', '年');
+                $y = trim($y); 
+                $m = $this->get_string_between($reservation_datetime, '年', '月');
+                $d = $this->get_string_between($reservation_datetime, '月', '日');
+                $reservation_date = $y.'-'.$m.'-'.$d;
+                $reservation_start_time  = $this->get_string_between($reservation_datetime, '）', ' ～');
+                $reservation_end_time  = $this->get_string_between($reservation_datetime, ' ～', ' 所要時間');
+                $reservation_duration  = $this->get_string_between($reservation_datetime, '[ ', ' ]');
+                $reservation_datetime = $reservation_date.' '.$reservation_start_time;
+            }else{
+                $reservation_date = '';
+                $reservation_start_time  = '00 :00';
+                $reservation_end_time  = '00 :00';
+                $reservation_duration  = '00 :00';
+                $reservation_datetime = '';
+            }*/  
+            
+            /* Service id section*/
+            $service_id = '0';
+            $cusromer_id = $employee_ids = '';
+            foreach ($servicelist as $key => $value) {
+                if($service_name ==  $value['Service']['name']){
+                    $service_id = $value['Service']['id'];
+                }
+            }
+
+
+
+            
+            // $staff = str_replace("　"," ",$staff);
+            $staff2 = str_replace(" ","　",$staff);
+            $employee_ids = '';
+            
+
+            foreach ($employeelist as $empkey => $empvalue) {
+                 if( ($staff ==  $empvalue['Employee']['name']) || ($staff2 ==  $empvalue['Employee']['name'])){
+                    if( ($service_id == '0') && isset($empvalue['Employee']['service_id']) && !empty($empvalue['Employee']['service_id']) ){
+                        $service_id = $empvalue['Employee']['service_id'];
+                    }
+                    if(empty($employee_ids)){
+                        $employee_ids = $empvalue['Employee']['id'];
+                    }else{
+                        $employee_ids .= ', '.$empvalue['Employee']['id'];
+                    }
+                }
+            }
+            
+             /* kana_name section*/
+            if(!empty($kana_name)){
+                $kana_name_arr = explode(' ', $kana_name);
+                if(isset($kana_name_arr[1]) && !empty($kana_name_arr[1])){
+                    $kana_first_name = ltrim($kana_name_arr[1]);
+                    $kana_last_name = ltrim($kana_name_arr[0]);
+                }else{
+                    $kana_first_name = ltrim($kana_name);
+                    $kana_last_name ='';
+                }
+                $kana_first_name = str_replace('　', '', $kana_first_name);
+                $kana_last_name = str_replace('　', '', $kana_last_name); 
+            }else{
+                $kana_first_name = '';
+                $kana_last_name = ''; 
+            }    
+            
+            /* Customer add section*/
+            $cusromer_id = 0;
+            if(!empty($kanji_name)){
+                $fullName = explode(' ', $kanji_name);
+                if(isset($fullName[1]) && !empty($fullName[1])){
+                    $first_name = ltrim($fullName[1]);
+                    $last_name = ltrim($fullName[0]);
+                }else{
+                    $first_name = ltrim($kanji_name);
+                    $last_name ='';
+                }
+                $first_name = str_replace('　', '', $first_name);
+                $last_name = str_replace('　', '', $last_name);
+                if(empty($first_name)){
+                    $first_name = $kana_last_name;
+                }
+                if(empty($last_name)){
+                    $last_name = $kana_first_name;
+                }
+
+                $full_name = $last_name." ".$first_name;
+                $full_name = trim($full_name);
+                $condition['Customer.user_id'] =  $user_id;
+                $condition['Customer.first_name'] =  $first_name;
+                $condition['Customer.last_name'] =  $last_name;
+                // echo "get data customer";
+                $CustomerData = $this->Customer->find('first', array('conditions'=> $condition));
+                    
+                if(isset($CustomerData['Customer']['id']) && !empty($CustomerData['Customer']['id'])){
+                    $cusromer_id = $CustomerData['Customer']['id'];
+                    $this->Customer->id = $CustomerData['Customer']['id'];
+                    $customerData['Customer']['modified'] = date('Y-m-d H:i:s');
+                    // $this->Customer->saveField('status' , 1);
+                    if(empty($CustomerData['Customer']['last_visited']) || ($CustomerData['Customer']['last_visited'] =='null'))
+                        $CustomerData['Customer']['last_visited'] = $CustomerData['Customer']['modified'];
+                    $last_visited = $CustomerData['Customer']['last_visited'];
+                    
+
+                }else{
+                    
+                    $customerData['Customer']['user_id'] = $user_id;
+                    $customerData['Customer']['service_id'] = $service_id;
+                    $customerData['Customer']['name'] = $full_name;
+                    $customerData['Customer']['first_name'] = $first_name;
+                    $customerData['Customer']['last_name'] = $last_name;
+                    $customerData['Customer']['kana_first_name'] = $kana_first_name;
+                    $customerData['Customer']['kana_last_name'] = $kana_last_name;
+                    $customerData['Customer']['tel'] = $customer_phone_number;
+                    $customerData['Customer']['is_gmail'] = '1';
+                    $customerData['Customer']['status'] ='0';
+                    // pr($customerData);
+                    $this->Customer->saveAll($customerData); 
+                    $cusromer_id = $this->Customer->id;
+                    $last_visited = $reservation_datetime;
+                   
+                   
+                }    
+            } 
+            // echo "added customer";
+            $reservationData = array();
+            $reservationData = $this->Reservation->find('first', array('conditions'=> array( 'Reservation.reservation_number'=>$reservation_number, 'Reservation.user_id'=>$user_id), 'fields' =>array('Reservation.id', 'Reservation.reservation_number')));
+            $reservation =array();
+           /* Reservation Array Section*/
+            if(!empty($reservation_number)){
+                if(($status == 'お客様キャンセル' ) ||  ($status == 'サロンキャンセル')){
+                    if(isset($reservationData['Reservation']['id']) && !empty($reservationData['Reservation']['id'])){
+                        $id = $reservationData['Reservation']['id'];
+                        // echo "delete new";
+                        
+                        $this->Reservation->delete($id, true);
+                    }    
+                     
+                }elseif( ( (isset($reservationData['Reservation']['id']) ) && ($status != 'お客様キャンセル') ) || (isset($reservationData['Reservation']['id']) && ($status != 'サロンキャンセル') ) ){
+                    $reservation['Reservation']['id'] =  isset($reservationData['Reservation']['id']) ? $reservationData['Reservation']['id'] : '';
+                    $reservation['Reservation']['last_visited'] = $last_visited;
+                    $reservation['Reservation']['reservation_number'] = $reservation_number;
+                    $reservation['Reservation']['user_id'] = $user_id;
+                    $reservation['Reservation']['service_id'] = $service_id;
+                    $reservation['Reservation']['customer_id'] = $cusromer_id;
+                    $reservation['Reservation']['employee_ids'] = $employee_ids;
+                    $reservation['Reservation']['reservation_type'] = Configure::read('App.Status.active');
+                    $reservation['Reservation']['all_day'] = '0';
+                    $reservation['Reservation']['start_date'] = $reservation_date;
+                    $reservation['Reservation']['end_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_start_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_end_date'] = $reservation_date;
+                    $reservation['Reservation']['used_points'] = $used_points;
+                    $reservation['Reservation']['channel'] = 'サロンボード';
+                    $reservation['Reservation']['note'] = $note;
+                    $reservation['Reservation']['coupon'] = $coupon_name;
+                    $reservation['Reservation']['start_time'] = $reservation_start_time;
+                    $reservation['Reservation']['end_time'] = $reservation_end_time;
+                    $reservation['Reservation']['is_gmail'] = '1';
+                    $reservation['Reservation']['salon_board'] = '1';
+                    if(!empty($menu)){
+                        $reservation['Reservation']['menu'] = '1';
+                    }else{
+                        $reservation['Reservation']['menu'] = '0';
+                        $reservation['Reservation']['menu_text'] = '';
+                    }
+                    $reservation['Reservation']['reservation_total'] = $reservation_amount;
+                    $reservation['Reservation']['payment_total'] = $reservation_amount;
+                    $reservation_id = $reservationData['Reservation']['id'];
+                    // echo "update new";
+                    // pr($reservation);
+                    $this->Reservation->saveAll($reservation); 
+               }elseif( (!isset($reservationData['Reservation']['id'])  && ($status != 'お客様キャンセル' )) || (!isset($reservationData['Reservation']['id']) && ($status != 'サロンキャンセル')) ){
+                    
+                    $reservation['Reservation']['last_visited'] = $last_visited;
+                    $reservation['Reservation']['reservation_number'] = $reservation_number;
+                    $reservation['Reservation']['user_id'] = $user_id;
+                    $reservation['Reservation']['service_id'] = $service_id;
+                    $reservation['Reservation']['customer_id'] = $cusromer_id;
+                    $reservation['Reservation']['employee_ids'] = $employee_ids;
+                    $reservation['Reservation']['reservation_type'] = Configure::read('App.Status.active');
+                    $reservation['Reservation']['all_day'] = '0';
+                    $reservation['Reservation']['start_date'] = $reservation_date;
+                    $reservation['Reservation']['end_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_start_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_end_date'] = $reservation_date;
+                    $reservation['Reservation']['used_points'] = $used_points;
+                    
+                    $reservation['Reservation']['channel'] = 'サロンボード';
+                    $reservation['Reservation']['note'] = $note;
+                    $reservation['Reservation']['coupon'] = $coupon_name;
+                    $reservation['Reservation']['start_time'] = $reservation_start_time;
+                    $reservation['Reservation']['end_time'] = $reservation_end_time;
+                    $reservation['Reservation']['is_gmail'] = '1';
+                    $reservation['Reservation']['salon_board'] = '1';
+                    $reservation['Reservation']['status'] = '1';
+                    if(!empty($menu)){
+                        $reservation['Reservation']['menu'] = '1';
+                        // $reservation['Reservation']['menu_text'] = $menu;
+                    }else{
+                        $reservation['Reservation']['menu'] = '0';
+                        $reservation['Reservation']['menu_text'] = '';
+                    }
+                    $reservation['Reservation']['reservation_total'] = $reservation_amount;
+                    $reservation['Reservation']['payment_total'] = $reservation_amount;
+                    $reservation_id = '0';
+                    if($this->Reservation->saveAll($reservation)){
+                        $reservation_id = $this->Reservation->id; 
+                        
+                        $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id)));
+                        foreach ($employeeData as $empKey => $empValue) {
+                            $reservationStatusReadData = $reservationStatusData = array();
+                            $emps_id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : '';
+                            $reservationStatusData['ReservationRead']['user_id'] =  $user_id;
+                            $reservationStatusData['ReservationRead']['reservation_id'] =  $reservation_id;
+                            $reservationStatusData['ReservationRead']['employee_id'] =  $emps_id;
+                            $reservationStatusData['ReservationRead']['date'] =  $reservation_date;
+                            $reservationStatusData['ReservationRead']['status'] =  '0';
+                            $this->ReservationRead->saveAll($reservationStatusData);
+
+
+                            $reservationStatusReadData['ReservationStatusRead']['user_id'] =  $user_id;
+                            $reservationStatusReadData['ReservationStatusRead']['employee_id'] =  $emps_id;
+                            $reservationStatusReadData['ReservationStatusRead']['reservation_id'] =  $reservation_id;
+                            $reservationStatusReadData['ReservationStatusRead']['status'] =  '0';
+                            $this->ReservationStatusRead->saveAll($reservationStatusReadData);
+
+                        }
+                        
+                        /* User Notification send*/
+                        // $reservationNotificationMessage =  '予約が追加されました';
+                        $reservationNotificationMessage =  $last_name.' '.$first_name.' 様が '.$this->formatDateInJapanese($visit_date).$reservation_datetime_notification.' に予約しました';
+                        $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id)));
+                        $deviceTokenArr = array();
+                        foreach ($employeeData as $empKey => $empValue) {
+                            $emp_id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : '';
+                            $empDevicetoken = isset($empValue['Employee']['device_token']) ? $empValue['Employee']['device_token'] : '';
+                            $emp_device_type = isset($empValue['Employee']['device_type']) ? $empValue['Employee']['device_type'] : '';
+                            if(!empty($empDevicetoken) && !in_array($empDevicetoken, $deviceTokenArr) ){
+                                echo $reservationNotificationMessage;
+                                if($emp_device_type == 'Android'){
+                                    $this->androidPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation', Configure::read('App.Firebase.apikey'));
+                                }else{
+                                    $this->IOSPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation');
+                                    // $this->IOSPushNotification($empDevicetoken, $empDOBNotificationMessage, $user_id, $empValue['Employee']['id'],'','', $emp_device_type, 'employee', 'employee_birthday') ;
+                                }
+
+                                 
+                                array_push($deviceTokenArr, $empDevicetoken);
+                            }
+                        }
+                    }  
+               }
+               
+            }   
+        }
+        echo 'Sccuessfully.';exit();
+       
+       
+        
+    }
+
+
+    public function salon_board_reservation_api_old($test_data = null){
+       
+        $data = file_get_contents('php://input');
+    
+        if(empty($data)){
+            $data = json_encode($_REQUEST);
+        } 
+        $salonBoardScraperObj = new SalonBoardScraper(array(
+            'username' => 'CC21324',
+            'password' => 'Majestic2020!'
+        ));
+        $cdate = date('Ymd');
+        $edate = date('Ymd', strtotime("+50 days"));
+       // echo $this->formatDateInJapaneseText($cdate);
+       // echo $this->formatDateInJapaneseText($edate);
+       // die;
+        $params = array(
+            'org.apache.struts.taglib.html.TOKEN'=>'d28f8949a44f96bc391cb992c4cf1fe0',
+            'storeIdForMultipleTabCheck'=> 'f864916fa8886929e5a543df3854ed8e',
+            'hideSearchPanelFlg'=> '0',
+            'rsvDateFromrsvDateFrom'=> '20190627',
+            'rsvDateTo'=> '20190627',
+            'dispDateFrom'=> '2019年6月27日（水）',
+            'dispDateTo'=> '2019年6月27日（水）',
+            'rsvCustomerNameKana'=> '',
+            'reserveId'=> '',
+            'staffId'=>'',
+            'rsvRouteId'=>'',
+            'watchword'=>''
+        );
+        // get staff reservation list from salon board
+        $response = $salonBoardScraperObj->getReservationList($params);
+        // $curl_response = iconv('shift-jis', 'utf-8', $response)
+        // var_dump($curl_response);
+        $lines = explode(PHP_EOL, $response);
+        $getReservationData =  $reservationArr = array();
+        foreach ($lines as $line) {
+            $reservationArr[] = str_getcsv($line);
+        }
+        // echo "<pre>";
+        // print_r($reservationArr);
+
+        foreach ($reservationArr as $reservationKey => $reservationValue) {
+            // pr($reservationValue[1][0]);
+            if(!empty($reservationValue[1]) && ($reservationValue[1][0]=="B")){
+                $getReservationData[$reservationKey]['status'] = $reservationValue[0];
+                $getReservationData[$reservationKey]['reservation_number'] = $reservationValue[1];
+                $getReservationData[$reservationKey]['staff'] = $reservationValue[2];
+                $getReservationData[$reservationKey]['visit_date'] = $reservationValue[5];
+                $getReservationData[$reservationKey]['reservation_route'] = $reservationValue[13];
+                $getReservationData[$reservationKey]['menu'] = $reservationValue[16];
+                $getReservationData[$reservationKey]['coupon_name'] = $reservationValue[17];
+                $getReservationData[$reservationKey]['staff_start_time'] = $reservationValue[6];
+                $getReservationData[$reservationKey]['staff_end_time'] = $reservationValue[7];
+                $getReservationData[$reservationKey]['service_duration'] = $reservationValue[8];
+                $getReservationData[$reservationKey]['facility_start_time'] = $reservationValue[10];
+                $getReservationData[$reservationKey]['facility_end_time'] = $reservationValue[11];
+                $getReservationData[$reservationKey]['service_name'] = $reservationValue[4];
+                $getReservationData[$reservationKey]['kana_name'] = $reservationValue[24];
+                $getReservationData[$reservationKey]['kanji_name'] = $reservationValue[21];
+                $getReservationData[$reservationKey]['customer_phone_number'] = $reservationValue[26];
+                $getReservationData[$reservationKey]['reservation_amount'] = $reservationValue[28];
+                $getReservationData[$reservationKey]['used_points'] = $reservationValue[30];
+
+
+            }
+        }
+        pr($getReservationData);die;
+        // for row in my_list:
+        // #set the data to upload
+        // if(row[1].find('B') >=0):
+        //     reservation_data_all[str(n)] =  reservation_data = {
+                                                           
+        //                                                 }
+
+
+        //     n = n+1
+        // // $str = mb_convert_encoding($response, "SJIS");
+        // // var_dump($str);
+        // die;
+
+        $this->loadModel('Service');
+        $this->loadModel('Employee');
+        $this->loadModel('Customer');
+        $this->loadModel('Reservation');
+        $this->loadModel('ReservationRead');
+        $this->loadModel('ReservationStatusRead');
+        $decoded = json_decode(json_encode($getReservationData), true);
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $servicelist = $this->Service->find('all', array('conditions' => array('Service.user_id' => $user_id), 'fields' => array('Service.id', 'Service.name')));
+        $employeelist = $this->Employee->find('all', array('conditions' => array('Employee.user_id' => $user_id), 'fields' => array('Employee.id', 'Employee.name', 'Employee.service_id')));
+         // pr($decoded);
+        
+        $i =0;
+        foreach ($decoded as $key => $value) {
+            $coupon_name = isset($value['coupon_name']) ? $value['coupon_name'] : '';
+            $customer_phone_number = isset($value['customer_phone_number']) ? $value['customer_phone_number'] : '';
+            $facility_start_time = isset($value['facility_start_time']) ? $value['facility_start_time'] : '';
+            $facility_end_time = isset($value['facility_end_time']) ? $value['facility_end_time'] : '';
+            $kana_name = isset($value['kana_name']) ? $value['kana_name'] : '';
+            $kanji_name = isset($value['kanji_name']) ? $value['kanji_name'] : '';
+            $note = isset($value['menu']) ? $value['menu'] : '';
+            $reservation_amount = isset($value['reservation_amount']) ? $value['reservation_amount'].' 円' : '0 円';
+            $reservation_number = isset($value['reservation_number']) ? $value['reservation_number'] : '';
+            $reservation_route = isset($value['reservation_route']) ? $value['reservation_route'] : '';
+            
+            $service_name = isset($value['service_name']) ? $value['service_name'] : '';
+            $reservation_duration = isset($value['service_duration']) ? $value['service_duration'] : '';
+            $staff = isset($value['staff']) ? $value['staff'] : '';
+
+            $staff_start_time = isset($value['staff_start_time']) ? $value['staff_start_time'] : '';
+            $staff_end_time = isset($value['staff_end_time']) ? $value['staff_end_time'] : '';
+            $status = isset($value['status']) ? $value['status'] : '';
+            $visit_date = isset($value['visit_date']) ? $value['visit_date'] : '';
+            $used_points = isset($value['used_points']) ? $value['used_points'].' 円'  : '0';
+            $status = isset($value['status']) ? $value['status'] : '';
+            // $note = isset($value['note']) ? $value['note'] : '';
+            $reservation_date =date("Y-m-d", strtotime($visit_date));
+            // echo "staff_start_time : ".$staff_start_time;
+            $staff_start_timeiIni = (string)$staff_start_time;
+            $staff_start_timei = array();
+            $staff_start_timei[0] = isset($staff_start_timeiIni[0])?$staff_start_timeiIni[0]:0;
+            $staff_start_timei[1] = isset($staff_start_timeiIni[1])?$staff_start_timeiIni[1]:0;
+            $staff_start_timei[2] = isset($staff_start_timeiIni[2])?$staff_start_timeiIni[2]:0;
+            $staff_start_timei[3] = isset($staff_start_timeiIni[3])?$staff_start_timeiIni[3]:0;
+
+            $reservation_start_time = $staff_start_timei[0].$staff_start_timei[1].":".$staff_start_timei[2].$staff_start_timei[3];
+
+            // echo "staff_end_time : ".$staff_end_time;
+            $staff_end_timeiIni = (string)$staff_end_time;
+            $staff_end_timei = array();
+            $staff_end_timei[0] = isset($staff_end_timeiIni[0])?$staff_end_timeiIni[0]:0;
+            $staff_end_timei[1] = isset($staff_end_timeiIni[1])?$staff_end_timeiIni[1]:0;
+            $staff_end_timei[2] = isset($staff_end_timeiIni[2])?$staff_end_timeiIni[2]:0;
+            $staff_end_timei[3] = isset($staff_end_timeiIni[3])?$staff_end_timeiIni[3]:0;
+
+            $reservation_end_time = $staff_end_timei[0].$staff_end_timei[1].":".$staff_end_timei[2].$staff_end_timei[3];
+
+           
+            // $presentation_conditions = isset($value['presentation_conditions']) ? $value['presentation_conditions'] : '';
+            // $customer_phone_number = isset($value['customer_phone_number']) ? $value['customer_phone_number'] : '';
+            // $coupon_name = isset($value['coupon_name']) ? $value['coupon_name'] : '';
+            // $coupon_description = isset($value['coupon_description']) ? $value['coupon_description'] : '';
+            
+            
+            // $reservation_start_time = (string)$reservation_start_time;
+            // $staff_end_timei = (string)$staff_end_time;
+            
+            // $reservation_end_time = (string)$reservation_end_time;
+             $reservation_datetime = $reservation_date.' '.$reservation_start_time;
+            
+
+            
+
+            /* reservation date section*/
+            // $visit_date = isset($value['visit_date']) ? $value['visit_date'] : '';
+            /*if(!empty($visit_date)){
+                $reservation_datetime = 'start'.$visit_date.'end';
+                $y = $this->get_string_between($reservation_datetime, 'start', '年');
+                $y = trim($y); 
+                $m = $this->get_string_between($reservation_datetime, '年', '月');
+                $d = $this->get_string_between($reservation_datetime, '月', '日');
+                $reservation_date = $y.'-'.$m.'-'.$d;
+                $reservation_start_time  = $this->get_string_between($reservation_datetime, '）', ' ～');
+                $reservation_end_time  = $this->get_string_between($reservation_datetime, ' ～', ' 所要時間');
+                $reservation_duration  = $this->get_string_between($reservation_datetime, '[ ', ' ]');
+                $reservation_datetime = $reservation_date.' '.$reservation_start_time;
+            }else{
+                $reservation_date = '';
+                $reservation_start_time  = '00 :00';
+                $reservation_end_time  = '00 :00';
+                $reservation_duration  = '00 :00';
+                $reservation_datetime = '';
+            }*/  
+            
+            /* Service id section*/
+            $service_id = '0';
+            $cusromer_id = $employee_ids = '';
+            foreach ($servicelist as $key => $value) {
+                if($service_name ==  $value['Service']['name']){
+                    $service_id = $value['Service']['id'];
+                }
+            }
+
+
+
+            
+            // $staff = str_replace("　"," ",$staff);
+            $staff2 = str_replace(" ","　",$staff);
+            $employee_ids = '';
+            
+
+            foreach ($employeelist as $empkey => $empvalue) {
+                 if( ($staff ==  $empvalue['Employee']['name']) || ($staff2 ==  $empvalue['Employee']['name'])){
+                    if( ($service_id == '0') && isset($empvalue['Employee']['service_id']) && !empty($empvalue['Employee']['service_id']) ){
+                        $service_id = $empvalue['Employee']['service_id'];
+                    }
+                    if(empty($employee_ids)){
+                        $employee_ids = $empvalue['Employee']['id'];
+                    }else{
+                        $employee_ids .= ', '.$empvalue['Employee']['id'];
+                    }
+                }
+            }
+            
+             /* kana_name section*/
+            if(!empty($kana_name)){
+                $kana_name_arr = explode(' ', $kana_name);
+                if(isset($kana_name_arr[1]) && !empty($kana_name_arr[1])){
+                    $kana_first_name = ltrim($kana_name_arr[1]);
+                    $kana_last_name = ltrim($kana_name_arr[0]);
+                }else{
+                    $kana_first_name = ltrim($kana_name);
+                    $kana_last_name ='';
+                }
+                $kana_first_name = str_replace('　', '', $kana_first_name);
+                $kana_last_name = str_replace('　', '', $kana_last_name); 
+            }else{
+                $kana_first_name = '';
+                $kana_last_name = ''; 
+            }    
+            
+            /* Customer add section*/
+            $cusromer_id = 0;
+            if(!empty($kanji_name)){
+                $fullName = explode(' ', $kanji_name);
+                if(isset($fullName[1]) && !empty($fullName[1])){
+                    $first_name = ltrim($fullName[1]);
+                    $last_name = ltrim($fullName[0]);
+                }else{
+                    $first_name = ltrim($kanji_name);
+                    $last_name ='';
+                }
+                $first_name = str_replace('　', '', $first_name);
+                $last_name = str_replace('　', '', $last_name);
+                if(empty($first_name)){
+                    $first_name = $kana_last_name;
+                }
+                if(empty($last_name)){
+                    $last_name = $kana_first_name;
+                }
+
+                $full_name = $last_name." ".$first_name;
+                $full_name = trim($full_name);
+                $condition['Customer.user_id'] =  $user_id;
+                $condition['Customer.first_name'] =  $first_name;
+                $condition['Customer.last_name'] =  $last_name;
+                // echo "get data customer";
+                $CustomerData = $this->Customer->find('first', array('conditions'=> $condition));
+                    
+                if(isset($CustomerData['Customer']['id']) && !empty($CustomerData['Customer']['id'])){
+                    $cusromer_id = $CustomerData['Customer']['id'];
+                    $this->Customer->id = $CustomerData['Customer']['id'];
+                    $customerData['Customer']['modified'] = date('Y-m-d H:i:s');
+                    // $this->Customer->saveField('status' , 1);
+                    if(empty($CustomerData['Customer']['last_visited']) || ($CustomerData['Customer']['last_visited'] =='null'))
+                        $CustomerData['Customer']['last_visited'] = $CustomerData['Customer']['modified'];
+                    $last_visited = $CustomerData['Customer']['last_visited'];
+                    
+
+                }else{
+                    
+                    $customerData['Customer']['user_id'] = $user_id;
+                    $customerData['Customer']['service_id'] = $service_id;
+                    $customerData['Customer']['name'] = $full_name;
+                    $customerData['Customer']['first_name'] = $first_name;
+                    $customerData['Customer']['last_name'] = $last_name;
+                    $customerData['Customer']['kana_first_name'] = $kana_first_name;
+                    $customerData['Customer']['kana_last_name'] = $kana_last_name;
+                    $customerData['Customer']['tel'] = $customer_phone_number;
+                    $customerData['Customer']['is_gmail'] = '1';
+                    $customerData['Customer']['status'] ='0';
+                    // pr($customerData);
+                    $this->Customer->saveAll($customerData); 
+                    $cusromer_id = $this->Customer->id;
+                    $last_visited = $reservation_datetime;
+                   
+                   
+                }    
+            } 
+            // echo "added customer";
+            $reservationData = array();
+            $reservationData = $this->Reservation->find('first', array('conditions'=> array( 'Reservation.reservation_number'=>$reservation_number, 'Reservation.user_id'=>$user_id), 'fields' =>array('Reservation.id', 'Reservation.reservation_number')));
+            $reservation =array();
+           /* Reservation Array Section*/
+            if(!empty($reservation_number)){
+                if(($status == 'お客様キャンセル' ) ||  ($status == 'サロンキャンセル')){
+                    if(isset($reservationData['Reservation']['id']) && !empty($reservationData['Reservation']['id'])){
+                        $id = $reservationData['Reservation']['id'];
+                        // echo "delete new";
+                        
+                        $this->Reservation->delete($id, true);
+                    }    
+                     
+                }elseif( ( (isset($reservationData['Reservation']['id']) ) && ($status != 'お客様キャンセル') ) || (isset($reservationData['Reservation']['id']) && ($status != 'サロンキャンセル') ) ){
+                    $reservation['Reservation']['id'] =  isset($reservationData['Reservation']['id']) ? $reservationData['Reservation']['id'] : '';
+                    $reservation['Reservation']['last_visited'] = $last_visited;
+                    $reservation['Reservation']['reservation_number'] = $reservation_number;
+                    $reservation['Reservation']['user_id'] = $user_id;
+                    $reservation['Reservation']['service_id'] = $service_id;
+                    $reservation['Reservation']['customer_id'] = $cusromer_id;
+                    $reservation['Reservation']['employee_ids'] = $employee_ids;
+                    $reservation['Reservation']['reservation_type'] = Configure::read('App.Status.active');
+                    $reservation['Reservation']['all_day'] = '0';
+                    $reservation['Reservation']['start_date'] = $reservation_date;
+                    $reservation['Reservation']['end_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_start_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_end_date'] = $reservation_date;
+                    $reservation['Reservation']['used_points'] = $used_points;
+                    $reservation['Reservation']['channel'] = 'サロンボード';
+                    $reservation['Reservation']['note'] = $note;
+                    $reservation['Reservation']['coupon'] = $coupon_name;
+                    $reservation['Reservation']['start_time'] = $reservation_start_time;
+                    $reservation['Reservation']['end_time'] = $reservation_end_time;
+                    $reservation['Reservation']['is_gmail'] = '1';
+                    $reservation['Reservation']['salon_board'] = '1';
+                    if(!empty($menu)){
+                        $reservation['Reservation']['menu'] = '1';
+                    }else{
+                        $reservation['Reservation']['menu'] = '0';
+                        $reservation['Reservation']['menu_text'] = '';
+                    }
+                    $reservation['Reservation']['reservation_total'] = $reservation_amount;
+                    $reservation['Reservation']['payment_total'] = $reservation_amount;
+                    $reservation_id = $reservationData['Reservation']['id'];
+                    // echo "update new";
+                    // pr($reservation);
+                    $this->Reservation->saveAll($reservation); 
+               }elseif( (!isset($reservationData['Reservation']['id'])  && ($status != 'お客様キャンセル' )) || (!isset($reservationData['Reservation']['id']) && ($status != 'サロンキャンセル')) ){
+                    
+                    $reservation['Reservation']['last_visited'] = $last_visited;
+                    $reservation['Reservation']['reservation_number'] = $reservation_number;
+                    $reservation['Reservation']['user_id'] = $user_id;
+                    $reservation['Reservation']['service_id'] = $service_id;
+                    $reservation['Reservation']['customer_id'] = $cusromer_id;
+                    $reservation['Reservation']['employee_ids'] = $employee_ids;
+                    $reservation['Reservation']['reservation_type'] = Configure::read('App.Status.active');
+                    $reservation['Reservation']['all_day'] = '0';
+                    $reservation['Reservation']['start_date'] = $reservation_date;
+                    $reservation['Reservation']['end_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_start_date'] = $reservation_date;
+                    $reservation['Reservation']['extra_end_date'] = $reservation_date;
+                    $reservation['Reservation']['used_points'] = $used_points;
+                    
+                    $reservation['Reservation']['channel'] = 'サロンボード';
+                    $reservation['Reservation']['note'] = $note;
+                    $reservation['Reservation']['coupon'] = $coupon_name;
+                    $reservation['Reservation']['start_time'] = $reservation_start_time;
+                    $reservation['Reservation']['end_time'] = $reservation_end_time;
+                    $reservation['Reservation']['is_gmail'] = '1';
+                    $reservation['Reservation']['salon_board'] = '1';
+                    $reservation['Reservation']['status'] = '1';
+                    if(!empty($menu)){
+                        $reservation['Reservation']['menu'] = '1';
+                        // $reservation['Reservation']['menu_text'] = $menu;
+                    }else{
+                        $reservation['Reservation']['menu'] = '0';
+                        $reservation['Reservation']['menu_text'] = '';
+                    }
+                    $reservation['Reservation']['reservation_total'] = $reservation_amount;
+                    $reservation['Reservation']['payment_total'] = $reservation_amount;
+                    $reservation_id = '0';
+                    if($this->Reservation->saveAll($reservation)){
+                        $reservation_id = $this->Reservation->id; 
+                        
+                        $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id)));
+                        foreach ($employeeData as $empKey => $empValue) {
+                            $reservationStatusReadData = $reservationStatusData = array();
+                            $emps_id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : '';
+                            $reservationStatusData['ReservationRead']['user_id'] =  $user_id;
+                            $reservationStatusData['ReservationRead']['reservation_id'] =  $reservation_id;
+                            $reservationStatusData['ReservationRead']['employee_id'] =  $emps_id;
+                            $reservationStatusData['ReservationRead']['date'] =  $reservation_date;
+                            $reservationStatusData['ReservationRead']['status'] =  '0';
+                            $this->ReservationRead->saveAll($reservationStatusData);
+
+
+                            $reservationStatusReadData['ReservationStatusRead']['user_id'] =  $user_id;
+                            $reservationStatusReadData['ReservationStatusRead']['employee_id'] =  $emps_id;
+                            $reservationStatusReadData['ReservationStatusRead']['reservation_id'] =  $reservation_id;
+                            $reservationStatusReadData['ReservationStatusRead']['status'] =  '0';
+                            $this->ReservationStatusRead->saveAll($reservationStatusReadData);
+
+                        }
+                        
+                        /* User Notification send*/
+                        // $reservationNotificationMessage =  '予約が追加されました';
+                        $reservationNotificationMessage =  $last_name.' '.$first_name.' 様が '.$this->formatDateInJapanese($visit_date).' に予約しました';
+                        $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id)));
+                        $deviceTokenArr = array();
+                        foreach ($employeeData as $empKey => $empValue) {
+                            $emp_id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : '';
+                            $empDevicetoken = isset($empValue['Employee']['device_token']) ? $empValue['Employee']['device_token'] : '';
+                            $emp_device_type = isset($empValue['Employee']['device_type']) ? $empValue['Employee']['device_type'] : '';
+                            if(!empty($empDevicetoken) && !in_array($empDevicetoken, $deviceTokenArr) ){
+                                echo $reservationNotificationMessage;
+                                if($emp_device_type == 'Android'){
+                                    $this->androidPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation', Configure::read('App.Firebase.apikey'));
+                                }else{
+                                    $this->IOSPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation');
+                                    // $this->IOSPushNotification($empDevicetoken, $empDOBNotificationMessage, $user_id, $empValue['Employee']['id'],'','', $emp_device_type, 'employee', 'employee_birthday') ;
+                                }
+
+                                 
+                                array_push($deviceTokenArr, $empDevicetoken);
+                            }
+                        }
+                    }  
+               }
+               
+            }   
+        }
+        echo 'Sccuessfully.';exit();
+       
+       
+        
+    }
+
+
+    public function salon_board_reservation_api($test_data = null){
+       
+        $data = file_get_contents('php://input');
+    
+        if(empty($data)){
+            $data = json_encode($_REQUEST);
+        } 
+
+        $decoded = json_decode($data, true);
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+
+        $this->loadModel('User');
+        $this->loadModel('Service');
+        $this->loadModel('Employee');
+        $this->loadModel('Customer');
+        $this->loadModel('Reservation');
+        $this->loadModel('ReservationRead');
+        $this->loadModel('ReservationStatusRead');
+        $totalReservationArr = array();
+        $i =0;
+        $userData = $this->User->find("all",array("conditions"=>array("User.sb_username != " =>"","User.sb_password != " =>"")));
+        // pr($userData);die;
+
+        foreach ($userData as $userKey => $userValue) {
+            $sb_username = $userValue['User']['sb_username'];
+            $sb_password = $userValue['User']['sb_password'];
+            $user_id = $userValue['User']['id'];
+            $salonBoardScraperObj = new SalonBoardScraper(array(
+                'username' => $sb_username,
+                'password' => $sb_password
+            ));
+
+            $cdate = date('Ymd');
+            $edate = date('Ymd', strtotime("+90 days"));
+            $params = array(
+                'org.apache.struts.taglib.html.TOKEN'=>'6241ba37fa62d1aeb3ca893d368cf873',
+                'storeIdForMultipleTabCheck'=> 'f864916fa8886929e5a543df3854ed8e',
+                'hideSearchPanelFlg'=> '0',
+                'rsvDateFromrsvDateFrom'=> $cdate,
+                'rsvDateTo'=> $edate,
+                'dispDateFrom'=> '2019年6月26日（水）',
+                'dispDateTo'=> '2019年6月26日（水）',
+                'rsvCustomerNameKana'=> '',
+                'reserveId'=> '',
+                'staffId'=>'',
+                'rsvRouteId'=>'',
+                'watchword'=>''
+            );
+            // get staff reservation list from salon board
+            $response = $salonBoardScraperObj->getReservationList($params);
+             
+            $response = mb_convert_encoding($response, "UTF-8", "SJIS-win");
+            
+            $lines = explode(PHP_EOL, $response);
+            $getReservationData =  $reservationArr = array();
+            foreach ($lines as $line) {
+                $reservationArr[] = str_getcsv($line);
+            }
+            // echo "<pre>";
+            // $reservationArr = json_encode($reservationArr);
+            // pr($reservationArr;die;
+            
+            
+            foreach ($reservationArr as $reservationKey => $reservationValue) {
+                // pr($reservationValue);
+                // echo $reservationValue[1];
+                // echo $reservationValue[1][0];
+                if(!empty($reservationValue[1]) && ($reservationValue[1][0]=="B")){
+                    $getReservationData[$reservationKey]['status'] = $reservationValue[0];
+                    $getReservationData[$reservationKey]['reservation_number'] = $reservationValue[1];
+                    $getReservationData[$reservationKey]['staff'] = $reservationValue[2];
+                    $getReservationData[$reservationKey]['visit_date'] = $reservationValue[5];
+                    $getReservationData[$reservationKey]['reservation_route'] = $reservationValue[13];
+                    $getReservationData[$reservationKey]['menu'] = $reservationValue[16];
+                    $getReservationData[$reservationKey]['coupon_name'] = $reservationValue[17];
+                    $getReservationData[$reservationKey]['staff_start_time'] = $reservationValue[6];
+                    $getReservationData[$reservationKey]['staff_end_time'] = $reservationValue[7];
+                    $getReservationData[$reservationKey]['service_duration'] = $reservationValue[8];
+                    $getReservationData[$reservationKey]['facility_start_time'] = $reservationValue[10];
+                    $getReservationData[$reservationKey]['facility_end_time'] = $reservationValue[11];
+                    $getReservationData[$reservationKey]['service_name'] = $reservationValue[4];
+                    $getReservationData[$reservationKey]['kana_name'] = $reservationValue[24];
+                    $getReservationData[$reservationKey]['kanji_name'] = $reservationValue[21];
+                    $getReservationData[$reservationKey]['customer_phone_number'] = $reservationValue[26];
+                    $getReservationData[$reservationKey]['reservation_amount'] = $reservationValue[28];
+                    $getReservationData[$reservationKey]['used_points'] = $reservationValue[30];
+                    
+
+                }
+            }
+            $totalReservationArr[$i] = $getReservationData;
+            $totalReservationArr[$i]["user_id"] = $user_id;
+            $i++;
+            
+            // $decoded = json_decode(json_encode($getReservationData), true);
+            $decoded = $getReservationData;
+
+            // $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+            $servicelist = $this->Service->find('all', array('conditions' => array('Service.user_id' => $user_id), 'fields' => array('Service.id', 'Service.name')));
+            $employeelist = $this->Employee->find('all', array('conditions' => array('Employee.user_id' => $user_id), 'fields' => array('Employee.id', 'Employee.name', 'Employee.service_id')));
+              
+            $i =0;
+            foreach ($decoded as $key => $value) {
+                $coupon_name = isset($value['coupon_name']) ? $value['coupon_name'] : '';
+                $customer_phone_number = isset($value['customer_phone_number']) ? $value['customer_phone_number'] : '';
+                $facility_start_time = isset($value['facility_start_time']) ? $value['facility_start_time'] : '';
+                $facility_end_time = isset($value['facility_end_time']) ? $value['facility_end_time'] : '';
+                $kana_name = isset($value['kana_name']) ? $value['kana_name'] : '';
+                $kanji_name = isset($value['kanji_name']) ? $value['kanji_name'] : '';
+                $note = isset($value['menu']) ? $value['menu'] : '';
+                $reservation_amount = isset($value['reservation_amount']) ? number_format($value['reservation_amount']).'円' : '0円';
+                $reservation_number = isset($value['reservation_number']) ? $value['reservation_number'] : '';
+                $reservation_route = isset($value['reservation_route']) ? $value['reservation_route'] : '';
+                
+                $service_name = isset($value['service_name']) ? $value['service_name'] : '';
+                $reservation_duration = isset($value['service_duration']) ? $value['service_duration'] : '';
+                $staff = isset($value['staff']) ? $value['staff'] : '';
+
+                $staff_start_time = isset($value['staff_start_time']) ? $value['staff_start_time'] : '';
+                $staff_end_time = isset($value['staff_end_time']) ? $value['staff_end_time'] : '';
+                $status = isset($value['status']) ? $value['status'] : '';
+                $visit_date = isset($value['visit_date']) ? $value['visit_date'] : '';
+                $used_points = isset($value['used_points']) ? number_format($value['used_points']).'円'  : '0円';
+                $status = isset($value['status']) ? $value['status'] : '';
+                // $note = isset($value['note']) ? $value['note'] : '';
+                $reservation_date =date("Y-m-d", strtotime($visit_date));
+                // echo "staff_start_time : ".$staff_start_time;
+                $staff_start_timeiIni = (string)$staff_start_time;
+                $staff_start_timei = array();
+                $staff_start_timei[0] = isset($staff_start_timeiIni[0])?$staff_start_timeiIni[0]:0;
+                $staff_start_timei[1] = isset($staff_start_timeiIni[1])?$staff_start_timeiIni[1]:0;
+                $staff_start_timei[2] = isset($staff_start_timeiIni[2])?$staff_start_timeiIni[2]:0;
+                $staff_start_timei[3] = isset($staff_start_timeiIni[3])?$staff_start_timeiIni[3]:0;
+
+                $reservation_start_time = $staff_start_timei[0].$staff_start_timei[1].":".$staff_start_timei[2].$staff_start_timei[3];
+
+                // echo "staff_end_time : ".$staff_end_time;
+                $staff_end_timeiIni = (string)$staff_end_time;
+                $staff_end_timei = array();
+                $staff_end_timei[0] = isset($staff_end_timeiIni[0])?$staff_end_timeiIni[0]:0;
+                $staff_end_timei[1] = isset($staff_end_timeiIni[1])?$staff_end_timeiIni[1]:0;
+                $staff_end_timei[2] = isset($staff_end_timeiIni[2])?$staff_end_timeiIni[2]:0;
+                $staff_end_timei[3] = isset($staff_end_timeiIni[3])?$staff_end_timeiIni[3]:0;
+
+                $reservation_end_time = $staff_end_timei[0].$staff_end_timei[1].":".$staff_end_timei[2].$staff_end_timei[3];
+                
+                // $reservation_end_time = (string)$reservation_end_time;
+                 $reservation_datetime = $reservation_date.' '.$reservation_start_time;
+                
+                
+                /* Service id section*/
+                $service_id = '0';
+                $cusromer_id = $employee_ids = '';
+                foreach ($servicelist as $key => $value) {
+                    if($service_name ==  $value['Service']['name']){
+                        $service_id = $value['Service']['id'];
+                    }
+                }
+
+
+
+                
+                // $staff = str_replace("　"," ",$staff);
+                $staff2 = str_replace(" ","　",$staff);
+                $employee_ids = '';
+                
+                // echo $staff2;die;
+                foreach ($employeelist as $empkey => $empvalue) {
+                     if( ($staff ==  $empvalue['Employee']['name']) || ($staff2 ==  $empvalue['Employee']['name'])){
+                        if( ($service_id == '0') && isset($empvalue['Employee']['service_id']) && !empty($empvalue['Employee']['service_id']) ){
+                            $service_id = $empvalue['Employee']['service_id'];
+                        }
+                        if(empty($employee_ids)){
+                            $employee_ids = $empvalue['Employee']['id'];
+                        }else{
+                            $employee_ids .= ', '.$empvalue['Employee']['id'];
+                        }
+                    }
+                }
+                
+                 /* kana_name section*/
+                if(!empty($kana_name)){
+                    $kana_name_arr = explode(' ', $kana_name);
+                    if(isset($kana_name_arr[1]) && !empty($kana_name_arr[1])){
+                        $kana_first_name = ltrim($kana_name_arr[1]);
+                        $kana_last_name = ltrim($kana_name_arr[0]);
+                    }else{
+                        $kana_first_name = ltrim($kana_name);
+                        $kana_last_name ='';
+                    }
+                    $kana_first_name = str_replace('　', '', $kana_first_name);
+                    $kana_last_name = str_replace('　', '', $kana_last_name); 
+                }else{
+                    $kana_first_name = '';
+                    $kana_last_name = ''; 
+                }    
+                // echo $kana_last_name,$kana_first_name;die;
+
+                /* Customer add section*/
+                $cusromer_id = 0;
+                if(!empty($kanji_name)){
+
+                    $fullName = explode(' ', $kanji_name);
+                    if(isset($fullName[1]) && !empty($fullName[1])){
+                        $first_name = ltrim($fullName[1]);
+                        $last_name = ltrim($fullName[0]);
+                    }else{
+                        $first_name = ltrim($kanji_name);
+                        $last_name ='';
+                    }
+                    $first_name = str_replace('　', '', $first_name);
+                    $last_name = str_replace('　', '', $last_name);
+                    if(empty($first_name)){
+                        $first_name = $kana_last_name;
+                    }
+                    if(empty($last_name)){
+                        $last_name = $kana_first_name;
+                    }
+
+                    $full_name = $last_name." ".$first_name;
+                    $full_name = trim($full_name);
+                    $condition['Customer.user_id'] =  $user_id;
+                    $condition['Customer.first_name'] =  $first_name;
+                    $condition['Customer.last_name'] =  $last_name;
+                    // pr($condition);die;
+                    // echo "get data customer";
+                    $CustomerData = $this->Customer->find('first', array('conditions'=> $condition));
+                    
+                    if(isset($CustomerData['Customer']['id']) && !empty($CustomerData['Customer']['id'])){
+                        $cusromer_id = $CustomerData['Customer']['id'];
+                        $this->Customer->id = $CustomerData['Customer']['id'];
+                        $customerData['Customer']['modified'] = date('Y-m-d H:i:s');
+                        // $this->Customer->saveField('status' , 1);
+                        if(empty($CustomerData['Customer']['last_visited']) || ($CustomerData['Customer']['last_visited'] =='null'))
+                            $CustomerData['Customer']['last_visited'] = $CustomerData['Customer']['modified'];
+                        $last_visited = $CustomerData['Customer']['last_visited'];
+                        
+
+                    }else{
+                        
+                        $customerData['Customer']['user_id'] = $user_id;
+                        $customerData['Customer']['service_id'] = $service_id;
+                        $customerData['Customer']['name'] = $full_name;
+                        $customerData['Customer']['first_name'] = $first_name;
+                        $customerData['Customer']['last_name'] = $last_name;
+                        $customerData['Customer']['kana_first_name'] = $kana_first_name;
+                        $customerData['Customer']['kana_last_name'] = $kana_last_name;
+                        $customerData['Customer']['tel'] = $customer_phone_number;
+                        $customerData['Customer']['is_gmail'] = '1';
+                        $customerData['Customer']['status'] ='0';
+                        // pr($customerData);
+                        $this->Customer->saveAll($customerData); 
+                        $cusromer_id = $this->Customer->id;
+                        $last_visited = $reservation_datetime;
+                       
+                       
+                    }    
+                } 
+                // echo "added customer";
+                $reservationData = array();
+                // echo $reservation_number;
+                // echo $user_id;die;
+                $reservationData = $this->Reservation->find('first', array('conditions'=> array( 'Reservation.reservation_number'=>$reservation_number, 'Reservation.user_id'=>$user_id), 'fields' =>array('Reservation.id', 'Reservation.reservation_number')));
+                // pr($reservationData);
+                $reservation =array();
+               /* Reservation Array Section*/
+                if(!empty($reservation_number)){
+                    if(($status == 'お客様キャンセル' ) ||  ($status == 'サロンキャンセル')){
+                        if(isset($reservationData['Reservation']['id']) && !empty($reservationData['Reservation']['id'])){
+                            $id = $reservationData['Reservation']['id'];
+                            $this->Reservation->delete($id, true);
+                        }    
+                         
+                    }elseif( ( (isset($reservationData['Reservation']['id']) ) && ($status != 'お客様キャンセル') ) || (isset($reservationData['Reservation']['id']) && ($status != 'サロンキャンセル') ) ){
+                        $reservation['Reservation']['id'] =  isset($reservationData['Reservation']['id']) ? $reservationData['Reservation']['id'] : '';
+                        $reservation['Reservation']['last_visited'] = $last_visited;
+                        $reservation['Reservation']['reservation_number'] = $reservation_number;
+                        $reservation['Reservation']['user_id'] = $user_id;
+                        $reservation['Reservation']['service_id'] = $service_id;
+                        $reservation['Reservation']['customer_id'] = $cusromer_id;
+                        $reservation['Reservation']['employee_ids'] = $employee_ids;
+                        $reservation['Reservation']['reservation_type'] = Configure::read('App.Status.active');
+                        $reservation['Reservation']['all_day'] = '0';
+                        $reservation['Reservation']['start_date'] = $reservation_date;
+                        $reservation['Reservation']['end_date'] = $reservation_date;
+                        $reservation['Reservation']['extra_start_date'] = $reservation_date;
+                        $reservation['Reservation']['extra_end_date'] = $reservation_date;
+                        $reservation['Reservation']['used_points'] = $used_points;
+                        $reservation['Reservation']['channel'] = 'サロンボード';
+                        $reservation['Reservation']['note'] = $note;
+                        $reservation['Reservation']['coupon'] = $coupon_name;
+                        $reservation['Reservation']['start_time'] = $reservation_start_time;
+                        $reservation['Reservation']['end_time'] = $reservation_end_time;
+                        $reservation['Reservation']['is_gmail'] = '1';
+                        $reservation['Reservation']['salon_board'] = '1';
+                        if(!empty($menu)){
+                            $reservation['Reservation']['menu'] = '1';
+                        }else{
+                            $reservation['Reservation']['menu'] = '0';
+                            $reservation['Reservation']['menu_text'] = '';
+                        }
+                        $reservation['Reservation']['reservation_total'] = $reservation_amount;
+                        $reservation['Reservation']['payment_total'] = $reservation_amount;
+                        $reservation_id = $reservationData['Reservation']['id'];
+                        $this->Reservation->saveAll($reservation); 
+                   }elseif( (!isset($reservationData['Reservation']['id'])  && ($status != 'お客様キャンセル' )) || (!isset($reservationData['Reservation']['id']) && ($status != 'サロンキャンセル')) ){
+                        
+                        $reservation['Reservation']['last_visited'] = $last_visited;
+                        $reservation['Reservation']['reservation_number'] = $reservation_number;
+                        $reservation['Reservation']['user_id'] = $user_id;
+                        $reservation['Reservation']['service_id'] = $service_id;
+                        $reservation['Reservation']['customer_id'] = $cusromer_id;
+                        $reservation['Reservation']['employee_ids'] = $employee_ids;
+                        $reservation['Reservation']['reservation_type'] = Configure::read('App.Status.active');
+                        $reservation['Reservation']['all_day'] = '0';
+                        $reservation['Reservation']['start_date'] = $reservation_date;
+                        $reservation['Reservation']['end_date'] = $reservation_date;
+                        $reservation['Reservation']['extra_start_date'] = $reservation_date;
+                        $reservation['Reservation']['extra_end_date'] = $reservation_date;
+                        $reservation['Reservation']['used_points'] = $used_points;
+                        
+                        $reservation['Reservation']['channel'] = 'サロンボード';
+                        $reservation['Reservation']['note'] = $note;
+                        $reservation['Reservation']['coupon'] = $coupon_name;
+                        $reservation['Reservation']['start_time'] = $reservation_start_time;
+                        $reservation['Reservation']['end_time'] = $reservation_end_time;
+                        $reservation['Reservation']['is_gmail'] = '1';
+                        $reservation['Reservation']['salon_board'] = '1';
+                        $reservation['Reservation']['status'] = '1';
+                        if(!empty($menu)){
+                            $reservation['Reservation']['menu'] = '1';
+                            // $reservation['Reservation']['menu_text'] = $menu;
+                        }else{
+                            $reservation['Reservation']['menu'] = '0';
+                            $reservation['Reservation']['menu_text'] = '';
+                        }
+                        $reservation['Reservation']['reservation_total'] = $reservation_amount;
+                        $reservation['Reservation']['payment_total'] = $reservation_amount;
+                        $reservation_id = '0';
+                        // echo "add new";
+                        // pr($reservation);
+                        if($this->Reservation->saveAll($reservation)){
+                            $reservation_id = $this->Reservation->id; 
+                            
+                            $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id)));
+                            foreach ($employeeData as $empKey => $empValue) {
+                                $reservationStatusReadData = $reservationStatusData = array();
+                                $emps_id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : '';
+                                $reservationStatusData['ReservationRead']['user_id'] =  $user_id;
+                                $reservationStatusData['ReservationRead']['reservation_id'] =  $reservation_id;
+                                $reservationStatusData['ReservationRead']['employee_id'] =  $emps_id;
+                                $reservationStatusData['ReservationRead']['date'] =  $reservation_date;
+                                $reservationStatusData['ReservationRead']['status'] =  '0';
+                                $this->ReservationRead->saveAll($reservationStatusData);
+
+
+                                $reservationStatusReadData['ReservationStatusRead']['user_id'] =  $user_id;
+                                $reservationStatusReadData['ReservationStatusRead']['employee_id'] =  $emps_id;
+                                $reservationStatusReadData['ReservationStatusRead']['reservation_id'] =  $reservation_id;
+                                $reservationStatusReadData['ReservationStatusRead']['status'] =  '0';
+                                $this->ReservationStatusRead->saveAll($reservationStatusReadData);
+
+                            }
+                            
+                            /* User Notification send*/
+                            // $reservationNotificationMessage =  $last_name.' '.$first_name.' 様が '.$this->formatDateInJapanese($visit_date).$reservation_datetime_notification.' に予約しました';
+                            $reservationNotificationMessage = 'スタッフが'. $last_name.' '.$first_name.' 様 '.$this->formatDateInJapanese($visit_date).$reservation_start_time.' ～ '.$reservation_end_time. ' に追加しました';
+                            $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id)));
+                            $deviceTokenArr = array();
+                            foreach ($employeeData as $empKey => $empValue) {
+                                $emp_id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : '';
+                                $empDevicetoken = isset($empValue['Employee']['device_token']) ? $empValue['Employee']['device_token'] : '';
+                                $emp_device_type = isset($empValue['Employee']['device_type']) ? $empValue['Employee']['device_type'] : '';
+                                if(!empty($empDevicetoken) && !in_array($empDevicetoken, $deviceTokenArr) ){
+                                    echo $reservationNotificationMessage;
+                                    if($emp_device_type == 'Android'){
+                                        $this->androidPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation', Configure::read('App.Firebase.apikey'));
+                                    }else{
+                                        $this->IOSPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation');
+                                        // $this->IOSPushNotification($empDevicetoken, $empDOBNotificationMessage, $user_id, $empValue['Employee']['id'],'','', $emp_device_type, 'employee', 'employee_birthday') ;
+                                    }
+
+                                     
+                                    array_push($deviceTokenArr, $empDevicetoken);
+                                }
+                            }
+                        }  
+                   }
+                   
+                }   
+            }
+
+        }
+
+        // pr($totalReservationArr);die;
+        
         echo 'Sccuessfully.';exit();
        
        
@@ -426,6 +1650,58 @@ class CronSchedulersController extends AppController {
        
     }
 
+    public function customer_horoscope() {
+        // Check the action is being invoked by the cron dispatcher 
+        // if (!defined('CRON_DISPATCHER')) { $this->redirect('/'); exit(); }
+        //no view
+        $this->autoRender = false; 
+        $this->loadModel('User');
+        $this->loadModel('Employee');
+        $this->loadModel('Customer');
+
+        $data = $this->Customer->find('all',array('conditions'=>array('MONTH(Customer.dob)'=>date('m'),'DAY(Customer.dob)'=>date('d'))));
+        // pr($data);die;
+        if(!empty($data)){
+            foreach ($data as $key => $value) {
+                $user_id = isset($value['Customer']['user_id']) ? $value['Customer']['user_id'] : '';
+                if(!empty($user_id)){
+
+                    $customer_name = $value['Customer']['last_name'].' '.$value['Customer']['first_name'];
+                    $customer_id = $value['Customer']['id'];
+                    $empDOBNotificationMessage = '今日は'.$customer_name.' 様の誕生日です！お祝いの言葉を送りましょう';
+                    $deviceTokenArr =array();
+                     /* User Notification send*/
+                    $userData = $this->User->find('first', array('conditions'=>array('User.id'=>$user_id)));
+                    $devicetoken = isset($userData['User']['device_token']) ? $userData['User']['device_token'] : '';
+                    $device_type = isset($userData['User']['device_type']) ? $userData['User']['device_type'] : '';
+                    
+                   
+                    /* User Notification send*/
+
+                    $employeeData = $this->Employee->find('all', array('conditions'=>array('Employee.user_id'=>$user_id), 'order' => array('Employee.modified' => 'DESC')));
+                    foreach ($employeeData as $empKey => $empValue) {
+                        $emp_id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : '';
+                        $empDevicetoken = isset($empValue['Employee']['device_token']) ? $empValue['Employee']['device_token'] : '';
+                        $emp_device_type = isset($empValue['Employee']['device_type']) ? $empValue['Employee']['device_type'] : '';
+                        
+                        if(!empty($empDevicetoken) && !in_array($empDevicetoken, $deviceTokenArr) ){
+
+                            if($emp_device_type == 'Android'){
+                                
+                                $this->androidPushNotification($empDevicetoken, $empDOBNotificationMessage, $user_id, $empValue['Employee']['id'],$customer_id,'', $emp_device_type, 'employee', 'customer_birthday', Configure::read('App.Firebase.apikey')) ;
+                            }else{
+                                $this->IOSCustomerPushNotification($empDevicetoken, $empDOBNotificationMessage, $user_id, $empValue['Employee']['id'],$customer_id,'', $emp_device_type, 'employee', 'customer_birthday') ;
+                            }
+                            array_push($deviceTokenArr, $empDevicetoken);
+                        }
+                    }
+                }   
+            }
+            die('successfully');
+        }    
+       
+    }
+
     public function customer_birthday() {
         // Check the action is being invoked by the cron dispatcher 
         // if (!defined('CRON_DISPATCHER')) { $this->redirect('/'); exit(); }
@@ -436,7 +1712,7 @@ class CronSchedulersController extends AppController {
         $this->loadModel('Customer');
 
         $data = $this->Customer->find('all',array('conditions'=>array('MONTH(Customer.dob)'=>date('m'),'DAY(Customer.dob)'=>date('d'))));
-        pr($data);die;
+        // pr($data);die;
         if(!empty($data)){
             foreach ($data as $key => $value) {
                 $user_id = isset($value['Customer']['user_id']) ? $value['Customer']['user_id'] : '';
@@ -481,7 +1757,52 @@ class CronSchedulersController extends AppController {
 
     /************************ Push Notification ***********************/
 
+    public function IOSCustomerPushNotification($deviceToken="c59f8effdc67992a50e00e5580a9ceab1760ad525178cfade5de3e9a29a4cef9",$message="test cusotmer notification",$customer_id=null,  $reservation_id=null, $device_type=null, $member_type=null, $notification_type=null) {
+          // $deviceToken = $devicetoken;
+        $deviceToken = 'c59f8effdc67992a50e00e5580a9ceab1760ad525178cfade5de3e9a29a4cef9';
+        $message="Jai Hanuman.";
+        $ctx = stream_context_create();
+        $passphrase = '';
+        // ck.pem is your certificate file
+        $base_path = ROOT.DS.APP_DIR.DS.WEBROOT_DIR;
+        $path_to_cert = $base_path.'/ck.pem';
+        stream_context_set_option($ctx, 'ssl', 'local_cert', $path_to_cert);
+        stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
+        // Open a connection to the APNS server
+        $fp = stream_socket_client(
+            'ssl://gateway.push.apple.com:2195', $err,
+            $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+        if (!$fp)
+            exit("Failed to connect: $err $errstr" . PHP_EOL);
+       
 
+       
+        $body['aps']['alert']['title']  = Configure::read('Site.title');
+        $body['aps']['alert']['body']  = $message;
+        $body['aps']['sound']  = 'default';   
+        
+
+
+
+       
+        // Encode the payload as JSON
+        $payload = json_encode($body);
+        // echo $payload;die;
+        $msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
+        // Send it to the server
+        $result = fwrite($fp, $msg, strlen($msg));
+        var_dump($msg);
+        // Close the connection to the server
+        fclose($fp);
+        pr($result);
+        if (!$result){
+
+            return 'Message not delivered' . PHP_EOL;
+        }else{
+            echo 'successfully';
+           
+        }
+    }
 
 
     public function IOSPushNotification($deviceToken=null,$message=null,$user_id=null,$employee_id=null,$customer_id=null,  $reservation_id=null, $device_type=null, $member_type=null, $notification_type=null) {

@@ -65,24 +65,8 @@ class WebServicesv44Controller extends AppController{
         $this->loadModel("RecordData");
         $this->Auth->allow('*');
         $this->RequestHandler->addInputType('json', array('json_decode', true));
-       // App::import('Vendor', 'Google', array('file' => 'Google' . DS . 'autoload.php'));
         date_default_timezone_set("Asia/Tokyo");
-
-       /* $allUser =  $this->User->find('all');
-        if(isset($allUser[0]['User']) && !empty($allUser[0]['User'])){
-            foreach ($allUser as $userKey => $userValue) {
-                 if(isset($userValue['User']['cash_box']) && !empty($userValue['User']['cash_box']) && ($userValue['User']['cash_box'] !='null')) {
-                    if($userValue['User']['cash_box_date'] != date(Y-m-d)){
-                        $this->User->id = $userValue['User']['id'];
-                        $this->User->saveField('cash_box' , '' );
-                    }
-                 }   
-            }
-        }*/
-    
-
-
-        
+   
     }
 
     /************************************************************************************************************************************
@@ -119,14 +103,8 @@ class WebServicesv44Controller extends AppController{
         if(empty($data)){
             $data = json_encode($_GET);
         }    
-        /*      
-          $data = '{"email":"mahen.zed123@gmail.com", "password" : "123456"}';
-         */
-        //echo $data;
         $decoded = json_decode($data, true);
         $responseArr =array();
-        // $email = $decoded['email'];
-        // $password = $decoded['password'];
         $email = isset($decoded['email']) ? $decoded['email'] : '';
         $password = isset($decoded['password']) ? $decoded['password'] : '';
         $device_token = isset($decoded['device_token']) ? $decoded['device_token'] : '';
@@ -677,12 +655,12 @@ class WebServicesv44Controller extends AppController{
         // echo $message;die;
 
         $html  = $message;
-        $domain = "mg.jtsboard.com";
+        $domain = "jts.jtsboard.com";
         $config = array();
         $config['api_key'] = "457b1d1a0372e162d6336f675d1a69c6-de7062c6-a83103f2";
         $config['api_url'] = "https://api.mailgun.net/v3/" . $domain . "/messages";
         $message = array();
-        $message['from'] = $from;
+        $message['from'] = 'JTSボード <do-not-reply@jtsboard.com>';
         $message['to'] = $to;
         $message['subject'] = $subject;
         $message['html'] = $html;
@@ -2234,18 +2212,20 @@ class WebServicesv44Controller extends AppController{
             $this->ServiceColor->bindModel(array('belongsTo' => array('Service','Color')));
             $allServiceColorData = $this->ServiceColor->find('all', array('conditions' => array('ServiceColor.user_id' => $user_id, 'Service.status'=>1), 'order' =>array('ServiceColor.service_id' => 'asc')));
             // pr($allServiceColorData);
+            $i = 0;
             if(isset($allServiceColorData[0]['ServiceColor']) && !empty($allServiceColorData[0]['ServiceColor'])){
                 foreach ($allServiceColorData as $key => $value) {
                     // pr($value['ServiceColor']['service_id']);
                     $subServiceData = $this->SubService->find("first", array("conditions"=>array("SubService.service_id"=>$value['ServiceColor']['service_id'])));
                     // pr($subServiceData['SubService']['service_id']);
                     if($value['ServiceColor']['service_id'] == $subServiceData['SubService']['service_id']){
-                        $serviceColorData['ServiceColor'][$key]['id'] = $value['ServiceColor']['id'];
-                       $serviceColorData['ServiceColor'][$key]['service_id'] = $value['ServiceColor']['service_id'];
-                       $serviceColorData['ServiceColor'][$key]['service_name'] = $value['Service']['name'];
-                       $serviceColorData['ServiceColor'][$key]['color_code'] = $value['Color']['color_code'];
-                       $serviceColorData['ServiceColor'][$key]['color_id'] = $value['Color']['id'];
-                       $serviceColorData['ServiceColor'][$key]['color_name'] = $value['Color']['color_name'];
+                        $serviceColorData['ServiceColor'][$i]['id'] = $value['ServiceColor']['id'];
+                       $serviceColorData['ServiceColor'][$i]['service_id'] = $value['ServiceColor']['service_id'];
+                       $serviceColorData['ServiceColor'][$i]['service_name'] = $value['Service']['name'];
+                       $serviceColorData['ServiceColor'][$i]['color_code'] = $value['Color']['color_code'];
+                       $serviceColorData['ServiceColor'][$i]['color_id'] = $value['Color']['id'];
+                       $serviceColorData['ServiceColor'][$i]['color_name'] = $value['Color']['color_name'];
+                       $i++;
                     }
                 }
 
@@ -2532,8 +2512,8 @@ class WebServicesv44Controller extends AppController{
         $this->loadModel("RecordData");
         
         $tel = $customer['Customer']['tel'] = isset($decoded['tel']) ? $decoded['tel'] : '';
-        if(isset($decoded['id']) && !empty($decoded['id']))
-        $customer['Customer']['id'] = isset($decoded['id']) ? $decoded['id'] : '';
+        if(isset($decoded['customer_id']) && !empty($decoded['customer_id']))
+        $customer['Customer']['id'] = isset($decoded['customer_id']) ? $decoded['customer_id'] : '';
         $customer['Customer']['user_id'] = isset($decoded['user_id']) ? $decoded['user_id'] : '';
         $customer['Customer']['salon_id'] = isset($decoded['salon_id']) ? $decoded['salon_id'] : '';
         
@@ -3466,7 +3446,22 @@ class WebServicesv44Controller extends AppController{
             return '';
         }   
     }
-     function get_employee_image($id = ''){
+    function get_employee_image_by_name($name = '', $user_id = ''){
+        $this->loadModel("Employee");
+        if(!empty($name) && !empty($user_id)){
+            $data = $this->Employee->find('first',array('conditions'=> array('Employee.name'=>$name, 'Employee.user_id'=>$user_id  )));
+            if(isset($data['Employee']['image'])){
+                $emp_image = $data['Employee']['image'];
+            }else{
+
+                $emp_image = '';
+            }
+            return  $emp_image;
+        }else{
+            return '';
+        }   
+    }
+    function get_employee_image($id = ''){
         $this->loadModel("Employee");
         if(!empty($id)){
             $data = $this->Employee->find('first',array('conditions'=> array('Employee.id'=>$id )));
@@ -3481,6 +3476,7 @@ class WebServicesv44Controller extends AppController{
             return '';
         }   
     }
+
 
 
 /* New V1 data 08-08-2018 */
@@ -6374,20 +6370,26 @@ class WebServicesv44Controller extends AppController{
      *********************************************************************/
 
 
-
      function add_employee($test_data =null){
 
-        $data = file_get_contents('php://input');
-    
+         $data = file_get_contents('php://input');
+        
         if(empty($data)){
             $data = json_encode($_GET);
-        }   
+        }    
+        if(empty($data)){
+            $data = json_encode($_POST);
+        }
+        if(isset($test_data)&&(!empty($test_data))){
+            $data = json_encode($test_data);
+        }
+        $decoded = json_decode($data, true); 
         /* add reacord data*/ 
         $recordData['RecordData']['name'] = "add_employee";
         $recordData['RecordData']['query'] = json_encode($data);
         $this->RecordData->saveAll($recordData);
 
-        $decoded = json_decode($data, true); 
+        // $decoded = json_decode($data, true); 
 
          $this->loadModel("User");
          $this->loadModel("Employee");
@@ -6397,12 +6399,15 @@ class WebServicesv44Controller extends AppController{
         }
         $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
         $email = isset($decoded['email']) ? $decoded['email'] : '';
-         $employeeExist = $employeeCodeExist= array();
+        $first_name = isset($decoded['first_name']) ? $decoded['first_name'] : '';
+        $last_name = isset($decoded['last_name']) ? $decoded['last_name'] : '';
+        $employeeExist = $employeeCodeExist= array();
         if(!empty($employee_id)){
             $employeeExist = $this->Employee->find('first', array('conditions'=>array('Employee.id'=>$employee_id)));
             $employeeOwnerExist = $this->Employee->find('count', array('conditions'=>array('Employee.user_id'=>$user_id, 'Employee.role_id'=>Configure::read('App.Status.active'), 'Employee.status'=>Configure::read('App.Status.active') )));
            
-        }   
+        } 
+
         if(isset($employeeExist['Employee']['id']) && !empty($employeeExist['Employee']['id'])){
             $employee['Employee']['id'] = $employeeExist['Employee']['id'];
             $empCode = $employeeExist['Employee']['emp_code'];
@@ -6421,8 +6426,19 @@ class WebServicesv44Controller extends AppController{
             // echo 'test'.$decoded['service_id'].'tesws';die;
             $responseArr =array();
             $employee['Employee']['user_id'] = $user_id;
-            $emp_name = $employee['Employee']['name'] = isset($decoded['name']) ? $decoded['name'] : '';
-            // $employee['Employee']['name'] = str_replace(" ","　",$emp_name);
+            if(!empty($first_name) && !empty($last_name))
+            {
+                $emp_name = $employee['Employee']['name'] = $first_name." ".$last_name;
+            }elseif(!empty($first_name) && empty($last_name)){
+                 $emp_name = $employee['Employee']['name'] = $first_name;
+            }elseif(empty($first_name) && !empty($last_name)){
+                 $emp_name = $employee['Employee']['name'] = $last_name;
+            }else{
+                 $emp_name = $employee['Employee']['name'] = "";
+            }
+            $employee['Employee']['first_name'] = $first_name;
+            $employee['Employee']['last_name'] = $last_name;
+            $employee['Employee']['name'] = str_replace(" ","　",$emp_name);
             $employee['Employee']['email'] =isset($decoded['email']) ? $decoded['email'] : '';
             $employee['Employee']['service_id'] =($decoded['service_id'] !='') ? $decoded['service_id'] : '0';
             $employee['Employee']['dob'] = isset($decoded['dob']) ? $decoded['dob'] : '';
@@ -6523,7 +6539,7 @@ class WebServicesv44Controller extends AppController{
         }
         
         $this->loadModel("Reservation");
-        $reservationCodeExist = $this->Reservation->find('first', array('conditions'=>array('Reservation.reservation_number'=>$randstring,'Reservation.status !='=>'5')));
+        $reservationCodoeExist = $this->Reservation->find('first', array('conditions'=>array('Reservation.reservation_number'=>$randstring,'Reservation.status !='=>'5')));
         if(isset($reservationCodeExist['Reservation']['id']) && !empty($reservationCodeExist['Reservation']['id'])){
             $this->ReservationNumberString();
         }
@@ -6663,7 +6679,7 @@ class WebServicesv44Controller extends AppController{
      *********************************************************************/
     
     
-      function employee_list($testData = null){
+function employee_list($testData = null){
           
         $data = file_get_contents('php://input');
     
@@ -6685,13 +6701,34 @@ class WebServicesv44Controller extends AppController{
             }else{
 
                 if(!empty($data)){
+
                     
                     foreach ($data as $key => $value) {
+
+
+
+
                         $customerData['Employee'][$i] = $value['Employee'];
                         $customerData['Employee'][$i]['dob'] = date( 'Y年m月d日', strtotime( $value['Employee']['dob']));
                         $customerData['Employee'][$i]['joining_date'] = date( 'Y年m月d日', strtotime( $value['Employee']['joining_date']));
                         $customerData['Employee'][$i]['service_name'] = $this->get_service_name($value['Employee']['service_id']);
-                        
+                        $nameArr = explode("　", $customerData['Employee'][$i]['name']);
+                        $first_name = isset($nameArr[1]) ? $nameArr[1] : ' ';
+                        $last_name  =  isset($nameArr[0]) ? $nameArr[0] : '';
+                        if(!empty($customerData['Employee'][$i]['first_name']) or !empty($customerData['Employee'][$i]['last_name']))
+                        {
+                            
+                             $customerData['Employee'][$i]['last_name'] = $customerData['Employee'][$i]['last_name'];
+                             $customerData['Employee'][$i]['first_name'] = ($customerData['Employee'][$i]['first_name'] !=null) ? $customerData['Employee'][$i]['first_name']: ' '; 
+
+
+
+                           
+                        }else{
+                             $customerData['Employee'][$i]['last_name'] = $last_name;
+                             $customerData['Employee'][$i]['first_name'] = $first_name;
+                        }
+                    
                         $i++;
                     }
 
@@ -6812,7 +6849,7 @@ class WebServicesv44Controller extends AppController{
      *********************************************************************/
     
     
-      function technician_employee_list($testData = null){
+    function technician_employee_list($testData = null){
           
         $data = file_get_contents('php://input');
     
@@ -6859,23 +6896,6 @@ class WebServicesv44Controller extends AppController{
                     
                 }
 
-                /*
-                $conTime["Reservation.user_id"] = $user_id;     
-                $conTime["Reservation.reservation_type"] = "3";     
-                $conTime["Reservation.all_day"] = "0";  
-                $conTime["Reservation.start_date >="] = $date;  
-                $conTime["Reservation.end_date <="] = $date; 
-                $conTime["Reservation.start_time >="] = $start_time; 
-                $reservationsData = $this->Reservation->find('all',array('conditions'=> $conTime, 'order' => array('Reservation.id' => 'DESC')));
-                foreach ($reservationsData as $rreservationsDatakey => $reservationsDatavalue) {
-                    $emp_ids_array = explode(',', $reservationsDatavalue['Reservation']['employee_ids']);
-                    foreach ($emp_ids_array as $emp_ids_key => $emp_ids_value) {
-                        if(!in_array($emp_ids_value, $allEmpIds)){
-                            $allEmpIds[$empKeys] = $emp_ids_value; 
-                            $empKeys++;
-                        }
-                    }
-                } */
                 $customerData['Employee'] = array();
                 //print_r($data);die;
                 if(!empty($data)){
@@ -9232,6 +9252,7 @@ class WebServicesv44Controller extends AppController{
         $start_time = $reservation['Reservation']['start_time'] = isset($decoded['start_time']) ? $decoded['start_time'] : '';
         $end_time = $reservation['Reservation']['end_time'] = isset($decoded['end_time']) ? $decoded['end_time'] : '';
         $employee_ids = $reservation['Reservation']['employee_ids'] = isset($decoded['employee_ids']) ? $decoded['employee_ids'] : '0';
+        $event_blocked = $reservation['Reservation']['event_blocked'] = isset($decoded['event_blocked']) ? $decoded['event_blocked'] : '0';
         if(!empty($reservation_type) && ($reservation_type =='1')){
             $customer_id = $reservation['Reservation']['customer_id'] = isset($decoded['customer_id']) ? $decoded['customer_id'] : '';
             $customer_name = $reservation['Reservation']['customer_name'] = isset($decoded['customer_name']) ? $decoded['customer_name'] : '';
@@ -9559,6 +9580,7 @@ class WebServicesv44Controller extends AppController{
             }
             
         }
+        // pr($reservation);die;
         if(empty($employee_ids)){
             $conditions = array('Reservation.id'=>$decoded['id']);
             $this->Reservation->deleteAll($conditions);
@@ -9566,6 +9588,7 @@ class WebServicesv44Controller extends AppController{
             $jsonEncode = json_encode($responseArr);
             
         }else{
+            // pr($reservation);die;
             if($this->Reservation->saveAll($reservation)){
                 $reservation_id = $this->Reservation->id;
                 $responseArr['reservation_id'] = $reservation_id;
@@ -9597,7 +9620,8 @@ class WebServicesv44Controller extends AppController{
 
                 if(!empty($customer_name) && ($reservation_type =='1')){
 
-                    $reservationNotificationMessage = $customer_name.' 様が '.$start_date.' ('.$dys[$dy].') '.$start_time.' ～ '.$end_time. ' 所要時間[ '.$duration.' ] に予約しました';
+                    // $reservationNotificationMessage = $customer_name.' 様が '.$start_date.' ('.$dys[$dy].') '.$start_time.' ～ '.$end_time. ' 所要時間[ '.$duration.' ] に予約しました';
+                    $reservationNotificationMessage = 'スタッフが'. $customer_name.' 様 '.$start_date.' ('.$dys[$dy].') '.$start_time.' ～ '.$end_time. ' に追加しました';
                 }elseif($reservation_type =='2'){
                     $reservationNotificationMessage = $emps_name.' が '.$start_date.' にイベントを作成しました';
                 }elseif($reservation_type =='3'){
@@ -9622,7 +9646,7 @@ class WebServicesv44Controller extends AppController{
                         if($emp_device_type == 'iphone'){
                             $this->IOSPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation');
                         }elseif($emp_device_type == 'Android'){
-                            $this->androidPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation', Configure::read('App.Firebase.apikey'));
+                            // $this->androidPushNotification($empDevicetoken, $reservationNotificationMessage, $user_id, $empValue['Employee']['id'],'', $reservation_id,  $emp_device_type, 'employee', 'add_reservation', Configure::read('App.Firebase.apikey'));
                         }
                         
                         array_push($deviceTokenArr, $empDevicetoken);
@@ -9638,6 +9662,7 @@ class WebServicesv44Controller extends AppController{
                             $reservationStatusData['ReservationRead']['user_id'] =  $user_id;
                             $reservationStatusData['ReservationRead']['employee_id'] =  $emp_id;
                             $reservationStatusData['ReservationRead']['date'] =  $date;
+                            $reservationStatusData['ReservationRead']['event_blocked'] =  $event_blocked;
                             $reservationStatusData['ReservationRead']['status'] =  '0';
                             $this->ReservationRead->saveAll($reservationStatusData);
 
@@ -9661,10 +9686,10 @@ class WebServicesv44Controller extends AppController{
         }
 
         
-        $log = $this->Reservation->getDataSource()->getLog(false, false);
-        $recordData['RecordData']['name'] = "add_reservation";
-        $recordData['RecordData']['query'] = json_encode($log);
-        $this->RecordData->saveAll($recordData);
+        // $log = $this->Reservation->getDataSource()->getLog(false, false);
+        // $recordData['RecordData']['name'] = "add_reservation";
+        // $recordData['RecordData']['query'] = json_encode($log);
+        // $this->RecordData->saveAll($recordData);
         echo  $jsonEncode;exit();
 
     }
@@ -10010,7 +10035,6 @@ class WebServicesv44Controller extends AppController{
             }else{
                 $this->Reservation->bindModel(array('belongsTo' => array('Customer', 'Service')));
                 $reservationDataFind = $this->Reservation->find('all',array('conditions'=>array( 'Reservation.user_id'=>$user_id, 'Reservation.start_date <=' => $date, 'Reservation.end_date >=' => $date,  'Reservation.status !='=>'5'),  'order' => array('Reservation.start_date' => 'DESC', 'Reservation.start_time' => 'ASC')));
-                // pr($reservationDataFind);die;
                  $empIds =  $reservationData = array();
                  $ij  =$staff = $event = $employee = 0;
                  $staff_name = '';
@@ -10073,6 +10097,8 @@ class WebServicesv44Controller extends AppController{
                                 }
                                 $subServiceListRe = $this->SubService->find("first",array("conditions"=>array("SubService.id"=>$value['Reservation']['sub_service_id'])));
                                 $sub_service_name_staff = isset($subServiceListRe['SubService']['name']) ? $subServiceListRe['SubService']['name'] :'';
+                                if(empty($reservationData[$sectionType][$staff]['note']))
+                                    $reservationData[$sectionType][$staff]['note'] = $sub_service_name_staff;
                                 $reservationData[$sectionType][$staff]['service_id']= $value['Reservation']['service_id'];
                                 $reservationData[$sectionType][$staff]['sub_service_id']= $value['Reservation']['sub_service_id'];
                                 $reservationData[$sectionType][$staff]['service_name']= $value['Service']['name'];
@@ -10166,23 +10192,23 @@ class WebServicesv44Controller extends AppController{
                                 $reservationData[$sectionType][$event]['extra_end_date']= $value['Reservation']['extra_end_date'];
                                 $reservationData[$sectionType][$event]['is_event']= $value['Reservation']['is_event'];
                                 $reservationData[$sectionType][$event]['reservation_type']= $value['Reservation']['reservation_type'];
-                                    if(!empty($serviceColor['ServiceColor']['color_code'])){
-                                        $reservationData[$sectionType][$event]['service_color']= $serviceColor['ServiceColor']['color_code'];
+                                if(!empty($serviceColor['ServiceColor']['color_code'])){
+                                    $reservationData[$sectionType][$event]['service_color']= $serviceColor['ServiceColor']['color_code'];
+                                }
+                                $reservationData[$sectionType][$event]['customer_id']= $value['Customer']['id'];
+                                
+                                $reservationData[$sectionType][$event]['customer_name']= $value['Customer']['last_name'].' '.$value['Customer']['first_name'];
+                                $reservationData[$sectionType][$event]['tel']= isset($value['Customer']['tel']) ? $value['Customer']['tel'] : '';
+                                $reservationData[$sectionType][$event]['customer_status']= $value['Customer']['status'];
+                                
+                                if(!empty($allEmp)){
+                                    foreach ($allEmp as $empKey => $empValue) {
+                                        $reservationData[$sectionType][$event]['Employee'][$empKey]['id']= $empValue['Employee']['id'];
+                                        $reservationData[$sectionType][$event]['Employee'][$empKey]['name']= $empValue['Employee']['name'];
+                                        $reservationData[$sectionType][$event]['Employee'][$empKey]['emp_code']= $empValue['Employee']['emp_code'];
+                                        $reservationData[$sectionType][$event]['Employee'][$empKey]['image']= $empValue['Employee']['image'];
                                     }
-                                    $reservationData[$sectionType][$event]['customer_id']= $value['Customer']['id'];
-                                    
-                                    $reservationData[$sectionType][$event]['customer_name']= $value['Customer']['last_name'].' '.$value['Customer']['first_name'];
-                                    $reservationData[$sectionType][$event]['tel']= isset($value['Customer']['tel']) ? $value['Customer']['tel'] : '';
-                                    $reservationData[$sectionType][$event]['customer_status']= $value['Customer']['status'];
-                                    
-                                    if(!empty($allEmp)){
-                                        foreach ($allEmp as $empKey => $empValue) {
-                                            $reservationData[$sectionType][$event]['Employee'][$empKey]['id']= $empValue['Employee']['id'];
-                                            $reservationData[$sectionType][$event]['Employee'][$empKey]['name']= $empValue['Employee']['name'];
-                                            $reservationData[$sectionType][$event]['Employee'][$empKey]['emp_code']= $empValue['Employee']['emp_code'];
-                                            $reservationData[$sectionType][$event]['Employee'][$empKey]['image']= $empValue['Employee']['image'];
-                                        }
-                                    }
+                                }
 
                                 $last_visit =  isset($value['Customer']['last_visit']) ? $value['Customer']['last_visit'] : $value['Customer']['modified'];
                                 if(empty($last_visit))
@@ -10247,6 +10273,9 @@ class WebServicesv44Controller extends AppController{
                                     $reservationData[$sectionType][$all_day]['sub_service_name']= $sub_service_name_all;
                                     $reservationData[$sectionType][$all_day]['end_date']= $value['Reservation']['end_date'];
                                     $reservationData[$sectionType][$all_day]['extra_start_date']= $value['Reservation']['extra_start_date'];
+                                    $reservationData[$sectionType][$all_day]['note']= $value['Reservation']['note'];
+                                    if(empty($reservationData[$sectionType][$all_day]['note']))
+                                        $reservationData[$sectionType][$all_day]['note'] = $sub_service_name_all;
                                     $reservationData[$sectionType][$all_day]['extra_end_date']= $value['Reservation']['extra_end_date'];
                                     $reservationData[$sectionType][$all_day]['is_event']= $value['Reservation']['is_event'];
                                     $reservationData[$sectionType][$all_day]['reservation_type']= $value['Reservation']['reservation_type'];
@@ -10326,6 +10355,9 @@ class WebServicesv44Controller extends AppController{
                                     $reservationData[$sectionType][$morning]['sub_service_name']= $sub_service_name_morning;
                                     $reservationData[$sectionType][$morning]['end_date']= $value['Reservation']['end_date'];
                                     $reservationData[$sectionType][$morning]['extra_start_date']= $value['Reservation']['extra_start_date'];
+                                    $reservationData[$sectionType][$morning]['note']= $value['Reservation']['note'];
+                                    if(empty($reservationData[$sectionType][$morning]['note']))
+                                        $reservationData[$sectionType][$morning]['note'] = $sub_service_name_morning;
                                     $reservationData[$sectionType][$morning]['extra_end_date']= $value['Reservation']['extra_end_date'];
                                     $reservationData[$sectionType][$morning]['is_event']= $value['Reservation']['is_event'];
                                     $reservationData[$sectionType][$morning]['reservation_type']= $value['Reservation']['reservation_type'];
@@ -10408,6 +10440,9 @@ class WebServicesv44Controller extends AppController{
                                     $reservationData[$sectionType][$afternoon]['sub_service_name']= $sub_service_name_afternoon;
                                     $reservationData[$sectionType][$afternoon]['end_date']= $value['Reservation']['end_date'];
                                     $reservationData[$sectionType][$afternoon]['extra_start_date']= $value['Reservation']['extra_start_date'];
+                                    $reservationData[$sectionType][$afternoon]['note']= $value['Reservation']['note'];
+                                    if(empty($reservationData[$sectionType][$afternoon]['note']))
+                                        $reservationData[$sectionType][$afternoon]['note'] = $sub_service_name_afternoon;
                                     $reservationData[$sectionType][$afternoon]['extra_end_date']= $value['Reservation']['extra_end_date'];
                                     $reservationData[$sectionType][$afternoon]['is_event']= $value['Reservation']['is_event'];
                                     $reservationData[$sectionType][$afternoon]['reservation_type']= $value['Reservation']['reservation_type'];
@@ -10628,92 +10663,9 @@ class WebServicesv44Controller extends AppController{
      *********************************************************************/
     
     
-    function calender_reservation_old($testData = null){
-          
-        $data = file_get_contents('php://input');
     
-        if(empty($data)){
-            $data = json_encode($_GET);
-        }    
 
-        $decoded = json_decode($data, true); 
-        $this->loadModel("User");
-        $this->loadModel("Customer");
-        $this->loadModel("ServiceColor");
-        $this->loadModel("Reservation");
-        $this->loadModel("ReservationRead");
-        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
-        $employee_id = isset($decoded['employee_id']) ? $decoded['employee_id'] : '32';
-        $i =0;
-        if(!empty($user_id)){
-            $userData = $this->User->find('first',array('conditions'=>array( 'User.id'=>$user_id)));
-            if(!$userData){
-                $jsonEncode =  json_encode(array('status'=>'error', 'msg'=> 'ユーザーは存在しません。')); //user does not exist
-            }else{
-                $reservationDataFind = $this->Reservation->find('all',array('conditions'=>array( 'Reservation.user_id'=>$user_id, 'Reservation.reservation_type !='=>'3', 'Reservation.status !='=>'4',  'Reservation.status !='=>'5'),  'order' => array('Reservation.start_date' => 'DESC')));
-                $reservationDateArr =  $reservationData = array();
-                $date = '';
-                $i= 0;
-                $j= 0;
-                if(!empty($reservationDataFind)){
-                    foreach ($reservationDataFind as $dateKey => $dateValue) {
-                        $dateArray = $this->dateRange( $dateValue['Reservation']['start_date'], $dateValue['Reservation']['end_date']);
-                        foreach ($dateArray as $dateArrKey => $dateArrValue) {
-                            if(!in_array($dateArrValue, $reservationDateArr)){
-                                $reservationDateArr[$j]=$dateArrValue;
-                                $j++;
-
-                            }
-                        }
-
-                    }    
-
-                    foreach ($reservationDateArr as $dateKey => $dateValue) {
-                        $i= 0;
-                        
-                        $conditions["Reservation.user_id"] = $user_id;
-                        $conditions['Reservation.start_date <='] = $dateValue;
-                        $conditions['Reservation.reservation_type !='] = '3';
-                        $conditions['Reservation.end_date >='] = $dateValue;
-                        $this->Reservation->bindModel(array('belongsTo' => array('Customer')));
-                        $reservationDateDataFind = $this->Reservation->find('all',array('conditions'=>$conditions,  'order' => array('Reservation.start_date' => 'DESC', 'Reservation.start_time' => 'ASC')));
-                         // pr($reservationDateDataFind);die;
-                        foreach ($reservationDateDataFind as $key => $value) {
-                            $date = $dateValue;
-                            $reservationData[$date][$i]['id']= $value['Reservation']['id'];
-                            $reservationData[$date][$i]['label']= $value['Customer']['last_name'].' '.$value['Customer']['first_name'];
-                            $reservationDateStatusDataFind = $this->ReservationRead->find('first',array('conditions'=>array('ReservationRead.employee_id'=>$employee_id, 'ReservationRead.date'=>$date)));
-                            // pr($reservationDateStatusDataFind);
-                            if(isset($reservationDateStatusDataFind['ReservationRead']['status']) && ($reservationDateStatusDataFind['ReservationRead']['status'] == '1')){
-                                 $reservationData[$date][$i]['read_status']= '1';
-                            }else{
-                                 $reservationData[$date][$i]['read_status']= '0';
-                            }
-
-                            $i++; 
-                        } 
-                    }
-                    // pr($reservationData);die;
-                   // $reservationData[$date]['count']= $i;
-               }else{
-                    $reservationData['Reservation'][$i]['msg'] = 'レコードが見つかりませんでした。'; //No Record Found
-                    $reservationData['Reservation'][$i]['status'] = 'error';
-                }
-                $jsonEncode = json_encode($reservationData);
-            }
-        }else{
-            $reservationData['Reservation'][$i]['msg'] = 'ユーザーは存在しません。'; //user does not exist
-            $reservationData['Reservation'][$i]['status'] = 'error';
-            $jsonEncode = json_encode($reservationData);
-        }
-       /* $log = $this->Reservation->getDataSource()->getLog(false, false);
-        $recordData['RecordData']['name'] = "calender_reservation";
-        $recordData['RecordData']['query'] = json_encode($log);
-        $this->RecordData->saveAll($recordData);*/
-        echo  $jsonEncode;exit();
-    }
-
-     function calender_reservation($testData = null){
+    function calender_reservation_old($testData = null){
           
         $data = file_get_contents('php://input');
     
@@ -10757,6 +10709,112 @@ class WebServicesv44Controller extends AppController{
 
                     }    
 
+                    foreach ($reservationDateArr as $dateKey => $dateValue) {
+                        $i= 0;
+                        
+                        $conditions["Reservation.user_id"] = $user_id;
+                        $conditions['Reservation.start_date <='] = $dateValue;
+                        $conditions['Reservation.reservation_type !='] = '3';
+                        $conditions['Reservation.status !='] = '5';
+                        $conditions['Reservation.end_date >='] = $dateValue;
+                        $this->Reservation->bindModel(array('belongsTo' => array('Customer')));
+                        $reservationDateDataFind = $this->Reservation->find('all',array('conditions'=>$conditions,  'order' => array('Reservation.start_date' => 'DESC', 'Reservation.start_time' => 'ASC')));
+                         // pr($reservationDateDataFind);die;
+                        foreach ($reservationDateDataFind as $key => $value) {
+                            $date = $dateValue;
+                            $reservationData[$date][$i]['id']= $value['Reservation']['id'];
+                            $reservationData[$date][$i]['label']= $value['Customer']['last_name'].' '.$value['Customer']['first_name'];
+                            $reservationDateStatusDataFind = $this->ReservationRead->find('first',array('conditions'=>array('ReservationRead.employee_id'=>$employee_id, 'ReservationRead.date'=>$date)));
+                            // pr($reservationDateStatusDataFind);
+                            if(isset($reservationDateStatusDataFind['ReservationRead']['status']) && ($reservationDateStatusDataFind['ReservationRead']['status'] == '1')){
+                                 $reservationData[$date][$i]['read_status']= '1';
+                            }else{
+                                 $reservationData[$date][$i]['read_status']= '0';
+                            }
+
+                            $i++;
+                            
+                            
+                        } 
+                    }
+                    // pr($reservationData);die;
+                   // $reservationData[$date]['count']= $i;
+               }else{
+                    $reservationData['Reservation'][$i]['msg'] = 'レコードが見つかりませんでした。'; //No Record Found
+                    $reservationData['Reservation'][$i]['status'] = 'error';
+                }
+                $jsonEncode = json_encode($reservationData);
+            }
+        }else{
+            $reservationData['Reservation'][$i]['msg'] = 'ユーザーは存在しません。'; //User does not exist
+            $reservationData['Reservation'][$i]['status'] = 'error';
+            $jsonEncode = json_encode($reservationData);
+        }
+       /* $log = $this->Reservation->getDataSource()->getLog(false, false);
+        $recordData['RecordData']['name'] = "calender_reservation";
+        $recordData['RecordData']['query'] = json_encode($log);
+        $this->RecordData->saveAll($recordData);*/
+        // pr($reservationData);die;
+        echo  $jsonEncode;exit();
+    }
+
+    function calender_reservation($testData = null){
+          
+        $data = file_get_contents('php://input');
+    
+        if(empty($data)){
+            $data = json_encode($_GET);
+        }    
+
+        $decoded = json_decode($data, true); 
+        $this->loadModel("User");
+        $this->loadModel("Customer");
+        $this->loadModel("ServiceColor");
+        $this->loadModel("Reservation");
+        $this->loadModel("ReservationRead");
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $employee_id = isset($decoded['employee_id']) ? $decoded['employee_id'] : '';
+        $date = isset($decoded['date']) ? $decoded['date'] : date("Y-m-d");
+        $cm = date('m', strtotime($date));
+        if($cm%12){
+            $nm = $cm + 1;
+            ($nm < 10 ) ? "0".$nm : $nm;            
+        }else{
+            $nm = "01";
+        }
+        if($cm==1){
+            $pm = 12;
+        }else{
+            $pm = $cm - 1;
+            ($pm < 10 ) ? "0".$pm : $pm;
+        }
+        
+        if(!empty($user_id)){
+            $userData = $this->User->find('first',array('conditions'=>array( 'User.id'=>$user_id)));
+            if(!$userData){
+                $jsonEncode =  json_encode(array('status'=>'error', 'msg'=> 'ユーザーは存在しません。'));
+            }else{
+                $conditions["Reservation.user_id"] = $user_id;
+                $conditions['Reservation.reservation_type !='] = 3;
+                $conditions['Reservation.status !='] = 4;
+                $conditions['Reservation.status !='] = 5;
+                $conditions['MONTH(Reservation.start_date)'] = array($pm,$cm,$nm);
+                $reservationDataFind = $this->Reservation->find('all',array('conditions'=>$conditions,  'order' => array('Reservation.start_date' => 'DESC')));
+                $reservationDateArr =  $reservationData = array();
+                $date = '';                
+                $j= 0;
+                if(!empty($reservationDataFind)){
+                    foreach ($reservationDataFind as $dateKey => $dateValue) {
+                        $dateArray = $this->dateRange( $dateValue['Reservation']['start_date'], $dateValue['Reservation']['end_date']);
+                        foreach ($dateArray as $dateArrKey => $dateArrValue) {
+                            if(!in_array($dateArrValue, $reservationDateArr)){
+                                $reservationDateArr[$j]=$dateArrValue;
+                                $j++;
+
+                            }
+                        }
+
+                    }    
                     foreach ($reservationDateArr as $dateKey => $dateValue) {
                         $i= 0;
                         
@@ -11522,6 +11580,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
         $this->loadModel('ReservationRead');
         $this->loadModel('ReservationStatusRead');
         $this->loadModel('SubService');
+        $this->loadModel('UserWorkingDay');
         $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
         $employee_id = isset($decoded['employee_id']) ? $decoded['employee_id'] : '';
         $date = isset($decoded['date']) ? $decoded['date'] : '';
@@ -11534,22 +11593,50 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
             }else{
 
                 $this->Reservation->bindModel(array('belongsTo' => array('Customer', 'Service','SubService')));
-               
-                $salon_start_time = isset($userData['User']['start_time']) ? $userData['User']['start_time'] : '';
-                $salon_end_time = isset($userData['User']['end_time']) ? $userData['User']['end_time'] : '';
+                
+                $day = date('D', strtotime($date));
+                $day = strtolower($day);
+                // echo $day;
+                $salonWorkingDaysData = $this->UserWorkingDay->find('first', array('conditions'=>array( 'UserWorkingDay.user_id'=>$user_id, 'UserWorkingDay.day'=>$day)));
+                // pr($salonWorkingDaysData);
+                if(isset($salonWorkingDaysData['UserWorkingDay']['start_time']) && !empty($salonWorkingDaysData['UserWorkingDay']['start_time']) && isset($salonWorkingDaysData['UserWorkingDay']['end_time']) && !empty($salonWorkingDaysData['UserWorkingDay']['end_time'])){
+                    $salon_start_time = isset($salonWorkingDaysData['UserWorkingDay']['start_time']) ? $salonWorkingDaysData['UserWorkingDay']['start_time'] : '';
+                    $salon_end_time = isset($salonWorkingDaysData['UserWorkingDay']['end_time']) ? $salonWorkingDaysData['UserWorkingDay']['end_time'] : '';
+                }else{
+                    $salon_start_time = isset($userData['User']['start_time']) ? $userData['User']['start_time'] : '';
+                    $salon_end_time = isset($userData['User']['end_time']) ? $userData['User']['end_time'] : '';
+                }
+                // echo $salon_start_time;
+                // echo $salon_end_time;die;
+
+                // $salon_start_time = isset($userData['User']['start_time']) ? $userData['User']['start_time'] : '';
+                // $salon_end_time = isset($userData['User']['end_time']) ? $userData['User']['end_time'] : '';
                 $conditions["Reservation.user_id"] = $user_id;
                 $conditions['Reservation.start_date <='] = $date;
                 $conditions['Reservation.end_date >='] = $date;
                 $conditions['Reservation.status !='] = '4';
                 $conditions['Reservation.status !='] = '5';
-                // $conditions['Reservation.user_id'] = $conditions['SubService.user_id'] ;
-                // $conditions['Reservation.note'] = $conditions['SubService.name'] ;
-               
+                
                 $reservationDataFind = $this->Reservation->find('all',array('conditions'=>$conditions,  'order' => array('Reservation.start_date' => 'DESC', 'Reservation.start_time' => 'ASC')));
-                $empReservationData = $reservationData = array();
-                 $ij  =$staff = $event = $employee = 0; 
+                $empEventBlockedIds = $empReservationData = $reservationData = array();
+                $ij  =$staff = $event = $employee = 0; 
                 $empIds = array();
                 if(!empty($reservationDataFind)){
+                    foreach ($reservationDataFind as $eventReservationKey => $eventReservationValue) {
+                        if(($eventReservationValue['Reservation']['reservation_type']== '2')){
+                                if($eventReservationValue['Reservation']['event_blocked'] == "1" and $eventReservationValue['Reservation']['all_day'] == "1"){
+                                    $emp_idsssss = explode(",", $eventReservationValue['Reservation']['employee_ids']);
+                                    // pr($emp_ids);die;
+                                    foreach ($emp_idsssss as $empssKey => $empssValue) {
+                                        if(!in_array($empssValue, $empEventBlockedIds)){
+                                            array_push($empEventBlockedIds, $empssValue);
+                                        }
+                                    }
+                                    
+                                            
+                                }
+                        }        
+                    }
                     foreach ($reservationDataFind as $key => $value) {
                         
                             $start_time = strtotime($value['Reservation']['start_time']);
@@ -11561,7 +11648,11 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                             $allEmp = array();
                             $reservation_id = $value['Reservation']['id'];
                             $employee_ids = $value['Reservation']['employee_ids'];
-                            if(!empty($employee_ids)){
+                            $event_blocked = $value['Reservation']['event_blocked'];
+                            if(!empty($employee_ids) && ($event_blocked == "1")){
+                                $employee_ids =  explode(",", $employee_ids);
+                                $allEmp = $this->Employee->find('all' ,array('conditions'=>array('Employee.id'=>$employee_ids,'Employee.status'=>1)));
+                            }elseif(!empty($employee_ids)){
                                 $employee_ids =  explode(",", $employee_ids);
                                 $allEmp = $this->Employee->find('all' ,array('conditions'=>array('Employee.id'=>$employee_ids,'Employee.status'=>1)));
                             }
@@ -11628,7 +11719,21 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                                 $reservationData[$sectionType][$staff]['reservation_number']= $value['Reservation']['reservation_number'];
                                 
                                 // $staff++;
-                            }elseif($value['Reservation']['reservation_type']== '2'){
+                            }elseif(($value['Reservation']['reservation_type']== '2')){
+                                if($value['Reservation']['event_blocked'] == "1" and $value['Reservation']['all_day'] == "1"){
+
+                                    $emp_ids = explode(",", $value['Reservation']['employee_ids']);
+                                    // pr($emp_ids);die;
+                                    foreach ($emp_ids as $empssKey => $empssValue) {
+                                        if(!in_array($empssValue, $empEventBlockedIds)){
+                                            array_push($empEventBlockedIds, $empssValue);
+                                        }
+                                    }
+                                    
+                                            
+                                }
+
+
                                 $sectionType = Configure::read('App.Reservation.event');
 
                                 $subServiceListEvent = $this->SubService->find("first", array("conditions"=>array("SubService.id"=>$value['Reservation']['sub_service_id'])));
@@ -11652,6 +11757,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                                         $reservationData[$sectionType][$event]['Employee'][$empKey]['name']= $empValue['Employee']['name'];
                                         $reservationData[$sectionType][$event]['Employee'][$empKey]['emp_code']= $empValue['Employee']['emp_code'];
                                         $reservationData[$sectionType][$event]['Employee'][$empKey]['image']= $empValue['Employee']['image'];
+                                        $reservationData[$sectionType][$event]['Employee'][$empKey]['is_technician']= $empValue['Employee']['is_technician'];
                                     }
                                 }else{
                                      $reservationData[$sectionType][$event]['Employee']= array();
@@ -11672,7 +11778,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                                 $reservationData[$sectionType][$event]['reservation_number']= $value['Reservation']['reservation_number'];
                                 
                                 $event++;
-                            }elseif(($value['Reservation']['reservation_type']== '1') || ($value['Reservation']['reservation_type']== '3') && ($value['Reservation']['all_day']== '0') ){
+                            }elseif(($value['Reservation']['reservation_type']== '1') || ($value['Reservation']['reservation_type']== '3')|| (($value['Reservation']['reservation_type']== '2') ) && ($value['Reservation']['all_day']== '0')  ){
                                 if($value['Reservation']['reservation_type']== '1' && $value['Reservation']['is_gmail']!== 0){
                                 //check if sub_service_id is 0
                                 $sub_service_id = $value['Reservation']['sub_service_id'];
@@ -11772,6 +11878,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                                             $empReservationData[$emp_name][$employee]['Employee'][$innerEmpKey]['image']= $innerEmpValue['Employee']['image'];
                                         }
                                         }else{
+
                                             $empReservationData[$emp_name][$employee]['Employee']= array();
                                         }
 
@@ -11787,28 +11894,31 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                     // pr($empReservationData);die;
                     
                     $sectionType = 'Employee';
+                    
                     if(!empty($empReservationData)){
 
                         foreach ($empReservationData as $empReservationkey => $empReservationvalue) {
                             $m =0;
-                            $empId ='';
+                           
                             $empId = $this->get_employee_id($empReservationkey, $user_id);
                             array_push($empIds,$empId);
                             foreach ($empReservationvalue as $ekey => $evalue) {
- 
+                            
                                 $reservationData[$sectionType][$empReservationkey][$m]= $evalue;
                                 $m++;
                           
                             }
                             
                         }
-                    } 
+                    }
+                    //pr($empEventBlockedIds);
+                    // pr($reservationData); 
                     $techEmpData = $this->Employee->find('all' ,array('conditions'=>array('Employee.is_technician'=>Configure::read('App.Status.active'), 'Employee.user_id' => $user_id,'Employee.status'=>1)));
                     if(!empty($techEmpData)){
                         // pr($techEmpData);die;
                         foreach ($techEmpData as $techEmpKey => $techEmpValue) {
                             $tech_emp_id = $techEmpValue['Employee']['id'];
-                            if(!in_array($tech_emp_id, $empIds)){
+                            if(!in_array($tech_emp_id, $empIds) && !in_array($tech_emp_id, $empEventBlockedIds)){
 
                                 $emp_name= $this->get_employee_name($tech_emp_id);
                                 // $reservationData[$sectionType][$emp_name] = array();
@@ -12797,29 +12907,32 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
             $this->CustomerHistory->bindModel(array('hasMany' => array('NoteService', 'NoteProduct')));
             $customerAnalysisData=$this->CustomerHistory->find('all', array('conditions'=>array('CustomerHistory.user_id'=>$user_id, 'CustomerHistory.date'=>$today_date)));
             //echo '<pre>';
-            //print_r($customerAnalysisData);die;
+            // print_r($customerAnalysisData);die;
             $serviceCashTotalPrice = $serviceCardTotalPrice =  $serviceTotalPrice =  0;
             $productCashTotalPrice =  $productCardTotalPrice =  $productTotalPrice =  0;
             $nailServiceTotalPrice = $nailServicePrice = $estheServicePrice = $estheServiceTotalPrice = $eyelashServicePrice =  $eyelashServiceTotalPrice =  $bodyServicePrice =  $bodyServiceTotalPrice =  $hairremoveServicePrice =  $hairremoveServiceTotalPrice = $facialServicePrice = $facialServiceTotalPrice =  0;
-             $totalServiceSell = $sellCashPrice = $sellCardPrice = $sellTotalPrice = $emp = 0;
+             $totalServiceSell = $sellCashPrice = $sellCardPrice = $sellTotalPrice = $emp = $sellCashPriceNew  = $sellCardPriceNew  =0;
             $employeeCustomerArray =$employeeArray = $empIdArr = array();
             $employeeCustomer ='';
             foreach ($customerAnalysisData as $customerAnalysisKey => $customerAnalysisValue) {
+
+
                 if(isset($customerAnalysisValue['NoteService'])){
+
                     foreach ($customerAnalysisValue['NoteService'] as $serviceKey => $serviceValue) {
-                        if($serviceValue['payment_type'] == '現金'){
-                            if(($serviceValue['service_id'] != 0)){
-                                $serviceCashPrice = $this->priceChangeInt($serviceValue['service_price']);
-                                $serviceCashTotalPrice = ($serviceCashTotalPrice + $serviceCashPrice);
-                            }
-                        } 
-                        if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == 'チケット')){
-                            if(($serviceValue['service_id'] != 0)){
-                                $serviceCardPrice = $this->priceChangeInt($serviceValue['service_price']);
-                                $serviceCardTotalPrice = ($serviceCardTotalPrice + $serviceCardPrice);
-                            }
-                        } 
-                        if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット')){  
+                        // if($serviceValue['payment_type'] == '現金'){
+                            // if(($serviceValue['service_id'] != 0)){
+                            //     $serviceCashPrice = $this->priceChangeInt($serviceValue['service_price']);
+                            //     $serviceCashTotalPrice = ($serviceCashTotalPrice + $serviceCashPrice);
+                            // }
+                        // } 
+                        // if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == 'チケット')){
+                            // if(($serviceValue['service_id'] != 0)){
+                            //     $serviceCardPrice = $this->priceChangeInt($serviceValue['service_price']);
+                            //     $serviceCardTotalPrice = ($serviceCardTotalPrice + $serviceCardPrice);
+                            // }
+                        // } 
+                        if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット' || ($serviceValue['payment_type'] == ''))){  
 
                             if(($serviceValue['service_id'] == '1') || ($serviceValue['service_id'] == 1)){
                                 $nailServicePrice = $this->priceChangeInt($serviceValue['service_price']);
@@ -12850,7 +12963,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                         
                         
                         if(isset($serviceValue['employee_id']) && ($serviceValue['employee_id']!=0) && ($serviceValue['service_id'] != 0)){
-                            if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット')){
+                            if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット'|| ($serviceValue['payment_type'] == ''))){
                                 $employee_id = $serviceValue['employee_id'];
                                 //$employeeCustomerArray = explode(',', $employeeCustomer);
                                 if(isset($employeeCustomerArray[$employee_id])){
@@ -12879,19 +12992,19 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                 }
                 if(isset($customerAnalysisValue['NoteProduct'])){
                     foreach ($customerAnalysisValue['NoteProduct'] as $productKey => $productValue) {
-                        if(($productValue['product_id'] != 0)){   
-                            if($productValue['payment_type'] == '現金'){
-                                $productCashPrice = $this->priceChangeInt($productValue['sale_price']);
-                                $productCashTotalPrice = ($productCashTotalPrice + $productCashPrice);
-                            } 
-                            if(($productValue['payment_type'] == 'カード') || ($productValue['payment_type'] == 'チケット')){
-                                $productCardPrice = $this->priceChangeInt($productValue['sale_price']);
-                                $productCardTotalPrice = ($productCardTotalPrice + $productCardPrice);
-                            }
-                        } 
+                        // if(($productValue['product_id'] != 0)){   
+                        //     if($productValue['payment_type'] == '現金'){
+                        //         $productCashPrice = $this->priceChangeInt($productValue['sale_price']);
+                        //         $productCashTotalPrice = ($productCashTotalPrice + $productCashPrice);
+                        //     } 
+                        //     if(($productValue['payment_type'] == 'カード') || ($productValue['payment_type'] == 'チケット')){
+                        //         $productCardPrice = $this->priceChangeInt($productValue['sale_price']);
+                        //         $productCardTotalPrice = ($productCardTotalPrice + $productCardPrice);
+                        //     }
+                        // } 
 
                         if(isset($productValue['employee_id']) && ($productValue['employee_id']!=0) && ($productValue['product_id'] != 0)){
-                            if(($productValue['payment_type'] == 'カード') || ($productValue['payment_type'] == '現金') || ($productValue['payment_type'] == 'チケット')){    
+                            if(($productValue['payment_type'] == 'カード') || ($productValue['payment_type'] == '現金') || ($productValue['payment_type'] == 'チケット' || ($productValue['payment_type'] == ''))){    
                                 $employee_id = $productValue['employee_id'];
                                 if(isset($employeeCustomerArray[$employee_id])){
                                     $employeeCustomerArray[$employee_id] = $employeeCustomerArray[$employee_id].','.$productValue['customer_id'];
@@ -12916,6 +13029,21 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                     }
                     $productTotalPrice = ($productCashTotalPrice + $productCardTotalPrice);
                 }
+                $card_amount_new = $card_amount_new = 0;
+                if(empty($serviceCashTotalPrice) && empty($productCashTotalPrice)){
+                    $cash_amount_new = isset($customerAnalysisValue['CustomerHistory']['cash_amount']) ? $this->priceChangeInt($customerAnalysisValue['CustomerHistory']['cash_amount']) : 0;
+                    
+                    $sellCashPriceNew  = $sellCashPriceNew + $cash_amount_new;
+                 
+                }
+
+                if(empty($serviceCardTotalPrice) && empty($productCardTotalPrice)){
+                    $card_amount_new = isset($customerAnalysisValue['CustomerHistory']['card_amount']) ? $this->priceChangeInt($customerAnalysisValue['CustomerHistory']['card_amount']) : 0;
+                    $sellCardPriceNew  = $sellCardPriceNew + $card_amount_new;
+                 
+                }
+                    // echo "sellCardPriceNew : ".$sellCardPriceNew."<br/>";
+
              }
              //print_r($employeeCustomerArray);die;
              $m =0;
@@ -12945,8 +13073,12 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
 
             $sellCashPrice = ($serviceCashTotalPrice + $productCashTotalPrice);
             $sellCardPrice = ($serviceCardTotalPrice + $productCardTotalPrice);
+            if(empty($sellCashPrice) && empty($sellCardPrice) ){
+                $sellCashPrice =$sellCashPriceNew;
+                $sellCardPrice = $sellCardPriceNew;
+            }
+           
 
-            $sellTotalPrice = ($sellCashPrice + $sellCardPrice);
             $sellTotalPrice = ($sellCashPrice + $sellCardPrice);
             if(!empty($today_date)){
                 $month_date =  date('Y-m', strtotime($today_date) );
@@ -13045,6 +13177,8 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
     }
 
 
+    
+
 
 
     /**************************************************************************
@@ -13120,7 +13254,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
             //print_r($customerAnalysisData);die;
             $serviceCashTotalPrice = $serviceCardTotalPrice =  $serviceTotalPrice =  0;
             $productCashTotalPrice =  $productCardTotalPrice =  $productTotalPrice =  0;
-            $nailServiceTotalPrice = $nailServicePrice = $estheServicePrice = $estheServiceTotalPrice = $eyelashServicePrice =  $eyelashServiceTotalPrice =  $bodyServicePrice =  $bodyServiceTotalPrice =  $hairremoveServicePrice =  $hairremoveServiceTotalPrice = $facialServicePrice = $facialServiceTotalPrice =  0;
+            $nailServiceTotalPrice = $nailServicePrice = $estheServicePrice = $estheServiceTotalPrice = $eyelashServicePrice =  $eyelashServiceTotalPrice =  $bodyServicePrice =  $bodyServiceTotalPrice =  $hairremoveServicePrice =  $hairremoveServiceTotalPrice = $facialServicePrice = $facialServiceTotalPrice =  $sellCashPriceNew  = $sellCardPriceNew  = 0;
             $totalServiceSell = $sellCashPrice = $sellCardPrice = $sellTotalPrice = $emp = 0;
             $employeeCustomerArray =$employeeArray = $empIdArr = array();
              foreach ($customerAnalysisData as $customerAnalysisKey => $customerAnalysisValue) {
@@ -13141,7 +13275,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                                         $serviceCardTotalPrice = ($serviceCardTotalPrice + $serviceCardPrice);
                                     }
                                 } 
-                                if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット')){  
+                                if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット') || ($serviceValue['payment_type'] == '')){  
 
                                     if(($serviceValue['service_id'] == '1') || ($serviceValue['service_id'] == 1)){
                                         $nailServicePrice = $this->priceChangeInt($serviceValue['service_price']);
@@ -13172,7 +13306,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                             }
                             
                             if(isset($serviceValue['employee_id']) && ($serviceValue['employee_id']!=0) && ($serviceValue['service_id'] != 0)){
-                                if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット')){
+                                if(($serviceValue['payment_type'] == 'カード') || ($serviceValue['payment_type'] == '現金') || ($serviceValue['payment_type'] == 'チケット') || ($serviceValue['payment_type'] == '')){
                                     $employee_id = $serviceValue['employee_id'];
                                     //$employeeCustomerArray = explode(',', $employeeCustomer);
                                     if(isset($employeeCustomerArray[$employee_id])){
@@ -13212,7 +13346,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                                 }
                             }   
                             if(isset($productValue['employee_id']) && ($productValue['employee_id']!=0) && ($productValue['product_id'] != 0)){
-                                if(($productValue['payment_type'] == 'カード') || ($productValue['payment_type'] == '現金') || ($productValue['payment_type'] == 'チケット')){    
+                                if(($productValue['payment_type'] == 'カード') || ($productValue['payment_type'] == '現金') || ($productValue['payment_type'] == 'チケット') || ($productValue['payment_type'] == '')){    
                                     $employee_id = $productValue['employee_id'];
                                     if(isset($employeeCustomerArray[$employee_id])){
                                         $employeeCustomerArray[$employee_id] = $employeeCustomerArray[$employee_id].','.$serviceValue['customer_id'];
@@ -13246,6 +13380,21 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                         }
                         $productTotalPrice = ($productCashTotalPrice + $productCardTotalPrice);
                     }
+                    $card_amount_new = $card_amount_new = 0;
+                    if(empty($serviceCashTotalPrice) && empty($productCashTotalPrice)){
+                        $cash_amount_new = isset($customerAnalysisValue['CustomerHistory']['cash_amount']) ? $this->priceChangeInt($customerAnalysisValue['CustomerHistory']['cash_amount']) : 0;
+                        
+                        $sellCashPriceNew  = $sellCashPriceNew + $cash_amount_new;
+                     
+                    }
+                   
+                    if(empty($serviceCardTotalPrice) && empty($productCardTotalPrice)){
+                        $card_amount_new = isset($customerAnalysisValue['CustomerHistory']['card_amount']) ? $this->priceChangeInt($customerAnalysisValue['CustomerHistory']['card_amount']) : 0;
+                        $sellCardPriceNew  = $sellCardPriceNew + $card_amount_new;
+                     
+                    }
+
+
 
              }
              //print_r($employeeCustomerArray);die;
@@ -13276,10 +13425,14 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
 
             $sellCashPrice = ($serviceCashTotalPrice + $productCashTotalPrice);
             $sellCardPrice = ($serviceCardTotalPrice + $productCardTotalPrice);
-
+            if(empty($sellCashPrice) && empty($sellCardPrice) ){
+                $sellCashPrice =$sellCashPriceNew;
+                $sellCardPrice = $sellCardPriceNew;
+            }
+            // echo $sellCashPrice."<br />";
+            // echo $sellCardPrice;
             $sellTotalPrice = ($sellCashPrice + $sellCardPrice);
-            $sellTotalPrice = ($sellCashPrice + $sellCardPrice);
-
+           
             
             if(!empty($start_date)){
                 $start_month_date =  date('Y-m', strtotime($start_date) );
@@ -16584,7 +16737,133 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
 
 /************************ Push Notification ***********************/
 
+    public function IOSPushNotificationNew($deviceToken=null,$message=null,$user_id="33",$employee_id="32",$customer_id="",  $reservation_id=null, $device_type=null, $member_type="chat", $notification_type=null) {
+          // $deviceToken = $devicetoken;
+        $deviceToken = '9857595f128c0e52dfb15c49981dfc93918e32b2413ba2265c24e4eb635165cc';
+        $this->loadModel('Employee');
+        $this->loadModel('Reservation');
+        $this->loadModel('CustomerHistory');
+        $this->loadModel('PushNotification');
+        $this->loadModel('NotificationRead');
+        $this->loadModel('NotificationCount');
+        $this->loadModel('BadgeCount');
 
+        $notificationCountData = $this->NotificationCount->find('first',array('conditions'=>array('NotificationCount.employee_id'=>$employee_id, 'NotificationCount.user_id'=>$user_id)));
+        if(isset($notificationCountData['NotificationCount']['count']) && !empty($notificationCountData['NotificationCount']['count'])){
+            $notification_count = $notificationCountData['NotificationCount']['count'];
+        }else{
+            $notification_count = 0;
+        }    
+        $badge_count = 0;
+        $badgeCountData = $this->BadgeCount->find('first',array('conditions'=>array('BadgeCount.employee_id'=>$employee_id, 'BadgeCount.user_id'=>$user_id)));
+        
+        if(isset($badgeCountData['BadgeCount']['count']) && !empty($badgeCountData['BadgeCount']['count'])){
+            $badge_count = $badgeCountData['BadgeCount']['count'];
+        }
+        $ctx = stream_context_create();
+        $passphrase = '';
+        // ck.pem is your certificate file
+        $base_path = ROOT.DS.APP_DIR.DS.WEBROOT_DIR;
+        $path_to_cert = $base_path.'/pushpem/ck.pem';
+        stream_context_set_option($ctx, 'ssl', 'local_cert', $path_to_cert);
+        stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
+        // pr($ctx);die;
+        // Open a connection to the APNS server
+        $fp = stream_socket_client(
+            'ssl://gateway.push.apple.com:2195', $err,
+            $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+
+        if (!$fp)
+            exit("Failed to connect: $err $errstr" . PHP_EOL);
+        // Create the payload body
+        if($notification_type == 'chat'){
+            $title = $this->get_employee_name($customer_id);
+        }else{
+            $title = Configure::read('Site.title');
+        }
+
+        $body['aps']['alert']['title']  = $title;
+        $body['aps']['alert']['body']  = $message;
+        $body['aps']['alert']['reservation_id']  = $reservation_id;
+        $body['aps']['alert']['notification_type']  = $notification_type;
+        $body['aps']['alert']['notification_count']  = (string)($notification_count+1);
+        if($notification_type == 'add_reservation'){
+            $reservationData = $this->Reservation->find('first',array('conditions'=>array('Reservation.id'=>$reservation_id, 'Reservation.user_id'=>$user_id, 'Reservation.status !='=>'5')));
+            $body['aps']['alert']['reservation_date']  = isset($reservationData['Reservation']['start_date']) ? $reservationData['Reservation']['start_date'] : '';
+            
+        }
+        // $body['aps']['badge']  = $notification_count+1;
+        $body['aps']['badge']  =  $badge_count+1;
+        $body['aps']['sound']  = 'default';   
+
+        
+       
+        // Encode the payload as JSON
+        $payload = json_encode($body);
+        // echo $payload;die;
+        $msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
+        // Send it to the server
+        $result = fwrite($fp, $msg, strlen($msg));
+        
+        // Close the connection to the server
+        fclose($fp);
+        if (!$result){
+
+            return 'Message not delivered' . PHP_EOL;
+        }
+        else{
+
+            
+            $pushNotificationData = $pushNotificationStatusData = array();
+
+            $user_id = $pushNotificationData['PushNotification']['user_id'] = ($user_id != null) ? $user_id : '';
+            $employee_id = $pushNotificationData['PushNotification']['employee_id'] = ($employee_id != null) ? $employee_id : '';
+            $pushNotificationData['PushNotification']['customer_id'] = ($customer_id != null) ? $customer_id : '';
+            $pushNotificationData['PushNotification']['reservation_id'] = ($reservation_id != null) ? $reservation_id : '';
+            $pushNotificationData['PushNotification']['device_type'] = ($device_type != null) ? $device_type : '';
+            $pushNotificationData['PushNotification']['device_token'] = ($deviceToken != null) ? $deviceToken : '';
+            $pushNotificationData['PushNotification']['member_type'] = ($member_type != null) ? $member_type : '';
+            $pushNotificationData['PushNotification']['notification_type'] = ($notification_type != null) ? $notification_type : '';
+            $pushNotificationData['PushNotification']['message'] = ($message != null) ? $message : '';
+            $pushNotificationData['PushNotification']['status'] =  '0';
+
+            if($this->PushNotification->saveAll($pushNotificationData)){
+                $push_notification_id = $this->PushNotification->id;
+                $pushNotificationStatusData['NotificationRead']['employee_id'] =  $employee_id;
+                $pushNotificationStatusData['NotificationRead']['push_notification_id'] =  $push_notification_id;
+                $pushNotificationStatusData['NotificationRead']['status'] =  '0';
+                $this->NotificationRead->saveAll($pushNotificationStatusData);
+
+                $notificationCountData = $this->NotificationCount->find('first',array('conditions'=>array('NotificationCount.employee_id'=>$employee_id, 'NotificationCount.user_id'=>$user_id)));
+                if(isset($notificationCountData['NotificationCount']['id']) && !empty($notificationCountData['NotificationCount']['id'])){
+                    $this->NotificationCount->id = $notificationCountData['NotificationCount']['id'];
+                    $count = ($notificationCountData['NotificationCount']['count']+ 1);
+                    $this->NotificationCount->saveField('count' ,  $count);
+                }else{
+                    $notificationCount['NotificationCount']['user_id'] =  $user_id;
+                    $notificationCount['NotificationCount']['employee_id'] =  $employee_id;
+                    $notificationCount['NotificationCount']['count'] =  1;
+                    $this->NotificationCount->saveAll($notificationCount);
+                }
+
+
+                $badgeCountData = $this->BadgeCount->find('first',array('conditions'=>array('BadgeCount.employee_id'=>$employee_id, 'BadgeCount.user_id'=>$user_id)));
+                if(isset($badgeCountData['BadgeCount']['id']) && !empty($badgeCountData['BadgeCount']['id'])){
+                    $this->BadgeCount->id = $badgeCountData['BadgeCount']['id'];
+                    $countBadge = ($badgeCountData['BadgeCount']['count']+ 1);
+                    $this->BadgeCount->saveField('count' ,  $countBadge);
+                }else{
+                    $badgeCount['BadgeCount']['user_id'] =  $user_id;
+                    $badgeCount['BadgeCount']['employee_id'] =  $employee_id;
+                    $badgeCount['BadgeCount']['count'] =  1;
+                    $this->BadgeCount->saveAll($badgeCount);
+                }
+
+
+            }
+            return 'Message successfully delivered' . PHP_EOL;
+        }
+    }
 
 
     public function IOSPushNotification($deviceToken=null,$message=null,$user_id=null,$employee_id=null,$customer_id=null,  $reservation_id=null, $device_type=null, $member_type=null, $notification_type=null) {
@@ -18058,8 +18337,11 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                 $allData['User']['name'] =  isset($data['User']['name'])?$data['User']['name']:'';
                 $allData['User']['email'] =  isset($data['User']['email'])?$data['User']['email']:'';
                 $allData['User']['image'] =  isset($data['User']['image'])?$data['User']['image']:'';
+                $allData['User']['image1'] =  isset($data['User']['image1'])?$data['User']['image1']:'';
+                $allData['User']['image2'] =  isset($data['User']['image2'])?$data['User']['image2']:'';
                 $allData['User']['company_name'] =  isset($data['User']['company_name'])?$data['User']['company_name']:'';
                 $allData['User']['salon_name'] =  isset($data['User']['salon_name'])?$data['User']['salon_name']:'';
+                $allData['User']['description'] =  isset($data['User']['description'])?$data['User']['description']:'';
                 $allData['User']['website'] =  isset($data['User']['website'])?$data['User']['website']:'';
                 $allData['User']['tel'] =  isset($data['User']['tel'])?$data['User']['tel']:'';
                 $allData['User']['other_tel'] =  isset($data['User']['other_tel'])?$data['User']['other_tel']:'';
@@ -18167,16 +18449,22 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
         /*Request log End*/
 
         $decoded = json_decode($data, true);
-
-        $user_id = $this->User->id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        
+        $user_id =  isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $this->User->id = $user_id;
         if(isset($decoded['name']) && !empty($decoded['name'])){
             $name = (isset($decoded['name']) && !empty($decoded['name'])) ? $decoded['name'] : '';
             $this->User->saveField('name' , $name );
+        }
+        if(isset($decoded['description']) && !empty($decoded['description'])){
+            $description = (isset($decoded['description']) && !empty($decoded['description'])) ? $decoded['description'] : '';
+            $this->User->saveField('description' , $description );
         }
         if(isset($decoded['company_name']) && !empty($decoded['company_name'])){
             $company_name = (isset($decoded['company_name']) && !empty($decoded['company_name'])) ? $decoded['company_name'] : '';
             $this->User->saveField('company_name' , $company_name );
         }
+
         if(isset($decoded['email']) && !empty($decoded['email'])){
             $email = (isset($decoded['email']) && !empty($decoded['email'])) ? $decoded['email'] : '';
             $userExist = $this->User->find('first', array('conditions'=>array('User.email'=>$email, 'User.id !='=>$user_id)));
@@ -18866,6 +19154,74 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                 $responseArr = array('user_id' => $user_id, 'status' => 'error', 'msg'=>'顧客情報が正常に追加されました。', 'msg1'=>'Image type should be (jpg, jpeg, png,gif).');
                 $jsonEncode = json_encode($responseArr);
             }
+        }elseif(isset($_FILES['image1']) && !empty($_FILES['image1'])){
+        
+            $path_info = pathinfo($_FILES['image1']['name']);
+
+            if(in_array($path_info['extension'], array('jpg', 'jpeg', 'png', 'gif'))){
+
+                $newName = md5(time()*rand()).'.'.$path_info['extension'];
+
+                /* Medium image upload */
+                $mediumRules = array('size' => array(MY_SHOP_MEDIUM_WIDTH, MY_SHOP_MEDIUM_HEIGHT), 'type' => 'resizecrop');
+                $medium = $this->Upload->upload($_FILES['image1'], WWW_ROOT . MY_SHOP_IMG_MEDIUM_DIR, $newName, $mediumRules);
+
+                /* Original image upload */
+                $res3 = $this->Upload->upload($_FILES['image1'], WWW_ROOT . MY_SHOP_IMG_ORIGINAL_DIR, $newName, '', array('png', 'jpg', 'jpeg', 'gif'));
+
+                /** Get user image from database **/
+                $user_image = $this->User->find('first',array('conditions'=>  array('User.id'=>$user_id),'fields'=>array('User.image1')));
+
+                /** Save and unlink user image in database**/
+                if(!empty($this->Upload->result)){
+                    $this->User->id = $user_id;
+                    $this->User->saveField('image1' , $this->Upload->result);
+                    if(isset($user_image['User']['image1']) && !empty($user_image['User']['image1'])){
+                        (file_exists(WWW_ROOT . MY_SHOP_IMG_ORIGINAL_DIR.$user_image['User']['image1'])?unlink(WWW_ROOT . MY_SHOP_IMG_ORIGINAL_DIR.$user_image['User']['image1']):'');
+                        (file_exists(WWW_ROOT . MY_SHOP_IMG_MEDIUM_DIR.$user_image['User']['image1'])?unlink(WWW_ROOT . MY_SHOP_IMG_MEDIUM_DIR.$user_image['User']['image1']):'');
+                    }
+                }
+                $responseArr = array('user_id' => $user_id, 'image_name'=>$this->Upload->result, 'msg'=>'顧客情報が正常に追加されました。', 'msg1'=>'My shop image upload successfully.', 'status' => 'success');
+                $jsonEncode = json_encode($responseArr);
+            }else{
+
+                $responseArr = array('user_id' => $user_id, 'status' => 'error', 'msg'=>'顧客情報が正常に追加されました。', 'msg1'=>'Image type should be (jpg, jpeg, png,gif).');
+                $jsonEncode = json_encode($responseArr);
+            }
+        }elseif(isset($_FILES['image2']) && !empty($_FILES['image2'])){
+        
+            $path_info = pathinfo($_FILES['image2']['name']);
+
+            if(in_array($path_info['extension'], array('jpg', 'jpeg', 'png', 'gif'))){
+
+                $newName = md5(time()*rand()).'.'.$path_info['extension'];
+
+                /* Medium image upload */
+                $mediumRules = array('size' => array(MY_SHOP_MEDIUM_WIDTH, MY_SHOP_MEDIUM_HEIGHT), 'type' => 'resizecrop');
+                $medium = $this->Upload->upload($_FILES['image2'], WWW_ROOT . MY_SHOP_IMG_MEDIUM_DIR, $newName, $mediumRules);
+
+                /* Original image upload */
+                $res3 = $this->Upload->upload($_FILES['image2'], WWW_ROOT . MY_SHOP_IMG_ORIGINAL_DIR, $newName, '', array('png', 'jpg', 'jpeg', 'gif'));
+
+                /** Get user image from database **/
+                $user_image = $this->User->find('first',array('conditions'=>  array('User.id'=>$user_id),'fields'=>array('User.image2')));
+
+                /** Save and unlink user image in database**/
+                if(!empty($this->Upload->result)){
+                    $this->User->id = $user_id;
+                    $this->User->saveField('image2' , $this->Upload->result);
+                    if(isset($user_image['User']['image2']) && !empty($user_image['User']['image2'])){
+                        (file_exists(WWW_ROOT . MY_SHOP_IMG_ORIGINAL_DIR.$user_image['User']['image2'])?unlink(WWW_ROOT . MY_SHOP_IMG_ORIGINAL_DIR.$user_image['User']['image2']):'');
+                        (file_exists(WWW_ROOT . MY_SHOP_IMG_MEDIUM_DIR.$user_image['User']['image2'])?unlink(WWW_ROOT . MY_SHOP_IMG_MEDIUM_DIR.$user_image['User']['image2']):'');
+                    }
+                }
+                $responseArr = array('user_id' => $user_id, 'image_name'=>$this->Upload->result, 'msg'=>'顧客情報が正常に追加されました。', 'msg1'=>'My shop image upload successfully.', 'status' => 'success');
+                $jsonEncode = json_encode($responseArr);
+            }else{
+
+                $responseArr = array('user_id' => $user_id, 'status' => 'error', 'msg'=>'顧客情報が正常に追加されました。', 'msg1'=>'Image type should be (jpg, jpeg, png,gif).');
+                $jsonEncode = json_encode($responseArr);
+            }
         }else{ //My shop image does not exist
             $responseArr = array('user_id' => $user_id, 'status' => 'error', 'msg'=>'私の店の画像は存在しません。'); 
             $jsonEncode = json_encode($responseArr);
@@ -19078,7 +19434,11 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
         }    
 
         $decoded = json_decode($data, true);
-
+        $employee_ids = isset($decoded['employee_ids']) ? $decoded['employee_ids'] : '';
+        $device_type = isset($decoded['device_type']) ? $decoded['device_type'] : '';
+        if($device_type== "Android"){
+            $employee_ids = explode(",", $employee_ids);
+        }
         if(isset($decoded['user_id']) && !empty($decoded['user_id'])){
             if(isset($decoded['service_id']) && !empty($decoded['service_id'])){
                 if(isset($decoded['id']) && !empty($decoded['id'])){
@@ -19088,7 +19448,9 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                 }else{
                     $msg = 'Sub service Added successfully.';
                 }
+
                 $subServiceData['SubService']['user_id'] = $decoded['user_id']; 
+                $subServiceData['SubService']['employee_id'] = json_encode($employee_ids); 
                 $subServiceData['SubService']['service_id'] = $decoded['service_id']; 
                 $subServiceData['SubService']['name'] = isset($decoded['name']) ? $decoded['name'] : ''; 
                 $subServiceData['SubService']['duration'] = isset($decoded['duration']) ? $decoded['duration'] : ''; 
@@ -19145,6 +19507,7 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
 
         /*** Load Model Start ***/
         $this->loadModel("Service");
+        $this->loadModel("Employee");
         $this->loadModel("SubService");
         /*** Load Model End ***/
 
@@ -19155,17 +19518,50 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
         }    
 
         $decoded = json_decode($data, true);
-
+        $employeedata = isset($decoded['employee_data']) ? $decoded['employee_data'] : '';
         if(isset($decoded['user_id']) && !empty($decoded['user_id'])){
             $this->Service->bindModel(array('hasMany' => array('SubService'=>array('conditions'=>array('SubService.user_id'=>$decoded['user_id'])))));
             $serviceData = $this->Service->find('all', array('conditions'=>array('Service.user_id'=>$decoded['user_id'])));
+           
             $subServiceList['Service'] = array();
+            $empdata = array();
             foreach($serviceData as $serviceValue){
+                    
                 // if(isset($serviceValue['SubService']) && !empty($serviceValue['SubService'])){
                     $subServiceList['Service'][$serviceValue['Service']['name']]['service_id'] = $serviceValue['Service']['id'];
                     $i = 0;
                     $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'] = array();
                     foreach ($serviceValue['SubService'] as $value) {
+                        $j = 0;
+                        // echo "emp A";
+                        $empArr = json_decode($value['employee_id']); 
+                        if(!empty($empArr)){
+                          $empData = $this->Employee->find("all", array("conditions" =>array("Employee.id"=>$empArr)));  
+                          foreach ($empData as $empKey => $empValue) {
+                            $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'][$i]['Employee'][$j]["id"] = $empValue['Employee']['id'];
+                            $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'][$i]['Employee'][$j]["name"] = $empValue['Employee']['name'];
+                            $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'][$i]['Employee'][$j]["image"] =$empValue['Employee']['image'];
+                            $j++;    
+                        }  
+                        }else{
+                            $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'][$i]['Employee'] = array();
+                        }                      
+                        
+                         //pr($value['employee_id']); die;
+                        // $array = explode(',', $value['employee_id']);
+                        // foreach ($array as $key => $value) {
+                               
+                        //        $value = str_replace("{", "", $value);
+                        //        $value = str_replace("}", "", $value);
+                        //        $value = str_replace("'", "", $value);
+                        //        $value = intval($value);                              
+                        //        $empname = $this->get_employee_name($value);
+                        //        $empimage = $this->get_employee_image($value);
+                        //        $empdata = array_push($empdata, array('id'=>$value,'name' => $empname,'image'=>$empimage ));
+                               
+
+                        //     }    
+
                         $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'][$i]['id'] = $value['id'];
                         $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'][$i]['user_id'] = $value['user_id'];
                         $subServiceList['Service'][$serviceValue['Service']['name']]['SubServiceList'][$i]['service_id'] = $value['service_id'];
@@ -19178,7 +19574,9 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
                         $i++;
                     }
                 // }
+                    
             }
+            // pr($subServiceList);
             $jsonEncode = json_encode($subServiceList);
         }else{
             $SubService = array('status' => 'error', 'msg'=>'Please enter user id','response_code'=>'404');
@@ -20023,6 +20421,455 @@ function dateRange( $first, $last, $step = '+1 day', $format = 'Y-m-d' ) {
 
 
 
-   
+
+
+    public function get_sub_service_data($test_data = null){
+        
+        $data = file_get_contents('php://input');
+        
+        if(empty($data)){
+            $data = json_encode($_GET);
+        }    
+
+        if(isset($test_data)&&(!empty($test_data))){
+            $data = json_encode($test_data);
+        }
+        $decoded = json_decode($data, true); 
+        
+        $this->loadModel('SubService');       
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $sub_service_id = isset($decoded['sub_service_id']) ? $decoded['sub_service_id'] : '';
+        $subServiceData = $this->SubService->find('first',array('conditions'=> array( 'SubService.user_id'=>$user_id, 'SubService.id'=>$sub_service_id)));
+
+        $responseArr  = array();
+        if(!empty($user_id)){
+           
+             // pr($subServiceData); die;
+             
+             $jsonEncode = json_encode($subServiceData);
+         
+        }else{
+
+            $responseArr = array('status' => 'error' );
+            $jsonEncode = json_encode($responseArr);
+        }
+        $log = $this->SubService->getDataSource()->getLog(false, false);
+        $recordData['RecordData']['name'] = "get_sub_service_data";
+        $recordData['RecordData']['query'] = json_encode($log);
+        $this->RecordData->saveAll($recordData);
+        echo  $jsonEncode;exit();
+
+    } 
+
+     /****************************************************************************************************************************************
+     * NAME: reservation_time_list
+     * Description: Register a user with .
+     *
+     * Subroutines Called:
+     *
+     * Parameters: Input / Output
+     Example :  
+     
+     
+     * Returns:
+     *
+     * Globals:
+     *
+     * Design Document Reference:
+     *
+     * Author: Mahendra Tripathi
+     *
+     * Assumptions and Limitation: - Client requirements not fixed and already changed many times.
+     *
+     * Exception Processing:
+     *
+     * REVISION HISTORY
+     * Date: By: Description:
+     *
+     *************************************************************************************************************************************/ 
+
+
+    public function reservation_time_list($id = null){
+
+        /*** Load Model Start ***/
+        
+        $this->loadModel("Employee");
+        $this->loadModel("SubService");
+        $this->loadModel("UserWorkingDay");
+        $this->loadModel("Reservation");
+        /*** Load Model End ***/
+
+        $data = file_get_contents('php://input');
+        
+        if(empty($data)){
+            $data = json_encode($_POST);
+        }    
+
+        $decoded = json_decode($data, true);
+        // pr($decoded); die;
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $sub_service_id = isset($decoded['sub_service_id']) ? $decoded['sub_service_id'] : '';
+        $employee_id = isset($decoded['employee_id']) ? $decoded['employee_id'] : '';
+        $date = isset($decoded['date']) ? $decoded['date'] : '';
+        $day = date('D', strtotime($date));
+        $day = strtolower($day);
+        // $start_time = isset($decoded['start_time']) ? $decoded['start_time'] : '';
+
+        /*variable decliration */
+        $responseArrNew = $responseArr = $timeSlot = array(); 
+        $interval = $i = $j = $countslotTime = $serviceSlotTime = $duration = 0;
+        $fromTime = $toTime = "00:00";
+        $singleSlotTime = 5;
+
+
+        if(isset($decoded['user_id']) && !empty($decoded['user_id'])){
+            $resData = $this->get_sub_service_employee_reservation($user_id, $sub_service_id,$employee_id,$date);
+            $duration = isset($resData["duration"]) ? $resData["duration"] : 0;
+            // pr($resData);
+            if(isset($resData["emp"]) && !empty($resData["emp"]) && $duration > 0 ){
+
+                $timeSlot = $this->get_salon_working_time_slot($user_id , $day);
+                $serviceSlotTime = ($duration/$singleSlotTime);
+                $countRes = count($resData["emp"]) -1;
+                // echo $countRes;
+                // pr($resData);die;
+                if(!empty($timeSlot)){
+                    if(isset($resData["emp"][0]["start_time"]) && !empty($resData["emp"][0]["start_time"])){
+                        // echo "sdf";die;
+                        foreach ($resData["emp"] as $key => $blockTime) {
+                            // echo "key ".$key;
+                           $blockedStartTime = date('H:i', strtotime('-5 minutes', strtotime($blockTime['start_time'])));
+                            // $blockedStartTime = $blockTime['start_time'];
+                           $blockedEndTime = $blockTime['end_time'];
+                            // $blockedEndTime = date('H:i', strtotime('-5 minutes', strtotime($blockTime['end_time'])));
+                            foreach ($timeSlot as $timeSlotKey => $timeSlotValue) {
+                                $slotStartTime = $timeSlotValue['start_time'];
+                                $slotEndTime = $timeSlotValue['end_time'];
+                                // $slotEndTime = date("H:i",(strtotime($timeSlotValue['end_time']) + 60*60));
+                                if(isset($responseArr["Time"][$slotStartTime]) && ($responseArr["Time"][$slotStartTime] == 0)){
+                                    // echo "id";die;
+                                    if($key ==  $countRes){
+                                        unset($responseArr["Time"][$slotStartTime]);
+                                    }else{
+                                        $responseArr["Time"][$slotStartTime] = 0;
+                                    }
+                                    
+                                }else{
+                                    // echo "test";die;
+                                    if((($slotStartTime <= $blockedStartTime) && ($slotEndTime < $blockedEndTime) ) ||  (($slotStartTime >= $blockedStartTime) && ($slotEndTime > $blockedEndTime) ) ){
+                                        $responseArr["Time"][$slotStartTime] = 1;
+                                    }else{
+                                        if($key ==  $countRes){
+                                            unset($responseArr["Time"][$slotStartTime]);
+                                        }else{
+                                            $responseArr["Time"][$slotStartTime] = 0;
+                                        }
+                                    }
+                                } 
+
+                            }
+                            
+                        }
+                    }else{
+                        // pr($timeSlot);die;
+                        foreach ($timeSlot as $timeSlotKey => $timeSlotValue) {
+                            $slotStartTime = $timeSlotValue['start_time'];
+                            $responseArr["Time"][$slotStartTime] = 1;
+                        }    
+
+                    } 
+                    // pr($responseArr);die;   
+                    $nextTimeKey ="";
+                    // pr($responseArr);die;
+                    $i =0;
+                    $responseArrNew["duration"] = $duration;
+                    $duration = $duration -5;
+                    foreach ($responseArr["Time"] as $timeKey => $avlValue) {
+
+                        $nextTimeKey = date('H:i', strtotime('+'.$duration.' minutes', strtotime($timeKey)));
+                        if(($avlValue == 1) && (isset($responseArr["Time"][$nextTimeKey])) && ($responseArr["Time"][$nextTimeKey]==1) ){
+                            $responseArrNew["Time"][$i]['slot']= $timeKey;
+                            $i++;
+                        }
+                    }
+                }else{
+                    $responseArrNew = array('status' => 'error', 'Time' => array(), 'msg'=>'Please add daily salon working time.','response_code'=>'404');
+                }    
+            }else{
+                $responseArrNew = array('status' => 'error', 'Time' => array(), 'msg'=>'Currently this Sub service not have staff.','response_code'=>'404');
+            }
+    
+        }else{
+            $responseArrNew = array('status' => 'error', 'Time' => array(), 'msg'=>'Please enter user id','response_code'=>'404');
+            
+        }    
+        $jsonEncode = json_encode($responseArrNew);    
+        echo  $jsonEncode;
+        exit();
+    }
+
+    function get_sub_service_employee_reservation($user_id=0, $sub_service_id = 0, $employee_id = 0, $date = null){
+        $this->loadModel("Employee");
+        $this->loadModel("SubService");
+        $subserviceData = $empData = $resposeData = array();
+        $i = 0;
+        if(!empty($user_id) && !empty($sub_service_id) && !empty($employee_id)){
+            $subserviceData = $this->SubService->find('first', array('conditions'=>array('SubService.user_id'=>$user_id,'SubService.id'=>$sub_service_id), 'fields'=>array('SubService.employee_id', 'SubService.duration')));
+            $empData = $this->Employee->find("first", array("conditions" =>array("Employee.id"=>$employee_id), 'order' =>array('Employee.id' => 'DESC')));
+            if(isset($empData["Employee"]["id"]) && !empty($empData["Employee"]["name"])){
+                $empName = $empData["Employee"]["name"];
+                $resData = $this->Reservation->find("all", array("conditions" =>array("Reservation.employee_ids"=>$employee_id, "Reservation.start_date" => $date, "Reservation.all_day"=>0)));
+                // pr($resData);die;
+                if(!empty($resData)){
+                    foreach ($resData as $resKey => $resValue) {
+                        if(isset($resValue['Reservation']['start_time']) && isset($resValue['Reservation']['end_time'])){
+                             $resposeData["emp"][$i]['start_time'] = $resValue['Reservation']['start_time'];
+                             $resposeData["emp"][$i]['end_time'] = $resValue['Reservation']['end_time'];
+                             $i++;
+                        }
+                    }
+                }else{
+                    $resposeData["emp"][$i]  = "";
+                }
+
+            }else{
+               $resposeData["emp"] = array();
+            }
+            $resposeData["duration"] = isset($subserviceData["SubService"]['duration']) ? $subserviceData["SubService"]['duration'] : 0;
+        }
+
+        return $resposeData;
+    }
+
+    function get_salon_working_time_slot($user_id=0, $day = 0){
+        $timeSlot = array();
+        $this->loadModel("UserWorkingDay");
+        // echo $day;
+        $userWorkingData = $this->UserWorkingDay->find("first", array("conditions" =>array("UserWorkingDay.user_id"=>$user_id,"UserWorkingDay.day"=>$day), 'order' =>array('UserWorkingDay.id' => 'DESC')));
+        // pr($userWorkingData);die;
+
+        $interval = 0;
+        if(isset($userWorkingData['UserWorkingDay']['start_time']) && isset($userWorkingData['UserWorkingDay']['end_time'])){
+            $working_start_time = $userWorkingData['UserWorkingDay']['start_time'];
+            $working_end_time = $userWorkingData['UserWorkingDay']['end_time'];
+            $interval = ((strtotime($working_end_time) - strtotime($working_start_time))/3600)*12;
+            if($user_id == "102"){
+                $interval = 144;
+            }
+            for($t= 1; $t <= $interval; $t++ ){
+                // $start = new DateTime($working_start_time);
+               $timeSlot[$t]['start_time'] = $working_start_time;
+               $working_start_time = $timeSlot[$t]['end_time'] =  date('H:i', strtotime('+5 minutes', strtotime($working_start_time))); 
+              
+            }
+        }
+        // pr($timeSlot);die;
+        return $timeSlot;
+
+    }
+
+
+
+
+
+    /**************************************************************************
+     * NAME: reservation_staff_list
+     * Description: All Service List .
+     *
+     * Subroutines Called:
+     *
+     * Parameters: Input / Output
+     Example : {"$user_id" : 33}
+     * Returns:
+     *
+     * Globals:
+     *
+     * Design Document Reference:
+     *
+     * Author: Mahendra Tripathi
+     *
+     * Assumptions and Limitation: - Client requirements not fixed and already changed many times.
+     *
+     * Exception Processing:
+     *
+     * REVISION HISTORY
+     * Date: By: Description:
+     *
+     *********************************************************************/
+    
+    public function reservation_staff_list($id = null){
+
+        /*** Load Model Start ***/
+        
+        $this->loadModel("Employee");
+        $this->loadModel("SubService");
+        $this->loadModel("UserWorkingDay");
+        $this->loadModel("Reservation");
+        /*** Load Model End ***/
+
+        $data = file_get_contents('php://input');
+        
+        if(empty($data)){
+            $data = json_encode($_POST);
+        }    
+
+        $decoded = json_decode($data, true);
+        // pr($decoded); die;
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $sub_service_id = isset($decoded['sub_service_id']) ? $decoded['sub_service_id'] : '';
+        $date = isset($decoded['date']) ? $decoded['date'] : '';
+        $day = date('D', strtotime($date));
+        $day = strtolower($day);
+        
+        /*variable decliration */
+        $responseArr = $timeSlot = array(); 
+        $i =  0;
+        if(!empty($user_id) && !empty($sub_service_id) && !empty($date)){
+            $subserviceData = $this->SubService->find('first', array('conditions'=>array('SubService.user_id'=>$user_id,'SubService.id'=>$sub_service_id), 'fields'=>array('SubService.employee_id', 'SubService.duration')));
+            $empIds = isset($subserviceData['SubService']['employee_id']) ? json_decode($subserviceData['SubService']['employee_id']) : '';
+            
+            $empData = $this->Employee->find("all", array("conditions" =>array("Employee.id"=>$empIds), 'order' =>array('Employee.id' => 'DESC')));
+            // pr($empData);
+            foreach ($empData as $empKey => $empValue) {
+
+                $id = isset($empValue['Employee']['id']) ? $empValue['Employee']['id'] : 0;
+                $resData = $this->Reservation->find("first", array("conditions" =>array("Reservation.employee_ids"=>$id, "Reservation.start_date" => $date, "Reservation.all_day"=>1)));
+                if(!empty($id) && !isset($resData['Reservation']['id']) ){
+                    $responseArr['Employee'][$i]['id'] = $id;
+                    $responseArr['Employee'][$i]['name'] = isset($empValue['Employee']['name']) ? $empValue['Employee']['name'] :  "";
+                    $responseArr['Employee'][$i]['image'] = isset($empValue['Employee']['image']) ? $empValue['Employee']['image'] :  "";
+                    $i++;
+                }
+                
+
+            }
+           
+        }else{
+            $responseArr = array('status' => 'error', 'Employee' => array(), 'msg'=>'Please enter user id','response_code'=>'404');
+        }
+        $jsonEncode = json_encode($responseArr);   
+        echo  $jsonEncode;
+        exit();
+    }
+
+
+
+    /**************************************************************************
+     * NAME: technician_list
+     * Description: All Service List .
+     *
+     * Subroutines Called:
+     *
+     * Parameters: Input / Output
+     Example : {"$user_id" : 33}
+     * Returns:
+     *
+     * Globals:
+     *
+     * Design Document Reference:
+     *
+     * Author: Mahendra Tripathi
+     *
+     * Assumptions and Limitation: - Client requirements not fixed and already changed many times.
+     *
+     * Exception Processing:
+     *
+     * REVISION HISTORY
+     * Date: By: Description:
+     *
+     *********************************************************************/
+    
+    
+    function technician_list($testData = null){
+         
+        // Load Model
+        $this->loadModel("RecordData");
+        $this->loadModel("Employee");
+        $this->loadModel("Reservation");
+
+        $data = file_get_contents('php://input');
+    
+        if(empty($data)){
+            $data = json_encode($_GET);
+        }    
+
+        $recordData['RecordData']['name'] = "technician_list";
+        $recordData['RecordData']['query'] = json_encode($data);
+        $this->RecordData->saveAll($recordData);
+
+        $decoded = json_decode($data, true); 
+        
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        $i=0;
+        $responseArr = array();
+        if(!empty($user_id)){
+            $data = $this->Employee->find('all',array('conditions'=>
+                                                    array( 'Employee.user_id'=>$user_id, 'Employee.status'=>Configure::read('App.Status.active'), 'Employee.is_technician'=>Configure::read('App.Status.active')),
+                                                    'order' => array('Employee.id' => 'DESC')
+                                                    ));
+
+            if(!$data){
+                $jsonEncode =  json_encode(array('status'=>'error', 'msg'=> '有効なユーザーIDを入力してください。')); //please enter valid user id
+            }else{
+                foreach ($data as $techEmpKey => $techEmpValue) {
+
+                    $responseArr['Employee'][$i]['id'] = $techEmpValue['Employee']['id'];
+                    $responseArr['Employee'][$i]['name'] = $techEmpValue['Employee']['name'];
+                    // $responseArr['Employee'][$i]['is_technician'] = $techEmpValue['Employee']['is_technician'];
+                    $responseArr['Employee'][$i]['image'] = $techEmpValue['Employee']['image'];
+                    // $responseArr['Employee'][$i]['user_id'] = $techEmpValue['Employee']['user_id'];
+                    $i++;
+                }
+                $jsonEncode = json_encode($responseArr);
+            }
+        }else{
+            $responseArr[$i]['Employee']['msg'] = 'レコードが見つかりませんでした。'; //No Record Found
+            $responseArr[$i]['Employee']['status'] = 'error';
+            $jsonEncode = json_encode($responseArr);
+        }
+        echo  $jsonEncode;exit();
+    }
+
+    function get_advertisment_list(){
+        // Load Model
+        $this->loadModel("RecordData");
+        $this->loadModel("Employee");
+        $this->loadModel("Reservation");
+
+        $data = file_get_contents('php://input');
+    
+        if(empty($data)){
+            $data = json_encode($_GET);
+        }    
+        $decoded = json_decode($data, true); 
+        $recordData['RecordData']['name'] = "push_notification_mirai";
+        $recordData['RecordData']['query'] = json_encode($data);
+        $this->RecordData->saveAll($recordData);
+        $responseArr = array();
+        $user_id = isset($decoded['user_id']) ? $decoded['user_id'] : '';
+        if(!empty($user_id)){
+            $dataAdvertisement = $this->User->find('first', array('conditions'=>array('User.id'=>$user_id), 'fields'=>array('User.advertisement')));
+
+            if(isset($dataAdvertisement['User']['advertisement'])){
+                $advertisement = explode(",", $dataAdvertisement['User']['advertisement']);
+                $i =  0;
+                foreach ($advertisement as $key => $value) {
+                    $responseArr['Advertisement'][$i]['name'] = $value;
+                    $i++;
+                }
+                $jsonEncode = json_encode($responseArr);
+            }else{
+                $responseArr = array('status' => 'error', 'msg' => 'シャネルは存在しません。', 'msg1' => 'Chanel does not exist.', 'Advertisement' => array()  );
+                $jsonEncode = json_encode($responseArr);
+            }
+        }else{
+            $responseArr = array('status' => 'error', 'msg' => 'シャネルは存在しません。', 'msg1' => 'Chanel does not exist.', 'Advertisement' => array()  );
+            $jsonEncode = json_encode($responseArr);
+
+        }
+        echo $jsonEncode;exit();
+
+    }
+
 
 }
